@@ -8,7 +8,7 @@ For each of six open-source projects, Specular's extractor agent derived a confi
 
 ## Projects
 
-The projects come from SpecMine and use different SDD approaches and coding agents. The projects were selected at random, but requiring different coding agents and SDD approaches.
+The projects come from the [SpecMine](https://arxiv.org/abs/2608.25202) dataset and use different SDD approaches and coding agents. The projects were selected at random, but requiring different coding agents and SDD approaches.
 
 | Project | Repository (commit used) | SDD approach | Coding agent(s) | MD files | MD kLOC |
 |---|---|---|---|---:|---:|
