@@ -1,0 +1,9 @@
+category,name,role,ids,defined_ids,definitions,references,ids_with_status,duplicate_findings,unresolved_findings,status_values
+requirements,Requirements,requirement,901,893,893,577,0,0,10,
+success,Success criteria,requirement,394,391,391,386,0,0,4,
+stories,User stories,requirement,264,261,261,3761,0,0,11,
+tasks,Tasks,task,2319,2317,2317,1385,2280,0,2,Done=1453; Open=825; Deferred=2
+decisions,Design decisions,design,143,137,139,367,7,4,13,Done=6; Closed=1
+research,Research findings,design,144,144,144,113,0,0,0,
+contracts,Contracts,design,4,4,4,5,0,0,0,
+features,Feature specifications,requirement,87,87,87,0,81,0,0,Draft=60; Done=12; Closed=4; Ready=1; Proposed=1; In progress=2; Revised=1

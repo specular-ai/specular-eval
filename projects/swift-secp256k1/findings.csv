@@ -1,0 +1,24 @@
+kind,id,category,scope,file,line,text
+duplicate,T031,tasks,specs/003-test-architecture,specs/003-test-architecture/tasks.md,182,- [x] T031 [US3] Implement `ZeroSignatureTests.swift` — Tests ZS-001 through ZS-004
+duplicate,T031,tasks,specs/003-test-architecture,specs/003-test-architecture/tasks.md,209,- [x] T031 [US4] Native test target `libsecp256k1Tests` configured in `Projects/Project.swift` as commandLineTool with subtree extraction for tests.c and precomputed tables
+duplicate,T032,tasks,specs/003-test-architecture,specs/003-test-architecture/tasks.md,183,- [x] T032 [US3] Implement `DEREncodingTests.swift` — Tests DE-001 through DE-004
+duplicate,T032,tasks,specs/003-test-architecture,specs/003-test-architecture/tasks.md,210,"- [x] T032 [US4] C settings configured via xcconfig: VERIFY define, header search paths pointing to `Vendor/secp256k1/src/`"
+duplicate,T033,tasks,specs/003-test-architecture,specs/003-test-architecture/tasks.md,184,- [x] T033 [US3] Implement `NonceSecurityTests.swift` — Tests NS-001 through NS-003
+duplicate,T033,tasks,specs/003-test-architecture,specs/003-test-architecture/tasks.md,211,- [x] T033 [US4] ~~Package.swift fallback~~ **SKIP**: Tuist approach succeeded
+duplicate,T034,tasks,specs/003-test-architecture,specs/003-test-architecture/tasks.md,185,- [x] T034 [US3] Implement `InvalidCurveTests.swift` — Tests IC-001 through IC-002
+duplicate,T034,tasks,specs/003-test-architecture,specs/003-test-architecture/tasks.md,212,- [x] T034 [US4] ~~NativeTestRunner.swift~~ **SKIP**: Direct commandLineTool execution works; no Swift wrapper needed
+duplicate,T035,tasks,specs/003-test-architecture,specs/003-test-architecture/tasks.md,186,- [x] T035 [US3] Add SecurityTests target to `Projects/Project.swift` (renamed from CVETests)
+duplicate,T035,tasks,specs/003-test-architecture,specs/003-test-architecture/tasks.md,213,"- [x] T035 [US4] **VERIFIED**: Native tests pass on macOS (16 tests, ""no problems found"")"
+duplicate,T036,tasks,specs/003-test-architecture,specs/003-test-architecture/tasks.md,187,- [x] T036 [US3] Document each test with inline comments explaining the vulnerability class and expected rejection behavior
+duplicate,T036,tasks,specs/003-test-architecture,specs/003-test-architecture/tasks.md,229,"- [x] T036 [P] [US5] Add MuSig2VectorTests unit test target to `Projects/Project.swift` with sources from `Projects/Sources/TestShared/**` and `Projects/Sources/MuSig2VectorTests/**`, resources from `"
+duplicate,T037,tasks,specs/003-test-architecture,specs/003-test-architecture/tasks.md,188,- [x] T037 [US3] **VERIFY**: Run `xcodebuild test -scheme SecurityTests` and confirm all 53 tests pass
+duplicate,T037,tasks,specs/003-test-architecture,specs/003-test-architecture/tasks.md,230,- [x] T037 [P] [US5] Create xcconfig files for MuSig2VectorTests: `Projects/Resources/MuSig2VectorTests/Debug.xcconfig` and `Release.xcconfig`
+unresolved,SM-003,tests,,Projects/README.md,116,| **SM-003** | Skipped | Signature normalization API not exposed in Swift wrapper |
+unresolved,T013,tasks,specs/002-swift-version-compat,specs/002-swift-version-compat/tasks.md,129,"- T013-T023 (US2) could theoretically start after T003, but better to have README done first for reference"
+unresolved,T023,tasks,specs/002-swift-version-compat,specs/002-swift-version-compat/tasks.md,129,"- T013-T023 (US2) could theoretically start after T003, but better to have README done first for reference"
+unresolved,T013,tasks,specs/002-swift-version-compat,specs/002-swift-version-compat/tasks.md,160,| 4 | T013-T023 | CI workflow (US2) |
+unresolved,T023,tasks,specs/002-swift-version-compat,specs/002-swift-version-compat/tasks.md,160,| 4 | T013-T023 | CI workflow (US2) |
+unresolved,SM-003,tests,,specs/003-test-architecture/tasks.md,123,| SM-003 | Verify normalized signature | `ecdsa_signature_normalize` + `ecdsa_verify` | Normalize(high-s) then verify | Normalize returns `1`; verify returns `1` |
+unresolved,SM-003,tests,,specs/003-test-architecture/tasks.md,161,| SM-003 | ❌ Not exposed | ⚠️ **Gap** | `secp256k1_ecdsa_signature_normalize` not wrapped — **skip or add wrapper** |
+unresolved,SM-003,tests,,specs/003-test-architecture/tasks.md,172,"**Recommendation for SM-003**: Skip test — libsecp256k1 auto-normalizes during signing, so high-s signatures only come from external sources. DER parsing tests (DE-*) already cover malformed input rej"
+unresolved,SM-003,tests,,specs/003-test-architecture/tasks.md,181,"- [x] T030 [US3] Implement `SignatureMalleabilityTests.swift` — Tests SM-001, SM-002 (SM-003 skipped per feasibility)"

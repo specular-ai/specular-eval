@@ -1,0 +1,13 @@
+category,name,role,ids,defined_ids,definitions,references,ids_with_status,duplicate_findings,unresolved_findings,status_values
+requirements,Requirements,requirement,401,396,396,238,0,0,17,
+success,Success Criteria,,55,55,55,100,0,0,0,
+stories,User Stories,requirement,31,30,30,57,0,0,1,
+tasks,Tasks,task,709,695,695,1984,653,0,26,Done=319; Open=334
+packages,Work Packages,task,81,81,81,965,9,0,0,Planned=8; Deferred=1
+decisions,Architecture Decisions,design,20,20,23,212,15,6,0,Proposed=11; Accepted=3; Rejected=1
+risks,Risks,,12,12,12,0,12,0,0,Mitigated=3; Open=6; Accepted=1; Closed=2
+tests,Test Cases,,19,19,19,16,0,0,0,
+shortstories,ID User Stories,requirement,40,40,40,5,0,0,0,
+shellstories,Shell Integration Stories,task,100,100,100,28,0,0,0,
+backlog,Broken Windows,task,71,71,71,14,71,0,0,Open=45; Fixed=18; Done=1; Mitigated=1; Claimed=5; Not reproducing=1
+package_tables,Work Packages (registers),task,16,16,16,135,16,0,0,Done=8; Planned=8

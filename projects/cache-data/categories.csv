@@ -1,0 +1,12 @@
+category,name,role,ids,defined_ids,definitions,references,ids_with_status,duplicate_findings,unresolved_findings,status_values
+requirements,Requirements,requirement,280,280,280,76,0,0,0,
+properties,Correctness Properties,design,343,333,335,586,0,4,12,
+tasks,Tasks,task,1216,1216,1216,0,1208,0,0,Done=1192; Open=13; In progress=3
+questions,Clarifying Questions,,28,28,28,1,0,0,0,
+workstreams,Workstreams,,17,16,16,70,0,0,1,
+remediations,Remediations,,7,7,7,9,0,0,0,
+plannedChanges,Planned Changes,,11,11,11,11,0,0,0,
+findings,Findings,,4,4,4,10,0,0,0,
+assertions,Security Property Assertions,design,12,12,12,37,0,0,0,
+risks,Risks,,20,20,20,0,0,0,0,
+scenarios,Scenarios,,14,14,14,0,0,0,0,

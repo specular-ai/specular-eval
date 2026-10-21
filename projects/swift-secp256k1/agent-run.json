@@ -1,0 +1,598 @@
+{
+  "project": "swift-secp256k1",
+  "agent": "Codex",
+  "model": "gpt-6-astra",
+  "toolCallLimit": 80,
+  "toolCalls": 71,
+  "seconds": 160,
+  "submittedEvaluation": {
+    "evaluationId": "e3",
+    "duplicates": 14,
+    "unresolved": 9,
+    "problems": 23
+  },
+  "bestEvaluation": {
+    "evaluationId": "e2",
+    "categories": 8,
+    "duplicates": 14,
+    "unresolved": 9,
+    "problems": 23
+  },
+  "submittedBest": true,
+  "summary": "Measured configuration for eight engineering-record categories: 279 definitions, 459 references, 159 mapped status occurrences with no status conflicts, and 55 dates. Remaining findings are documented source ambiguities and schema limitations.",
+  "categoryRationale": {
+    "requirements": "Retains the existing requirements key and replaces the unused REQ convention with FR IDs. Four specs define 49 functional requirements in leading bold list items (e.g. specs/001-spm-shared-code-plugin/spec.md:124). IDs restart per specs/* feature; only spec.md defines them.",
+    "success": "SC IDs identify 28 measurable success criteria in spec.md lists. The pattern includes the authored SC-002a suffix (specs/001-spm-shared-code-plugin/spec.md:149); each feature has its own scope.",
+    "stories": "User Story N headings define 16 user stories in the four feature specifications. US1-style task annotations resolve through a numeric ID template to User Story 1. Definitions are restricted to spec.md so task-section repetitions remain references; 228 references resolve.",
+    "tasks": "T-number IDs identify checkbox tasks in specs/*/tasks.md. Feature scopes prevent cross-feature collisions, checkbox-only definitions prevent dependency lists from redefining tasks, and suffixes are retained. All 140 definition occurrences are actual tasks. Seven IDs genuinely repeat within the test-architecture feature; removed workflow tasks have stale references.",
+    "blockers": "BL-001 through BL-003 identify explicit rollback-trigger conditions in specs/004-swift-crypto-update/spec.md:83–85. Leading list definitions and feature scoping yield three clean records.",
+    "tests": "PV, SV, SM, ZS, DE, NS, and IC IDs identify security test cases, not protocol or type names. Projects/README.md:49–76 supplies 26 current coverage definitions in its ID column; task design and feasibility tables remain references via definitionPaths. SM-003 is an acknowledged skipped case absent from that canonical coverage table; its five unresolved mentions are retained.",
+    "phases": "Phase N, including Phase 9.5, identifies 13 roadmap phases. Only level-one headings in .specify/memory/roadmap/*.md define phases. The shared .specify/mem* scope admits roadmap references while excluding unrelated workflow/template phases; all 89 references resolve.",
+    "features": "Feature Specification: title headings identify four named features in specs/*/spec.md. Keyword definitions capture names rather than branch numbers or version tokens and provide the correct attachment point for feature status metadata."
+  },
+  "gaps": [
+    {
+      "description": "Task IDs T031–T037 are reused for distinct tasks within one feature. File/folder scopes cannot disambiguate these same-file records or their bare references; 14 duplicate occurrences remain.",
+      "examples": [
+        {
+          "path": "specs/003-test-architecture/tasks.md",
+          "line": 182
+        },
+        {
+          "path": "specs/003-test-architecture/tasks.md",
+          "line": 209
+        },
+        {
+          "path": "specs/003-test-architecture/tasks.md",
+          "line": 230
+        }
+      ]
+    },
+    {
+      "description": "The skipped CI workflow removed T013–T023 definitions but left range references. Four unresolved endpoint occurrences are preserved rather than inventing definitions.",
+      "examples": [
+        {
+          "path": "specs/002-swift-version-compat/tasks.md",
+          "line": 70
+        },
+        {
+          "path": "specs/002-swift-version-compat/tasks.md",
+          "line": 129
+        },
+        {
+          "path": "specs/002-swift-version-compat/tasks.md",
+          "line": 160
+        }
+      ]
+    },
+    {
+      "description": "Security test definitions span incompatible ID and Test ID tables; the latter also repeats exact IDs in feasibility summaries in the same file. The single table-column/definition-path configuration cannot combine these cleanly. SM-003 remains unresolved because it is omitted from current coverage and marked skipped elsewhere.",
+      "examples": [
+        {
+          "path": "specs/003-test-architecture/tasks.md",
+          "line": 123
+        },
+        {
+          "path": "specs/003-test-architecture/tasks.md",
+          "line": 161
+        },
+        {
+          "path": "Projects/README.md",
+          "line": 116
+        }
+      ]
+    },
+    {
+      "description": "Completion marks and SKIP/DEFERRED qualifiers embedded in list-item descriptions are not supported status sites. Checkbox statuses remain literal Done/Open rather than guessing an override from prose.",
+      "examples": [
+        {
+          "path": "specs/003-test-architecture/spec.md",
+          "line": 109
+        },
+        {
+          "path": "specs/003-test-architecture/tasks.md",
+          "line": 24
+        },
+        {
+          "path": "specs/001-spm-shared-code-plugin/tasks.md",
+          "line": 81
+        }
+      ]
+    },
+    {
+      "description": "Status paragraphs in task-section summaries and spike reports cannot update a story/task defined in another file. They remain separate evidence rather than overriding canonical definitions.",
+      "examples": [
+        {
+          "path": "specs/002-swift-version-compat/tasks.md",
+          "line": 72
+        },
+        {
+          "path": "specs/001-spm-shared-code-plugin/tasks.md",
+          "line": 74
+        },
+        {
+          "path": "specs/003-test-architecture/spike-native-tests.md",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "description": "Dates in inline metadata after another field, version-history tables, and non-date-leading log entries are outside supported date sites.",
+      "examples": [
+        {
+          "path": "specs/002-swift-version-compat/plan.md",
+          "line": 3
+        },
+        {
+          "path": ".specify/memory/roadmap.md",
+          "line": 170
+        },
+        {
+          "path": ".specify/memory/constitution.md",
+          "line": 347
+        }
+      ]
+    },
+    {
+      "description": "The abbreviated date range 2025-12-08/09 cannot be represented faithfully by a single captured ISO date.",
+      "examples": [
+        {
+          "path": "specs/001-spm-shared-code-plugin/research.md",
+          "line": 166
+        }
+      ]
+    },
+    {
+      "description": "Research decisions use ordinary topic headings plus Decision paragraphs, risks use descriptive table cells, and acceptance scenarios use repeated ordered-list positions without stable IDs. No selective convention identifies these records without also matching unrelated sections or lists.",
+      "examples": [
+        {
+          "path": "specs/004-swift-crypto-update/research.md",
+          "line": 17
+        },
+        {
+          "path": "specs/004-swift-crypto-update/research.md",
+          "line": 80
+        },
+        {
+          "path": "specs/001-spm-shared-code-plugin/spec.md",
+          "line": 46
+        }
+      ]
+    }
+  ],
+  "statusRationale": "Enabled task-checkbox statuses and the authored COMPLETE heading suffix, plus a bounded Status: regex that reads contiguous values inside multi-line metadata paragraphs. Mapped Done/Complete/Implemented together and normalized decorated roadmap Planned, Future, and In Progress values. Evaluation maps all 159 occurrences: 140 checkboxes, 18 paragraphs, and one heading; no unmapped values or conflicts. All four features, 13 phases, and 133 distinct defined task IDs have statuses. No status is inferred for records lacking a supported authored status site.",
+  "dateRationale": "Retained actual ISO-date headings and Created, Ratified, and Date fields; enabled Last Updated and Last Amended as snapshots. Removed zero-hit status-date and list-entry rules. Excluded Vendor (30 files), .devin (18), and .specify/templates (5). Inspected every enabled rule: 18 heading dates, 8 Created, 1 Ratified, 12 Date, 15 Last Updated, and 1 Last Amended. The ambiguous 2025-12-08/09 heading is deliberately excluded rather than reduced to a partial date.",
+  "statusMetrics": {
+    "occurrences": 159,
+    "sites": {
+      "paragraphs": 18,
+      "checkboxes": 140,
+      "headings": 1
+    },
+    "mapped": 159,
+    "unmapped": 0,
+    "categories": [
+      {
+        "key": "requirements",
+        "name": "Functional requirements",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 49,
+        "conflicts": 0
+      },
+      {
+        "key": "success",
+        "name": "Success criteria",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 28,
+        "conflicts": 0
+      },
+      {
+        "key": "stories",
+        "name": "User stories",
+        "occurrences": 2,
+        "withStatus": 1,
+        "withoutStatus": 15,
+        "conflicts": 0
+      },
+      {
+        "key": "tasks",
+        "name": "Tasks",
+        "occurrences": 140,
+        "withStatus": 133,
+        "withoutStatus": 0,
+        "conflicts": 0
+      },
+      {
+        "key": "blockers",
+        "name": "Rollback blockers",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 3,
+        "conflicts": 0
+      },
+      {
+        "key": "tests",
+        "name": "Security test cases",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 26,
+        "conflicts": 0
+      },
+      {
+        "key": "phases",
+        "name": "Roadmap phases",
+        "occurrences": 13,
+        "withStatus": 13,
+        "withoutStatus": 0,
+        "conflicts": 0
+      },
+      {
+        "key": "features",
+        "name": "Features",
+        "occurrences": 4,
+        "withStatus": 4,
+        "withoutStatus": 0,
+        "conflicts": 0
+      }
+    ],
+    "values": [
+      {
+        "value": "Done",
+        "count": 135,
+        "status": "Done",
+        "example": {
+          "path": "specs/001-spm-shared-code-plugin/tasks.md",
+          "line": 21,
+          "text": "- [x] T001 [P] Create plugin directory structure at `Plugins/SharedSourcesPlugin/`"
+        }
+      },
+      {
+        "value": "🔜 Planned",
+        "count": 8,
+        "status": "Planned",
+        "example": {
+          "path": ".specify/memory/roadmap/phase-2-ci-quality-gates.md",
+          "line": 5,
+          "text": "**Status**: 🔜 Planned  "
+        }
+      },
+      {
+        "value": "Open",
+        "count": 5,
+        "status": "Open",
+        "example": {
+          "path": "specs/001-spm-shared-code-plugin/tasks.md",
+          "line": 81,
+          "text": "- [ ] T016 [US2] DEFERRED - Implement Windows file copy using robocopy or xcopy"
+        }
+      },
+      {
+        "value": "✅ Complete",
+        "count": 2,
+        "status": "Done",
+        "example": {
+          "path": ".specify/memory/roadmap/phase-0-tooling-foundation.md",
+          "line": 5,
+          "text": "**Status**: ✅ Complete  "
+        }
+      },
+      {
+        "value": "📋 Future",
+        "count": 2,
+        "status": "Future",
+        "example": {
+          "path": ".specify/memory/roadmap/phase-10-native-protocols.md",
+          "line": 5,
+          "text": "**Status**: 📋 Future  "
+        }
+      },
+      {
+        "value": "Complete",
+        "count": 2,
+        "status": "Done",
+        "example": {
+          "path": "specs/002-swift-version-compat/spec.md",
+          "line": 5,
+          "text": "**Status**: Complete  "
+        }
+      },
+      {
+        "value": "🚧 In Progress",
+        "count": 1,
+        "status": "In progress",
+        "example": {
+          "path": ".specify/memory/roadmap/phase-3-documentation-dx.md",
+          "line": 5,
+          "text": "**Status**: 🚧 In Progress  "
+        }
+      },
+      {
+        "value": "COMPLETE",
+        "count": 1,
+        "status": "Done",
+        "example": {
+          "path": "specs/003-test-architecture/spec.md",
+          "line": 65,
+          "text": "### User Story 4 - Run Native secp256k1 C Tests (Priority: P4) ✅ COMPLETE"
+        }
+      },
+      {
+        "value": "Draft",
+        "count": 1,
+        "status": "Draft",
+        "example": {
+          "path": "specs/003-test-architecture/spec.md",
+          "line": 5,
+          "text": "**Status**: Draft  "
+        }
+      },
+      {
+        "value": "Implemented",
+        "count": 1,
+        "status": "Done",
+        "example": {
+          "path": "specs/004-swift-crypto-update/spec.md",
+          "line": 5,
+          "text": "**Status**: Implemented  "
+        }
+      },
+      {
+        "value": "In Progress",
+        "count": 1,
+        "status": "In progress",
+        "example": {
+          "path": "specs/001-spm-shared-code-plugin/spec.md",
+          "line": 5,
+          "text": "**Status**: In Progress  "
+        }
+      }
+    ],
+    "unusedStatuses": []
+  },
+  "dateMetrics": {
+    "rules": [
+      {
+        "key": "heading",
+        "site": "heading",
+        "kind": "milestone",
+        "enabled": true,
+        "dates": 18,
+        "examples": [
+          {
+            "path": ".specify/memory/constitution.md",
+            "line": 249,
+            "text": "### Current Stack (2025-12-02)",
+            "date": "2025-12-02"
+          },
+          {
+            "path": ".specify/memory/roadmap/phase-3-documentation-dx.md",
+            "line": 13,
+            "text": "## Progress (2026-06-05)",
+            "date": "2026-06-05"
+          },
+          {
+            "path": "CHANGELOG.md",
+            "line": 10,
+            "text": "## [0.23.2] - 2026-05-22",
+            "date": "2026-05-22"
+          }
+        ]
+      },
+      {
+        "key": "created",
+        "site": "field",
+        "kind": "milestone",
+        "label": "Created",
+        "enabled": true,
+        "dates": 8,
+        "examples": [
+          {
+            "path": "specs/001-spm-shared-code-plugin/checklists/requirements.md",
+            "line": 4,
+            "text": "**Created**: 2025-12-08  ",
+            "date": "2025-12-08"
+          },
+          {
+            "path": "specs/001-spm-shared-code-plugin/spec.md",
+            "line": 4,
+            "text": "**Created**: 2025-12-08  ",
+            "date": "2025-12-08"
+          },
+          {
+            "path": "specs/002-swift-version-compat/checklists/requirements.md",
+            "line": 4,
+            "text": "**Created**: 2025-12-12  ",
+            "date": "2025-12-12"
+          }
+        ]
+      },
+      {
+        "key": "ratified",
+        "site": "field",
+        "kind": "milestone",
+        "label": "Ratified",
+        "enabled": true,
+        "dates": 1,
+        "examples": [
+          {
+            "path": ".specify/memory/constitution.md",
+            "line": 343,
+            "text": "**Ratified**: 2025-12-02",
+            "date": "2025-12-02"
+          }
+        ]
+      },
+      {
+        "key": "date",
+        "site": "field",
+        "kind": "milestone",
+        "label": "Date",
+        "enabled": true,
+        "dates": 12,
+        "examples": [
+          {
+            "path": "specs/001-spm-shared-code-plugin/data-model.md",
+            "line": 3,
+            "text": "**Date**: 2025-12-08  ",
+            "date": "2025-12-08"
+          },
+          {
+            "path": "specs/001-spm-shared-code-plugin/quickstart.md",
+            "line": 3,
+            "text": "**Date**: 2025-12-08  ",
+            "date": "2025-12-08"
+          },
+          {
+            "path": "specs/001-spm-shared-code-plugin/research.md",
+            "line": 3,
+            "text": "**Date**: 2025-12-08  ",
+            "date": "2025-12-08"
+          }
+        ]
+      },
+      {
+        "key": "last-updated",
+        "site": "field",
+        "kind": "snapshot",
+        "label": "Last Updated",
+        "enabled": true,
+        "dates": 15,
+        "examples": [
+          {
+            "path": ".specify/memory/roadmap/backlog.md",
+            "line": 4,
+            "text": "**Last Updated**: 2026-06-05",
+            "date": "2026-06-05"
+          },
+          {
+            "path": ".specify/memory/roadmap/phase-0-tooling-foundation.md",
+            "line": 6,
+            "text": "**Last Updated**: 2025-12-26  ",
+            "date": "2025-12-26"
+          },
+          {
+            "path": ".specify/memory/roadmap/phase-1-testing-foundation.md",
+            "line": 6,
+            "text": "**Last Updated**: 2025-12-26  ",
+            "date": "2025-12-26"
+          }
+        ]
+      },
+      {
+        "key": "last-amended",
+        "site": "field",
+        "kind": "snapshot",
+        "label": "Last Amended",
+        "enabled": true,
+        "dates": 1,
+        "examples": [
+          {
+            "path": ".specify/memory/constitution.md",
+            "line": 344,
+            "text": "**Last Amended**: 2025-12-02",
+            "date": "2025-12-02"
+          }
+        ]
+      }
+    ],
+    "emptyRules": [],
+    "exclusions": [
+      {
+        "path": "Vendor",
+        "files": 30
+      },
+      {
+        "path": ".devin",
+        "files": 18
+      },
+      {
+        "path": ".specify/templates",
+        "files": 5
+      }
+    ]
+  },
+  "progress": [
+    "Starting the Specular tools…",
+    "Preparing a read-only Codex thread…",
+    "Codex is surveying the project…",
+    "I’ll survey the Markdown documents, measure candidate rules, and check record matches, statuses, and dates before submitting the best configuration.",
+    "1/80 · Surveyed 120 Markdown files in 39 folders",
+    "2/80 · Read specs/001-spm-shared-code-plugin/spec.md lines 1-167",
+    "3/80 · Read specs/003-test-architecture/tasks.md lines 1-110",
+    "4/80 · Found 60 prefix and 6 keyword candidates",
+    "5/80 · Read specs/004-swift-crypto-update/research.md lines 1-100",
+    "6/80 · Read the configuration format",
+    "7/80 · Found 60 prefix and 6 keyword candidates",
+    "8/80 · Read specs/004-swift-crypto-update/research.md lines 1-85",
+    "9/80 · Read specs/004-swift-crypto-update/spec.md lines 65-110",
+    "10/80 · Read Projects/README.md lines 40-121",
+    "11/80 · Read .specify/memory/roadmap/phase-0-tooling-foundation.md lines 1-56",
+    "12/80 · Read specs/003-test-architecture/checklists/requirements.md lines 1-49",
+    "13/80 · Read specs/002-swift-version-compat/plan.md lines 1-60",
+    "14/80 · Searched /Status|Last Updated|Last Amended|Ratified|\\b20\\d{2}-\\d{2}-\\d/: 163 matches in 49 files",
+    "The project uses feature-scoped FR, SC, task, and user-story IDs, plus security-test IDs and roadmap phases. Templates and workflow guides repeat these formats, so I’ll restrict recognition to the actual record files and link shorthand such as `US1` to `User Story 1`.",
+    "15/80 · Searched /^#{1,4} .*|\\*\\*Status\\*\\*.*/: 30 matches in 14 files",
+    "16/80 · Searched /\\b(?:FR|SC|US|T|BL)[-_ ]?\\d+[a-z]?\\b/: 486 matches in 15 files",
+    "17/80 · Searched /\\*\\*Status\\*\\*.*|^[-*] .*20\\d\\d-\\d\\d-\\d\\d/: 26 matches in 23 files",
+    "18/80 · Read specs/003-test-architecture/tasks.md lines 105-182",
+    "19/80 · Read .specify/memory/roadmap/phase-9.5-cli-tool.md lines 1-30",
+    "20/80 · Read .specify/memory/roadmap.md lines 60-85",
+    "21/80 · Read specs/001-spm-shared-code-plugin/research.md lines 1-75",
+    "22/80 · Evaluated a draft: rejected (ID scope pattern \".specify/memory\" ends in a literal folder. A scope pattern needs a wildcard, glob, or {name} capture a)",
+    "23/80 · Evaluated draft 1: 8 categories, 284 definitions, 22 duplicates",
+    "24/80 · Listed 30 of 49 definition matches of requirements",
+    "25/80 · Listed 28 of 28 definition matches of success",
+    "26/80 · Listed 16 of 16 definition matches of stories",
+    "27/80 · Listed 14 of 14 duplicate matches of tasks",
+    "28/80 · Listed 3 of 3 definition matches of blockers",
+    "29/80 · Listed 26 of 26 definition matches of tests",
+    "30/80 · Listed 17 of 17 unresolved matches of phases",
+    "31/80 · Listed 4 of 4 definition matches of features",
+    "32/80 · Listed 4 of 4 unresolved matches of tasks",
+    "33/80 · Read specs/002-swift-version-compat/tasks.md lines 45-100",
+    "34/80 · Searched /T\\d+[-.]\\d+|T\\d+[A-Z]|\\[.\\] T/: 58 matches in 1 files",
+    "35/80 · Read specs/003-test-architecture/spec.md lines 1-18",
+    "The first measurement exposed genuine source inconsistencies: seven task IDs are reused within one feature, and a skipped workflow still has references to removed tasks. I’ll preserve those findings. I’m also adjusting status extraction to read metadata blocks and checkboxes, and excluding vendored files from date recognition.",
+    "36/80 · Evaluated a draft: rejected (.specify/memory/roadmap/phase-0-tooling-foundation.md: Line 3, status paragraphs: Error: Captured status \"✅ CompleteLast)",
+    "37/80 · Evaluated draft 2: 8 categories, 279 definitions, 14 duplicates",
+    "38/80 · Listed 1 of 1 without-status statuses of features",
+    "39/80 · Listed 5 of 15 without-status statuses of stories",
+    "40/80 · Listed 3 of 49 without-status statuses of requirements",
+    "41/80 · Listed 0 of 0 conflict statuses of tasks",
+    "42/80 · Listed 13 of 13 definition matches of phases",
+    "43/80 · Listed 5 of 5 unresolved matches of tests",
+    "44/80 · Listed 19 of 19 dates of rule heading",
+    "45/80 · Listed 8 of 8 dates of rule created",
+    "46/80 · Listed 1 of 1 dates of rule ratified",
+    "47/80 · Listed 15 of 15 dates of rule last-updated",
+    "48/80 · Listed 1 of 1 dates of rule last-amended",
+    "49/80 · Listed 12 of 12 dates of rule date",
+    "50/80 · Read specs/004-swift-crypto-update/spec.md lines 1-9",
+    "The revised rules recognize 279 definitions and map 158 status occurrences without conflicts. Before submitting, I’ll check the document kinds not yet read: data models, workflow schemas, quickstarts, spike reports, governance files, changelogs, API documentation, and templates. Remaining gaps include completion marks embedded in list text and dates recorded in tables or prose.",
+    "51/80 · Read specs/003-test-architecture/data-model.md lines 1-38",
+    "52/80 · Read specs/002-swift-version-compat/workflow-schema.md lines 1-32",
+    "53/80 · Read specs/004-swift-crypto-update/quickstart.md lines 1-30",
+    "54/80 · Read specs/003-test-architecture/spike-native-tests.md lines 1-35",
+    "55/80 · Read .specify/memory/constitution.md lines 330-350",
+    "56/80 · Read CHANGELOG.md lines 1-30",
+    "57/80 · Read Sources/P256K/P256K.docc/SilentPayments.md lines 1-22",
+    "58/80 · Read .specify/templates/checklist-template.md lines 1-35",
+    "59/80 · Read .devin/workflows/speckit.checklist.md lines 140-155",
+    "60/80 · Read AGENTS.md lines 1-30",
+    "61/80 · Searched /(?:ADR|DEC|RISK|REQ|CHK)[-_ ]?\\d+|Status[^\\r\\n]{0,90}|(?:Cre/: 46 matches in 28 files",
+    "62/80 · Searched /(?:ADR|DEC|RISK|REQ|CHK)[-_ ]?\\d+|Status[^\\r\\n]{0,60}|20\\d{2/: 1 matches in 1 files",
+    "63/80 · Searched /\\b(?:ADR|DEC|RISK|REQ|CHK)[-_ ]?\\d+\\b|\\*\\*(?:Status|Created|/: 26 matches in 2 files",
+    "64/80 · Searched /\\b(?:ADR|DEC|RISK|REQ|CHK)[-_ ]?\\d+\\b|\\*\\*(?:Status|Created|/: 0 matches in 0 files",
+    "65/80 · Evaluated draft 3: 8 categories, 279 definitions, 14 duplicates",
+    "66/80 · Listed 0 of 0 without-status statuses of features",
+    "67/80 · Listed 0 of 0 conflict statuses of stories",
+    "68/80 · Listed 0 of 0 unmapped statuses of phases",
+    "69/80 · Listed 5 of 140 definition matches of tasks",
+    "70/80 · Listed 2 of 26 without-status statuses of tests",
+    "Warned the agent: 10 tool calls remain.",
+    "The final draft recognizes 279 definitions across eight categories, maps all 159 detected status occurrences, and finds 55 dates outside vendored and template files. I’ll submit it with the remaining duplicate IDs, unresolved references, and unsupported conventions documented.",
+    "71/80 · Submitted draft 3 with 8 categories, statuses, dates, 8 gaps"
+  ]
+}

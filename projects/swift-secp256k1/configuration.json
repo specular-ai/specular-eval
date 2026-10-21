@@ -1,0 +1,427 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "key": "requirements",
+      "name": "Functional requirements",
+      "role": "requirement",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/spec.md"
+      ]
+    },
+    {
+      "key": "success",
+      "name": "Success criteria",
+      "role": "requirement",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/spec.md"
+      ]
+    },
+    {
+      "key": "stories",
+      "name": "User stories",
+      "role": "requirement",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/spec.md"
+      ]
+    },
+    {
+      "key": "tasks",
+      "name": "Tasks",
+      "role": "task",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/tasks.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": true,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start",
+          "checkboxOnly": true
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "blockers",
+      "name": "Rollback blockers",
+      "role": "requirement",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/spec.md"
+      ]
+    },
+    {
+      "key": "tests",
+      "name": "Security test cases",
+      "definitionPaths": [
+        "Projects/README.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": true,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "phases",
+      "name": "Roadmap phases",
+      "idScopes": [
+        {
+          "pattern": ".specify/mem*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        ".specify/memory/roadmap/*.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": false,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "features",
+      "name": "Features",
+      "role": "requirement",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/spec.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1
+          ],
+          "mode": "keyword",
+          "keyword": "Feature Specification",
+          "separator": ":"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": true,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    }
+  ],
+  "rules": [
+    {
+      "key": "fr",
+      "category": "requirements",
+      "prefix": "FR"
+    },
+    {
+      "key": "sc",
+      "category": "success",
+      "pattern": "\\bSC-\\d+[a-z]?\\b"
+    },
+    {
+      "key": "stories",
+      "category": "stories",
+      "pattern": "\\bUser Story \\d+\\b"
+    },
+    {
+      "key": "us",
+      "category": "stories",
+      "pattern": "\\bUS-?(?<n>\\d+)\\b",
+      "id": "User Story {n:int}"
+    },
+    {
+      "key": "tasks",
+      "category": "tasks",
+      "pattern": "\\bT\\d+[a-z]?\\b"
+    },
+    {
+      "key": "bl",
+      "category": "blockers",
+      "prefix": "BL"
+    },
+    {
+      "key": "security-tests",
+      "category": "tests",
+      "pattern": "\\b(?:PV|SV|SM|ZS|DE|NS|IC)-\\d{3}\\b"
+    },
+    {
+      "key": "phase",
+      "category": "phases",
+      "pattern": "\\bPhase \\d+(?:\\.\\d+)?\\b"
+    }
+  ],
+  "idDefinitionSites": {
+    "headings": {
+      "enabled": true,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mode": "start"
+    },
+    "tables": {
+      "enabled": true,
+      "column": "ID",
+      "mode": "exact"
+    },
+    "lists": {
+      "enabled": true,
+      "types": [
+        "unordered",
+        "ordered"
+      ],
+      "mode": "start"
+    },
+    "paragraphs": {
+      "enabled": false,
+      "mode": "start"
+    }
+  },
+  "statusSites": {
+    "checkboxes": {
+      "enabled": true,
+      "markers": {
+        "x": "Done",
+        "X": "Done",
+        " ": "Open",
+        "-": "In progress"
+      }
+    },
+    "paragraphs": {
+      "enabled": true,
+      "mode": "regex",
+      "label": "Status:",
+      "pattern": "Status:[ \\t]*(?<status>(?:✅ |🚧 |🔜 |📋 )?(?:Implemented|In Progress|Complete|Draft|Planned|Future|SKIPPED|Deferred))"
+    },
+    "tables": {
+      "enabled": true,
+      "mode": "full",
+      "column": "Status"
+    },
+    "headings": {
+      "enabled": true,
+      "mode": "regex",
+      "pattern": "✅\\s*(?<status>COMPLETE)\\s*$"
+    }
+  },
+  "statuses": [
+    {
+      "name": "Done",
+      "rules": [
+        {
+          "mode": "regex",
+          "value": "^(?:✅\\s*)?(?:Done|Complete|Implemented)(?:\\s|$)"
+        }
+      ]
+    },
+    {
+      "name": "In progress",
+      "rules": [
+        {
+          "mode": "regex",
+          "value": "^(?:🚧\\s*)?In Progress$"
+        }
+      ]
+    },
+    {
+      "name": "Planned",
+      "rules": [
+        {
+          "mode": "regex",
+          "value": "^(?:🔜\\s*)?Planned$"
+        }
+      ]
+    },
+    {
+      "name": "Future",
+      "rules": [
+        {
+          "mode": "regex",
+          "value": "^(?:📋\\s*)?Future$"
+        }
+      ]
+    },
+    {
+      "name": "Draft"
+    },
+    {
+      "name": "Open"
+    }
+  ],
+  "dates": {
+    "rules": [
+      {
+        "key": "heading",
+        "site": "heading",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})(?![\\d/])",
+        "kind": "milestone"
+      },
+      {
+        "key": "created",
+        "site": "field",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Created",
+        "kind": "milestone"
+      },
+      {
+        "key": "ratified",
+        "site": "field",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Ratified",
+        "kind": "milestone"
+      },
+      {
+        "key": "date",
+        "site": "field",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Date",
+        "kind": "milestone"
+      },
+      {
+        "key": "last-updated",
+        "site": "field",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Last Updated",
+        "kind": "snapshot"
+      },
+      {
+        "key": "last-amended",
+        "site": "field",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Last Amended",
+        "kind": "snapshot"
+      }
+    ],
+    "exclude": [
+      "Vendor",
+      ".devin",
+      ".specify/templates"
+    ]
+  }
+}

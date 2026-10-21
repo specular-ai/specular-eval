@@ -1,0 +1,8 @@
+category,name,role,ids,defined_ids,definitions,references,ids_with_status,duplicate_findings,unresolved_findings,status_values
+requirements,Requirements,requirement,116,116,116,1,0,0,0,
+success,Success Criteria,,32,32,32,0,0,0,0,
+stories,User Stories,requirement,18,18,18,314,0,0,0,
+tasks,Tasks,task,223,223,223,66,223,0,0,Done=218; Open=5
+decisions,Design Decisions,design,31,31,31,0,0,0,0,
+features,Features,requirement,5,5,5,0,0,0,0,
+named-decisions,Named Design Decisions,design,11,11,11,0,0,0,0,

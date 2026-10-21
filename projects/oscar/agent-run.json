@@ -1,0 +1,405 @@
+{
+  "project": "oscar",
+  "agent": "Codex",
+  "model": "gpt-6-astra",
+  "toolCallLimit": 80,
+  "toolCalls": 60,
+  "seconds": 145,
+  "submittedEvaluation": {
+    "evaluationId": "e5",
+    "duplicates": 0,
+    "unresolved": 0,
+    "problems": 0
+  },
+  "bestEvaluation": {
+    "evaluationId": "e2",
+    "categories": 7,
+    "duplicates": 0,
+    "unresolved": 0,
+    "problems": 0
+  },
+  "submittedBest": true,
+  "summary": "Recognize feature-scoped Spec Kit records across five features: 436 definitions and 381 references, with zero duplicates or unresolved references; 223 mapped task statuses and 18 dates. Exclude template examples and technical tokens.",
+  "categoryRationale": {
+    "requirements": "Retains the existing requirements key. FR-nnn and NFR-nnn identify functional and non-functional requirements in specs/*/spec.md (e.g. metrics lines 101 and 149). Lists define them; specs/* folder scopes distinguish reused numbers. Measured 116 definitions and one resolved research reference.",
+    "success": "SC-nnn identifies measurable success criteria in specification lists, e.g. metrics spec.md:229. Measured 32 definitions; restricted to feature scopes and definitionPaths specs/*/spec.md.",
+    "stories": "User Story n headings define 18 stories in spec.md; US1-style task tags alias to User Story 1 using the numeric ID template. 314 references resolve. Definitions restricted to spec.md prevent task phase headings and checklist summaries from redefining stories; P1/P2/P3 are priorities, not IDs.",
+    "tasks": "T001-style IDs identify implementation tasks at the start of checkbox lists in specs/*/tasks.md, e.g. bucket quotas tasks.md:17. Checkbox-only definitions preserve dependency mentions as references. Measured 223 definitions and 66 resolved references, with per-feature scope.",
+    "decisions": "Decision n headings identify numbered research decisions, e.g. bucket quotas research.md:3 and deployment research.md:19. Heading-only definitions and research definitionPaths avoid treating Decision prose fields as additional records. Measured 31 definitions.",
+    "features": "Feature Specification: <name> top-level headings identify five feature specifications. Keyword headings extract authored feature names, restricted to specs/*/spec.md; templates are excluded through onlyInScopes.",
+    "named-decisions": "Decision: <name> headings identify 11 federation design decisions, e.g. research.md:5 and :12. Keyword heading extraction preserves names containing inline code without partial-token references. This category complements numbered decisions."
+  },
+  "gaps": [
+    {
+      "description": "Feature specifications state Status: Draft within the multi-line introductory metadata paragraph, but tested literal and regex paragraph sites attach no status to these keyword-defined features. Preserve this as an analyzer/configuration gap rather than infer statuses for child records.",
+      "examples": [
+        {
+          "path": "specs/001-metrics-collection/spec.md",
+          "line": 5
+        },
+        {
+          "path": "specs/006-volumes/spec.md",
+          "line": 5
+        },
+        {
+          "path": "specs/007-bucket-quotas/spec.md",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "description": "The constitution's Last Amended snapshot shares a Version field line with Ratified. The additional snapshot rule produced zero dates alongside the ratification rule and is disabled; that separate date meaning remains unrepresented.",
+      "examples": [
+        {
+          "path": ".specify/memory/constitution.md",
+          "line": 76
+        }
+      ]
+    },
+    {
+      "description": "Validation dates embedded at the end of prose/list items are outside the available date sites: these are neither leading dated entries nor labelled fields, headings, or record statuses.",
+      "examples": [
+        {
+          "path": "specs/006-volumes/quickstart.md",
+          "line": 184
+        },
+        {
+          "path": "specs/006-volumes/quickstart.md",
+          "line": 185
+        }
+      ]
+    },
+    {
+      "description": "Acceptance scenarios use ordered Given/When/Then lists whose numbering restarts under each story; they have no stable token IDs or keyword-named scenario headings. Do not turn ordinary ordered-list numbering into speculative record IDs.",
+      "examples": [
+        {
+          "path": "specs/007-bucket-quotas/spec.md",
+          "line": 41
+        },
+        {
+          "path": "specs/007-bucket-quotas/spec.md",
+          "line": 77
+        }
+      ]
+    },
+    {
+      "description": "Quality checklists contain unnamed checkbox items rather than CHK IDs (CHK IDs occur only in templates). Checkbox statuses cannot be attached without defining stable records.",
+      "examples": [
+        {
+          "path": "specs/006-volumes/checklists/requirements.md",
+          "line": 10
+        }
+      ]
+    },
+    {
+      "description": "Task range notation resolves explicit endpoints but does not expand implicit interior IDs, such as T001-T003.",
+      "examples": [
+        {
+          "path": "specs/001-metrics-collection/tasks.md",
+          "line": 204
+        }
+      ]
+    }
+  ],
+  "statusRationale": "Enabled checkbox status extraction: x/X maps to Done and empty boxes to Open; 218 Done and 5 Open, no unmapped values, conflicts, or tasks without a status. Retained the standard Status: paragraph site after literal and regex experiments failed to attach the five feature Draft fields. No status is inferred for requirements, stories, criteria, or decisions that lack authored lifecycle values. Draft and In progress mappings remain available.",
+  "dateRationale": "Measured four dated Session headings, eight Created fields, five plan dates inside Branch metadata lines, and one constitution ratification date inside its Version line. Composite-field regexes specifically capture the Date or Ratified value. Removed unproductive default status/list-entry rules and disabled empty standalone Date/Ratified and constitution amendment rules. Templates are excluded; searches of docs/examples/root guidance found no further actual record date conventions or vendored date sources.",
+  "statusMetrics": {
+    "occurrences": 223,
+    "sites": {
+      "checkboxes": 223
+    },
+    "mapped": 223,
+    "unmapped": 0,
+    "categories": [
+      {
+        "key": "requirements",
+        "name": "Requirements",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 116,
+        "conflicts": 0
+      },
+      {
+        "key": "success",
+        "name": "Success Criteria",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 32,
+        "conflicts": 0
+      },
+      {
+        "key": "stories",
+        "name": "User Stories",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 18,
+        "conflicts": 0
+      },
+      {
+        "key": "tasks",
+        "name": "Tasks",
+        "occurrences": 223,
+        "withStatus": 223,
+        "withoutStatus": 0,
+        "conflicts": 0
+      },
+      {
+        "key": "decisions",
+        "name": "Design Decisions",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 31,
+        "conflicts": 0
+      },
+      {
+        "key": "features",
+        "name": "Features",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 5,
+        "conflicts": 0
+      },
+      {
+        "key": "named-decisions",
+        "name": "Named Design Decisions",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 11,
+        "conflicts": 0
+      }
+    ],
+    "values": [
+      {
+        "value": "Done",
+        "count": 218,
+        "status": "Done",
+        "example": {
+          "path": "specs/001-metrics-collection/tasks.md",
+          "line": 29,
+          "text": "- [X] T001 Create metrics types file in pkg/types/metrics.go"
+        }
+      },
+      {
+        "value": "Open",
+        "count": 5,
+        "status": "Open",
+        "example": {
+          "path": "specs/001-metrics-collection/tasks.md",
+          "line": 80,
+          "text": "- [ ] T047 [US1] Verify 6-month retention guarantees for all data sources and document retention ownership in specs/001-metri…"
+        }
+      }
+    ],
+    "unusedStatuses": [
+      "Draft",
+      "In progress"
+    ]
+  },
+  "dateMetrics": {
+    "rules": [
+      {
+        "key": "heading",
+        "site": "heading",
+        "kind": "milestone",
+        "enabled": true,
+        "dates": 4,
+        "examples": [
+          {
+            "path": "specs/001-metrics-collection/spec.md",
+            "line": 17,
+            "text": "### Session 2026-01-14",
+            "date": "2026-01-14"
+          },
+          {
+            "path": "specs/002-deployment-status-logs/spec.md",
+            "line": 10,
+            "text": "### Session 2026-04-04",
+            "date": "2026-04-04"
+          },
+          {
+            "path": "specs/002-federation/spec.md",
+            "line": 214,
+            "text": "### Session 2026-01-29",
+            "date": "2026-01-29"
+          }
+        ]
+      },
+      {
+        "key": "created",
+        "site": "field",
+        "kind": "milestone",
+        "label": "Created",
+        "enabled": true,
+        "dates": 8,
+        "examples": [
+          {
+            "path": "specs/001-metrics-collection/checklists/requirements.md",
+            "line": 4,
+            "text": "**Created**: 2026-01-13",
+            "date": "2026-01-13"
+          },
+          {
+            "path": "specs/001-metrics-collection/spec.md",
+            "line": 4,
+            "text": "**Created**: 2026-01-13  ",
+            "date": "2026-01-13"
+          },
+          {
+            "path": "specs/002-deployment-status-logs/checklists/requirements.md",
+            "line": 4,
+            "text": "**Created**: 2026-04-04",
+            "date": "2026-04-04"
+          }
+        ]
+      },
+      {
+        "key": "date",
+        "site": "field",
+        "kind": "milestone",
+        "label": "Date",
+        "enabled": false,
+        "dates": 0,
+        "examples": []
+      },
+      {
+        "key": "ratified",
+        "site": "field",
+        "kind": "milestone",
+        "label": "Ratified",
+        "enabled": false,
+        "dates": 0,
+        "examples": []
+      },
+      {
+        "key": "plan-date",
+        "site": "field",
+        "kind": "milestone",
+        "label": "Branch",
+        "enabled": true,
+        "dates": 5,
+        "examples": [
+          {
+            "path": "specs/001-metrics-collection/plan.md",
+            "line": 3,
+            "text": "**Branch**: `001-metrics-collection` | **Date**: 2026-01-13 | **Spec**: /Users/gmolto/Documents/GitHub/grycap/oscar/specs/001-metrics-collection/spec.md",
+            "date": "2026-01-13"
+          },
+          {
+            "path": "specs/002-deployment-status-logs/plan.md",
+            "line": 3,
+            "text": "**Branch**: `002-deployment-status-logs` | **Date**: 2026-04-04 | **Spec**: /Users/gmolto/Documents/GitHub/grycap/oscar/specs/002-deployment-status-logs/spec.md",
+            "date": "2026-04-04"
+          },
+          {
+            "path": "specs/002-federation/plan.md",
+            "line": 3,
+            "text": "**Branch**: `002-federation` | **Date**: 2026-01-29 | **Spec**: `/specs/002-federation/spec.md`",
+            "date": "2026-01-29"
+          }
+        ]
+      },
+      {
+        "key": "constitution-ratified",
+        "site": "field",
+        "kind": "milestone",
+        "label": "Version",
+        "enabled": true,
+        "dates": 1,
+        "examples": [
+          {
+            "path": ".specify/memory/constitution.md",
+            "line": 76,
+            "text": "**Version**: 1.0.2 | **Ratified**: 2026-01-13 | **Last Amended**: 2026-01-13",
+            "date": "2026-01-13"
+          }
+        ]
+      },
+      {
+        "key": "constitution-amended",
+        "site": "field",
+        "kind": "snapshot",
+        "label": "Version",
+        "enabled": false,
+        "dates": 0,
+        "examples": []
+      }
+    ],
+    "emptyRules": [],
+    "exclusions": [
+      {
+        "path": ".specify/templates",
+        "files": 5
+      }
+    ]
+  },
+  "progress": [
+    "Starting the Specular tools…",
+    "Preparing a read-only Codex thread…",
+    "Codex is surveying the project…",
+    "I’ll survey the Markdown records, test the ID, status, and date rules against actual matches, and submit the best measured configuration.",
+    "1/80 · Surveyed 126 Markdown files in 54 folders",
+    "2/80 · Read the configuration format",
+    "3/80 · Found 25 prefix and 10 keyword candidates",
+    "4/80 · Read specs/007-bucket-quotas/spec.md lines 1-340",
+    "5/80 · Read specs/007-bucket-quotas/tasks.md lines 1-340",
+    "6/80 · Read specs/007-bucket-quotas/spec.md lines 1-130",
+    "7/80 · Read specs/002-federation/research.md lines 1-120",
+    "8/80 · Read specs/006-volumes/plan.md lines 1-85",
+    "9/80 · Read specs/006-volumes/checklists/requirements.md lines 1-42",
+    "10/80 · search_markdown failed: Invalid regular expression: Invalid regular expression: /(?i)/gu: Invalid group",
+    "11/80 · Searched /^#{1,6} .*/: 5 matches in 5 files",
+    "12/80 · Searched /(?:Status|Created|Updated|Amended|Ratified|Date)\\*{0,2}\\s*:|/: 48 matches in 19 files",
+    "13/80 · Searched /\\b(?:REQ|FR|NFR|SC|US|ADR|RISK|DEC|T|CHK)[-_ ]?\\d+|User Stor/: 826 matches in 15 files",
+    "The records use feature-local IDs: requirements and success criteria appear in specifications, tasks use checkboxes, and task files refer to “User Story 1” as “US1.” I also found named design decisions. I’ll scope these to the feature folders so template examples don’t become records.",
+    "14/80 · Read specs/001-metrics-collection/spec.md lines 115-190",
+    "15/80 · Read specs/007-bucket-quotas/research.md lines 1-80",
+    "16/80 · Read specs/002-deployment-status-logs/research.md lines 1-70",
+    "17/80 · Read specs/001-metrics-collection/tasks.md lines 1-55",
+    "18/80 · Read specs/006-volumes/quickstart.md lines 1-50",
+    "19/80 · Searched /#{1,6} (?:Decision|Risk|Scenario)|\\bUS-\\d+|\\bREQ-\\d+/: 43 matches in 5 files",
+    "20/80 · Evaluated draft 1: 6 categories, 434 definitions, 0 duplicates",
+    "21/80 · Listed 6 of 116 definition matches of requirements",
+    "22/80 · Listed 6 of 32 definition matches of success",
+    "23/80 · Listed 6 of 18 definition matches of stories",
+    "24/80 · Listed 6 of 223 definition matches of tasks",
+    "25/80 · Listed 6 of 40 definition matches of decisions",
+    "26/80 · Listed 5 of 5 definition matches of features",
+    "27/80 · Listed 10 of 10 unresolved matches of decisions",
+    "28/80 · Searched /\\*\\*Status\\*\\*[^\\r\\n]*|\\d{4}-\\d{2}-\\d{2}/: 24 matches in 14 files",
+    "29/80 · Evaluated draft 2: 7 categories, 436 definitions, 0 duplicates",
+    "The revised draft finds 436 records with no duplicate IDs or unresolved references. Task checkboxes supply 223 statuses. Feature statuses and plan dates share paragraphs with other metadata; I’m testing rules for those layouts before the final pass through unread document types.",
+    "30/80 · Evaluated draft 3: 7 categories, 436 definitions, 0 duplicates",
+    "31/80 · Listed 11 of 11 definition matches of named-decisions",
+    "32/80 · Evaluated draft 4: 7 categories, 436 definitions, 0 duplicates",
+    "33/80 · Read specs/001-metrics-collection/data-model.md lines 1-65",
+    "34/80 · Read specs/001-metrics-collection/architecture.md lines 1-65",
+    "35/80 · Read specs/001-metrics-collection/monitoring-docs.md lines 1-45",
+    "36/80 · Read .specify/memory/constitution.md lines 60-77",
+    "The remaining document kinds are repository guidance, issue templates, Spec Kit templates, user/API documentation, deployment notes, and runnable examples. I’ll check those for additional conventions. The current rules capture 18 dates; the feature “Draft” fields still aren’t being attached by the analyzer, so I’ll report that limitation explicitly if the final test cannot resolve it.",
+    "37/80 · Searched /\\b(?:REQ|FR|NFR|SC|US|ADR|RISK|DEC|CHK|T)[-_ ]?\\d+|(?:Status/: 1 matches in 1 files",
+    "38/80 · Searched /\\b(?:REQ|FR|NFR|SC|US|ADR|RISK|DEC|CHK|T)[-_ ]?\\d+|(?:Status/: 0 matches in 0 files",
+    "39/80 · Searched /\\b(?:REQ|FR|NFR|SC|US|ADR|RISK|DEC|CHK|T)[-_ ]?\\d+|(?:Status/: 0 matches in 0 files",
+    "40/80 · Read AGENTS.md lines 1-45",
+    "41/80 · Read .github/ISSUE_TEMPLATE/feature_request.md lines 1-17",
+    "42/80 · Read .specify/templates/spec-template.md lines 1-35",
+    "43/80 · Read docs/api.md lines 1-17",
+    "44/80 · Read examples/cowsay/README.md lines 1-30",
+    "45/80 · Read deploy/ansible/README.md lines 1-4",
+    "46/80 · Evaluated draft 5: 7 categories, 436 definitions, 0 duplicates",
+    "47/80 · Listed 0 of 0 conflict statuses of tasks",
+    "48/80 · Listed 0 of 0 unmapped statuses of tasks",
+    "49/80 · Listed 0 of 0 without-status statuses of tasks",
+    "50/80 · Listed 4 of 5 without-status statuses of features",
+    "51/80 · Listed 4 of 18 without-status statuses of stories",
+    "52/80 · Listed 4 of 116 without-status statuses of requirements",
+    "53/80 · Listed 4 of 11 without-status statuses of named-decisions",
+    "54/80 · Listed 4 of 31 without-status statuses of decisions",
+    "55/80 · Listed 4 of 32 without-status statuses of success",
+    "56/80 · Listed 4 of 4 dates of rule heading",
+    "57/80 · Listed 4 of 8 dates of rule created",
+    "58/80 · Listed 4 of 5 dates of rule plan-date",
+    "59/80 · Listed 1 of 1 dates of rule constitution-ratified",
+    "The final check confirms 436 records, 381 references, and no duplicate IDs or unresolved references. All 223 task statuses map cleanly, and the date rules find 18 dates. I’ll submit this draft with gaps documented for feature statuses, unsupported date placements, and acceptance scenarios without stable IDs.",
+    "60/80 · Submitted draft 5 with 7 categories, statuses, dates, 6 gaps"
+  ]
+}

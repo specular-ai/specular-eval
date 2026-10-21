@@ -1,0 +1,490 @@
+{
+  "project": "sleap-roots",
+  "agent": "Codex",
+  "model": "gpt-6-astra",
+  "toolCallLimit": 80,
+  "toolCalls": 77,
+  "seconds": 272,
+  "submittedEvaluation": {
+    "evaluationId": "e6",
+    "duplicates": 4,
+    "unresolved": 62,
+    "problems": 66
+  },
+  "bestEvaluation": {
+    "evaluationId": "e6",
+    "categories": 12,
+    "duplicates": 4,
+    "unresolved": 62,
+    "problems": 66
+  },
+  "submittedBest": true,
+  "summary": "Measured configuration for OpenSpec requirements/scenarios/capabilities/archived changes, checklist and plan tasks, design decisions, cross-cutting concerns, review findings, and risks. Best draft: 2340 definitions, 1104 references, 1261 mapped statuses with zero conflicts, and 33 dates. Four duplicate occurrences and 62 unresolved references remain visible rather than inventing identities.",
+  "categoryRationale": {
+    "requirements": "Preserves the existing requirements key, replacing unused REQ prefix with authored level-3 Requirement: names. Evidence: openspec/specs/html-prediction-viewer/spec.md:10 and capability specs throughout. Capability scopes join current specs and change deltas; onlyInScopes excludes tool examples. 116 definitions, no duplicates or unresolved references.",
+    "scenarios": "Level-4 Scenario: headings identify behavioral acceptance examples, parented by requirement and scoped by capability. Evidence: html-prediction-viewer/spec.md:14,23,27. 649 definitions with no duplicates.",
+    "capability": "Fourteen openspec/specs/<capability>/spec.md files define capability names; verified derived records rather than class/type names.",
+    "changes": "Proposal-bearing folders identify 47 archived engineering changes. Derivation is restricted to openspec/changes, excluding .claude/commands/openspec/proposal.md. Archive semantics preserve actual archived state.",
+    "tasks": "Numbered checkbox entries such as 1.1 and hierarchical numbered task headings identify work items within tasks.md. Evidence: 2026-02-11-add-html-prediction-viewer/tasks.md:2 and 2026-10-04-add-wheat-sorghum-pipeline-cards/tasks.md:45. Levels 3–6 capture heading tasks while level-2 6.5 scope-expansion heading remains a reference. 1263 definitions, no duplicates/unresolved.",
+    "plan_tasks": "Task N and Task N.N headings in the two docs/superpowers/plans files identify implementation tasks. File scopes prevent collisions and exclude command documentation examples. 23 definitions, 11 resolved references.",
+    "decisions": "D1, D5b, Decision 1, and Decision D1 identify design decisions in scoped change/design documents. Heading regex recognizes optional Decision before D IDs; list sites support authored decision logs. definitionPaths keeps proposal/task mentions from defining decisions. Evidence: viewer/design.md:30, foundation/design.md:26,135, tier3c brainstorm:194. Remaining ambiguity is explicitly reported.",
+    "constraints": "CC-1 through CC-10 are project-wide cross-cutting engineering concerns defined exclusively in docs/circumnutation/roadmap.md:26–123. definitionPaths prevents restatements elsewhere becoming definitions; all 367 references resolve.",
+    "reviews": "CR-1 and CR2-1 style headings identify critical-review findings in superpowers design documents, not priority or lint tokens. Evidence: 2026-06-10 tier3c design:211,215. 22 definitions; one cross-document CR2-2 mention remains unresolved.",
+    "risks": "R1.–R6. heading IDs identify twelve explicit engineering risks in the temporal-CWT and Tier-1 design files (e.g. lines 522 and 890). Start-and-dot syntax deliberately distinguishes these from reviewer labels and compound review codes.",
+    "named_risks": "Risk: headings identify three named risks in fix-viewer-multi-timepoint/design.md:116,119,122. Keyword heading recognition is restricted to OpenSpec design files.",
+    "pipeline_decisions": "The June-14 pipeline brainstorm has D1–D8 heading definitions and repeats them in a list summary at lines 279–292. A separate scoped category uses heading-only definitions so all eight summary mentions resolve without duplicate definitions."
+  },
+  "gaps": [
+    {
+      "description": "Decision references qualified by another PR or source document cannot be resolved reliably by file/folder scopes alone; merging scopes would conflate unrelated D1–D8 records. Some brainstorm decisions have no supported definition site.",
+      "examples": [
+        {
+          "path": "openspec/changes/archive/2026-04-21-add-multiple-dicot-plate-pipeline/proposal.md",
+          "line": 62
+        },
+        {
+          "path": "openspec/changes/archive/2026-06-29-add-circumnutation-cli/design.md",
+          "line": 5
+        },
+        {
+          "path": "docs/superpowers/specs/2026-06-14-add-circumnutation-pipeline-design.md",
+          "line": 275
+        }
+      ]
+    },
+    {
+      "description": "Repeated decision definitions within one file cannot be distinguished by definitionPaths: D7's later provisional note repeats its list definition, and two different plotting headings use D5. Four duplicate occurrences remain.",
+      "examples": [
+        {
+          "path": "docs/superpowers/specs/2026-06-10-add-circumnutation-tier3c-traits-design.md",
+          "line": 459
+        },
+        {
+          "path": "openspec/changes/archive/2026-06-23-add-circumnutation-plots/design.md",
+          "line": 159
+        },
+        {
+          "path": "openspec/changes/archive/2026-06-23-add-circumnutation-plots/design.md",
+          "line": 209
+        }
+      ]
+    },
+    {
+      "description": "Document-level and mixed-workstream Status paragraphs do not belong to a defined child decision or requirement. They are not propagated or collapsed into a misleading single status.",
+      "examples": [
+        {
+          "path": "docs/superpowers/specs/2026-04-23-timelapse-diff-and-tip-kinematics-design.md",
+          "line": 6
+        },
+        {
+          "path": "docs/circumnutation/investigations/2026-06-10-tier3c-traveling-wave/report.md",
+          "line": 6
+        },
+        {
+          "path": ".serena/memories/execution_ready_plan.md",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "description": "Roadmap row-number IDs collide with numeric constants in the same file, and unescaped pipes shift the Status column in two rows. Omitted this category rather than recognizing constants as records or prose as status.",
+      "examples": [
+        {
+          "path": "docs/circumnutation/roadmap.md",
+          "line": 53
+        },
+        {
+          "path": "docs/circumnutation/roadmap.md",
+          "line": 144
+        },
+        {
+          "path": "docs/circumnutation/roadmap.md",
+          "line": 145
+        }
+      ]
+    },
+    {
+      "description": "Unnumbered checklist steps do not define stable record IDs, and their completion cannot be aggregated into the enclosing Task heading's status by current status sites.",
+      "examples": [
+        {
+          "path": "docs/superpowers/plans/2026-04-24-metadata-layer.md",
+          "line": 20
+        },
+        {
+          "path": "docs/superpowers/plans/2026-04-24-metadata-layer.md",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "description": "Review labels B1/I1/N1 recur across reviewers and rounds within the same file, requiring contextual identity beyond a simple file scope. Free-text Resolution/Addressed prose is not a reliable lifecycle status site.",
+      "examples": [
+        {
+          "path": "openspec/changes/archive/2026-05-22-add-circumnutation-synthetic-generator/design.md",
+          "line": 735
+        },
+        {
+          "path": "openspec/changes/archive/2026-05-22-add-circumnutation-synthetic-generator/design.md",
+          "line": 748
+        }
+      ]
+    },
+    {
+      "description": "The updated date embedded after a primary Date field is a separate snapshot; the retained field rule reads the primary date only. Arbitrary prose dates and filename dates are not treated as record milestones.",
+      "examples": [
+        {
+          "path": "docs/superpowers/specs/2026-04-23-timelapse-diff-and-tip-kinematics-design.md",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "description": "Bare R1–R6 references are ambiguous with reviewer/round labels in the same documents. Risk heading definitions are captured, but broad bare-R references are intentionally not inferred.",
+      "examples": [
+        {
+          "path": "openspec/changes/archive/2026-05-27-add-circumnutation-temporal-cwt-machinery/design.md",
+          "line": 39
+        },
+        {
+          "path": "openspec/changes/archive/2026-05-27-add-circumnutation-temporal-cwt-machinery/design.md",
+          "line": 522
+        }
+      ]
+    }
+  ],
+  "statusRationale": "Enabled checkbox statuses: 910 Done and 304 Open. Mapped the 47 archive-derived Archived statuses. All 1261 captured values map, with zero conflicts and zero unmapped values. Retained literal Status: paragraph/list and Status-column sites; these do not falsely propagate document-level statuses to child records. Inspected without-status matches: 49 heading-based tasks have no direct authored status. BLOCKING/IMPORTANT review tags are severity, not lifecycle status. Roadmap icon rules were measured but omitted because bare row numbers also match constants and malformed pipe tables misalign status cells.",
+  "dateRationale": "Retained measured heading (21), Created (1), and Date (10) rules; added Completed (1). Heading rule excludes Workstream title citations to an older design date. Removed empty status-date, dated-list-entry, and Ratified rules; Last Updated/Last Amended remain absent because no real values were found. Excluded .claude and .serena tool/copied workflow material. All four retained rules were inspected and find real dates; total 33.",
+  "statusMetrics": {
+    "occurrences": 1261,
+    "sites": {
+      "headings": 47,
+      "checkboxes": 1214
+    },
+    "mapped": 1261,
+    "unmapped": 0,
+    "categories": [
+      {
+        "key": "requirements",
+        "name": "Requirements",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 116,
+        "conflicts": 0
+      },
+      {
+        "key": "scenarios",
+        "name": "Scenarios",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 649,
+        "conflicts": 0
+      },
+      {
+        "key": "capability",
+        "name": "Capabilities",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 14,
+        "conflicts": 0
+      },
+      {
+        "key": "changes",
+        "name": "Changes",
+        "occurrences": 47,
+        "withStatus": 47,
+        "withoutStatus": 0,
+        "conflicts": 0
+      },
+      {
+        "key": "tasks",
+        "name": "Checklist tasks",
+        "occurrences": 1214,
+        "withStatus": 1214,
+        "withoutStatus": 49,
+        "conflicts": 0
+      },
+      {
+        "key": "plan_tasks",
+        "name": "Plan tasks",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 23,
+        "conflicts": 0
+      },
+      {
+        "key": "decisions",
+        "name": "Design decisions",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 171,
+        "conflicts": 0
+      },
+      {
+        "key": "constraints",
+        "name": "Cross-cutting concerns",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 10,
+        "conflicts": 0
+      },
+      {
+        "key": "reviews",
+        "name": "Critical review findings",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 22,
+        "conflicts": 0
+      },
+      {
+        "key": "risks",
+        "name": "Numbered risks",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 12,
+        "conflicts": 0
+      },
+      {
+        "key": "named_risks",
+        "name": "Named risks",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 3,
+        "conflicts": 0
+      },
+      {
+        "key": "pipeline_decisions",
+        "name": "Pipeline design decisions",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 8,
+        "conflicts": 0
+      }
+    ],
+    "values": [
+      {
+        "value": "Done",
+        "count": 910,
+        "status": "Done",
+        "example": {
+          "path": "openspec/changes/archive/2026-02-04-add-viewer-frame-sampling/tasks.md",
+          "line": 5,
+          "text": "- [x] 1.1 Add test for `select_frame_indices()` function"
+        }
+      },
+      {
+        "value": "Open",
+        "count": 304,
+        "status": "Open",
+        "example": {
+          "path": "openspec/changes/archive/2026-02-11-add-html-prediction-viewer/tasks.md",
+          "line": 2,
+          "text": "- [ ] 1.1 Create `sleap_roots/viewer/` directory structure"
+        }
+      },
+      {
+        "value": "Archived",
+        "count": 47,
+        "status": "Archived",
+        "example": {
+          "path": "openspec/changes/archive/2025-12-01-fix-api-docs-autogen/proposal.md",
+          "line": 1,
+          "text": "# Fix API Documentation Autogeneration Errors"
+        }
+      }
+    ],
+    "unusedStatuses": [
+      "In progress"
+    ]
+  },
+  "dateMetrics": {
+    "rules": [
+      {
+        "key": "heading",
+        "site": "heading",
+        "kind": "milestone",
+        "enabled": true,
+        "dates": 21,
+        "examples": [
+          {
+            "path": "docs/changelog.md",
+            "line": 59,
+            "text": "## [0.1.4] - 2024-11-10",
+            "date": "2024-11-10"
+          },
+          {
+            "path": "docs/changelog.md",
+            "line": 71,
+            "text": "## [0.1.3] - 2024-10-29",
+            "date": "2024-10-29"
+          },
+          {
+            "path": "docs/changelog.md",
+            "line": 76,
+            "text": "## [0.1.2] - 2024-08-26",
+            "date": "2024-08-26"
+          }
+        ]
+      },
+      {
+        "key": "created",
+        "site": "field",
+        "kind": "milestone",
+        "label": "Created",
+        "enabled": true,
+        "dates": 1,
+        "examples": [
+          {
+            "path": "openspec/changes/archive/2025-12-01-fix-api-docs-autogen/README.md",
+            "line": 4,
+            "text": "**Created**: 2025-01-25",
+            "date": "2025-01-25"
+          }
+        ]
+      },
+      {
+        "key": "date",
+        "site": "field",
+        "kind": "milestone",
+        "label": "Date",
+        "enabled": true,
+        "dates": 10,
+        "examples": [
+          {
+            "path": "docs/circumnutation/investigations/2026-06-10-tier3c-traveling-wave/report.md",
+            "line": 3,
+            "text": "**Date**: 2026-06-10",
+            "date": "2026-06-10"
+          },
+          {
+            "path": "docs/superpowers/specs/2026-04-09-adapt-claude-commands-design.md",
+            "line": 3,
+            "text": "**Date:** 2026-04-09",
+            "date": "2026-04-09"
+          },
+          {
+            "path": "docs/superpowers/specs/2026-04-16-multiple-dicot-plate-pipeline-design.md",
+            "line": 3,
+            "text": "**Date**: 2026-04-16",
+            "date": "2026-04-16"
+          }
+        ]
+      },
+      {
+        "key": "completed",
+        "site": "field",
+        "kind": "milestone",
+        "label": "Completed",
+        "enabled": true,
+        "dates": 1,
+        "examples": [
+          {
+            "path": "openspec/changes/archive/2025-12-01-fix-api-docs-autogen/README.md",
+            "line": 5,
+            "text": "**Completed**: 2025-01-30",
+            "date": "2025-01-30"
+          }
+        ]
+      }
+    ],
+    "emptyRules": [],
+    "exclusions": [
+      {
+        "path": ".claude",
+        "files": 25
+      },
+      {
+        "path": ".serena",
+        "files": 2
+      }
+    ]
+  },
+  "progress": [
+    "Starting the Specular tools…",
+    "Preparing a read-only Codex thread…",
+    "Codex is surveying the project…",
+    "I’ll survey the Markdown documents, measure candidate rules, and inspect their matches before submitting a configuration for records, statuses, and dates.",
+    "1/80 · Surveyed 310 Markdown files in 99 folders",
+    "2/80 · Read the configuration format",
+    "3/80 · Found 60 prefix and 19 keyword candidates",
+    "4/80 · Read openspec/specs/html-prediction-viewer/spec.md lines 1-155",
+    "5/80 · Read openspec/changes/archive/2026-02-11-add-html-prediction-viewer/tasks.md lines 1-56",
+    "6/80 · Read openspec/changes/archive/2026-02-11-add-html-prediction-viewer/design.md lines 1-141",
+    "7/80 · Read openspec/changes/archive/2026-02-11-add-html-prediction-viewer/proposal.md lines 1-23",
+    "8/80 · Searched /^(?:#{1,6}\\s+.*(?:Decision|D\\d|R\\d|CC-|CR-|I\\d|B\\d|N\\d|Task|/: 36 matches in 36 files",
+    "9/80 · Searched /(?:Status|Created|Last Updated|Date|Updated|Completed|Approv/: 50 matches in 29 files",
+    "10/80 · Searched /(?:^|\\n)#{1,6}[^\\n]*(?:\\bD\\d|\\bR\\d|CC-|CR-|\\bI\\d|\\bB\\d|\\bN\\d/: 356 matches in 53 files",
+    "11/80 · Searched /\\b(?:REQ[-_]\\d+|US-?\\d+|User Story\\s*\\d+|ADR-\\d+)\\b/: 0 matches in 0 files",
+    "12/80 · Searched /(?:^|\\n)[^\\n]*(?:Last [Uu]pdated|\\*\\*Status|\\*\\*Completed|\\*/: 26 matches in 17 files",
+    "13/80 · Read docs/superpowers/specs/2026-06-24-add-circumnutation-cli-design.md lines 1-100",
+    "14/80 · Read docs/superpowers/plans/2026-04-24-metadata-layer.md lines 1-85",
+    "The main conventions are named OpenSpec requirements and scenarios, numbered checklist tasks, and design decisions. I also found short IDs for cross-cutting constraints and review findings. I’ll scope those carefully because their numbering repeats across documents.",
+    "15/80 · Read docs/circumnutation/roadmap.md lines 1-143",
+    "16/80 · Read openspec/changes/archive/2026-06-03-add-circumnutation-tier1-derr-faithful/design.md lines 1090-1135",
+    "17/80 · Read docs/superpowers/specs/2026-06-10-add-circumnutation-tier3c-traits-design.md lines 200-260",
+    "18/80 · Read openspec/changes/archive/2026-06-29-add-circumnutation-cli/design.md lines 1-80",
+    "19/80 · Read openspec/changes/archive/2026-10-04-add-wheat-sorghum-pipeline-cards/tasks.md lines 1-70",
+    "20/80 · Evaluated draft 1: 9 categories, 2217 definitions, 2 duplicates",
+    "21/80 · Listed 12 of 116 definition matches of requirements",
+    "22/80 · Listed 12 of 649 definition matches of scenarios",
+    "23/80 · Listed 12 of 14 definition matches of capability",
+    "24/80 · Listed 12 of 47 definition matches of changes",
+    "25/80 · Listed 12 of 49 unresolved matches of tasks",
+    "26/80 · Listed 12 of 23 definition matches of plan_tasks",
+    "27/80 · Listed 12 of 138 unresolved matches of decisions",
+    "28/80 · Listed 10 of 10 definition matches of constraints",
+    "29/80 · Listed 1 of 1 unresolved matches of reviews",
+    "30/80 · Listed 2 of 2 duplicate matches of decisions",
+    "31/80 · Searched /#{2,5}[^\\r\\n]*(?:\\bD\\d+|Decision \\d+|\\bR\\d+|\\bCR\\d*-\\d+)/: 56 matches in 5 files",
+    "32/80 · Searched /#{2,5}[^\\r\\n]*\\bD\\d+/: 93 matches in 10 files",
+    "33/80 · Searched /\\b(?:Decision|D)\\s*1\\b/: 2 matches in 1 files",
+    "34/80 · Listed 50 of 138 unresolved matches of decisions",
+    "35/80 · Evaluated draft 2: 9 categories, 2326 definitions, 22 duplicates",
+    "The first two evaluations confirmed 116 requirements, 649 scenarios, and 47 archived changes. Checkbox rules now capture 1,214 task statuses with no conflicts. The remaining issues are mostly repeated decision summaries and references to decisions in other documents; I’m checking those before the final measurement.",
+    "36/80 · Listed 20 of 20 duplicate matches of decisions",
+    "37/80 · Listed 50 of 69 unresolved matches of decisions",
+    "38/80 · Listed 2 of 2 duplicate matches of tasks",
+    "39/80 · Listed 5 of 49 without-status statuses of tasks",
+    "40/80 · Listed 0 of 0 conflict statuses of tasks",
+    "41/80 · Listed 23 of 23 dates of rule heading",
+    "42/80 · Listed 1 of 1 dates of rule created",
+    "43/80 · Listed 1 of 1 dates of rule completed",
+    "44/80 · Listed 10 of 10 dates of rule date",
+    "45/80 · Searched /(?:#{2,5} |\\*\\*)R\\d+[^\\r\\n]*/: 130 matches in 6 files",
+    "46/80 · Read docs/circumnutation/investigations/2026-06-10-tier3c-traveling-wave/report.md lines 1-35",
+    "47/80 · Read docs/circumnutation/roadmap.md lines 157-188",
+    "48/80 · Read openspec/changes/archive/2026-05-22-add-circumnutation-synthetic-generator/design.md lines 735-775",
+    "49/80 · Evaluated draft 3: 11 categories, 2308 definitions, 6 duplicates",
+    "The roadmap uses status icons, but two rows contain unescaped `|` characters that shift the parsed Status column. I’ll report those as gaps rather than map prose as a status. Date inspection also caught two headings that cite an older design date; I’ve excluded those citations from milestone dates.",
+    "50/80 · Listed 1 of 1 unresolved matches of roadmap",
+    "51/80 · Listed 15 of 15 definition matches of design_logs",
+    "52/80 · Searched /#{1,6}[^\\r\\n]*(?:Risk|R\\d+[.: ])/: 44 matches in 23 files",
+    "53/80 · Evaluated a draft: rejected (ID scope pattern \"docs/superpowers/specs/{design}.md\" is invalid. Use project-relative segments such as specs/*, openspe)",
+    "The remaining document types to check are user/API guides, developer docs, changelogs, test-data notes, notebook diagrams, and tool/memory Markdown. I’ll scan those for additional conventions, then run the final evaluation.",
+    "54/80 · Read openspec/changes/archive/2026-05-27-add-circumnutation-temporal-cwt-machinery/design.md lines 520-548",
+    "55/80 · Read openspec/changes/archive/2026-02-13-fix-viewer-multi-timepoint/design.md lines 114-130",
+    "56/80 · Read docs/dev/architecture.md lines 1-4",
+    "57/80 · Read docs/guides/index.md lines 1-20",
+    "58/80 · Read docs/changelog.md lines 59-80",
+    "59/80 · Read tests/data/circumnutation_plate/README.md lines 1-25",
+    "60/80 · Read notebooks/DicotPipeline_Mermaid_Graph.md lines 1-15",
+    "61/80 · Read .serena/memories/execution_ready_plan.md lines 1-20",
+    "62/80 · Searched /\\b(?:REQ[-_]?\\d+|US-?\\d+|ADR-\\d+|User Story|Requirement:|Sce/: 62 matches in 17 files",
+    "63/80 · Searched /\\b(?:REQ[-_]?\\d+|US-?\\d+|ADR-\\d+|User Story|Requirement:|Sce/: 1 matches in 1 files",
+    "64/80 · Evaluated a draft: rejected (ID scope pattern \"openspec/changes/archive/2026-05-27-add-circumnutation-temporal-cwt-machinery\" ends in a literal folde)",
+    "65/80 · Evaluated draft 4: 11 categories, 2341 definitions, 22 duplicates",
+    "66/80 · Listed 12 of 12 definition matches of risks",
+    "67/80 · Listed 3 of 3 definition matches of named_risks",
+    "68/80 · Evaluated draft 5: 12 categories, 2332 definitions, 4 duplicates",
+    "69/80 · Listed 8 of 8 definition matches of pipeline_decisions",
+    "70/80 · Listed 4 of 4 duplicate matches of decisions",
+    "Warned the agent: 10 tool calls remain.",
+    "71/80 · Listed 19 of 69 unresolved matches of decisions",
+    "72/80 · Listed 3 of 22 without-status statuses of reviews",
+    "73/80 · Listed 21 of 21 dates of rule heading",
+    "74/80 · Searched /(?:Status|Created|Prepared|Last Updated|Last Amended|Ratifie/: 2595 matches in 109 files",
+    "75/80 · Read docs/api/core/pipelines.md lines 1-25",
+    "76/80 · Evaluated draft 6: 12 categories, 2340 definitions, 4 duplicates",
+    "The best draft recognizes 2,340 record definitions, 1,261 statuses, and 33 dates. All captured statuses map successfully, with no conflicts. I’m submitting it with documented gaps for cross-document decision references, repeated IDs, roadmap tables, and statuses written outside supported record sites.",
+    "77/80 · Submitted draft 6 with 12 categories, statuses, dates, 8 gaps"
+  ]
+}

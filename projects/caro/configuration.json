@@ -1,0 +1,745 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "key": "requirements",
+      "name": "Requirements",
+      "role": "requirement",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        },
+        {
+          "pattern": "kitty-specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/spec.md",
+        "specs/*/PRD.md",
+        "kitty-specs/*/spec.md"
+      ]
+    },
+    {
+      "key": "success",
+      "name": "Success Criteria",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        },
+        {
+          "pattern": "kitty-specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/spec.md",
+        "kitty-specs/*/spec.md"
+      ]
+    },
+    {
+      "key": "stories",
+      "name": "User Stories",
+      "role": "requirement",
+      "idScopes": [
+        {
+          "pattern": "kitty-specs/002-unquoted-cli-arguments*"
+        },
+        {
+          "pattern": "kitty-specs/004-add-internationalization-i18n*"
+        },
+        {
+          "pattern": "kitty-specs/008-caro-web-hub*"
+        },
+        {
+          "pattern": "kitty-specs/020-machine-resource-assessment*"
+        },
+        {
+          "pattern": "kitty-specs/022-issue-135-build*"
+        },
+        {
+          "pattern": "kitty-specs/025-llm-evaluation-harness*"
+        },
+        {
+          "pattern": "kitty-specs/026-llm-evaluation-harness*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/spec.md",
+        "kitty-specs/*/spec.md"
+      ]
+    },
+    {
+      "key": "tasks",
+      "name": "Tasks",
+      "role": "task",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        },
+        {
+          "pattern": "kitty-specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/tasks.md",
+        "kitty-specs/*/tasks.md",
+        "kitty-specs/*/future_work/WP*.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "regex",
+          "pattern": "^(?:Subtask )?(?<id>T\\d{3})\\b"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": true,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start",
+          "checkboxOnly": true
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "packages",
+      "name": "Work Packages",
+      "role": "task",
+      "idScopes": [
+        {
+          "pattern": "kitty-specs/002-*"
+        },
+        {
+          "pattern": "kitty-specs/004-*"
+        },
+        {
+          "pattern": "kitty-specs/008-*"
+        },
+        {
+          "pattern": "kitty-specs/009-*"
+        },
+        {
+          "pattern": "kitty-specs/010-*"
+        },
+        {
+          "pattern": "kitty-specs/016-*"
+        },
+        {
+          "pattern": "kitty-specs/017-*"
+        },
+        {
+          "pattern": "kitty-specs/022-*"
+        },
+        {
+          "pattern": "kitty-specs/025-*"
+        },
+        {
+          "pattern": "kitty-specs/026-*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "kitty-specs/*/tasks.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "regex",
+          "pattern": "^(?:Work Package )?(?<id>WP\\d+)\\b"
+        },
+        "tables": {
+          "enabled": false,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "decisions",
+      "name": "Architecture Decisions",
+      "role": "design",
+      "definitionPaths": [
+        "docs/adr"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "risks",
+      "name": "Risks",
+      "idScopes": [
+        {
+          "pattern": ".claude/releases/*.md"
+        }
+      ],
+      "onlyInScopes": true
+    },
+    {
+      "key": "tests",
+      "name": "Test Cases",
+      "idScopes": [
+        {
+          "pattern": "docs/qa/*.md"
+        },
+        {
+          "pattern": "specs/006-intelligent-prompt-generation*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "docs/qa",
+        "specs/*/test_cases.md"
+      ]
+    },
+    {
+      "key": "shortstories",
+      "name": "ID User Stories",
+      "role": "requirement",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        },
+        {
+          "pattern": "kitty-specs/027-issue-281-add*"
+        },
+        {
+          "pattern": "docs/PRD-ast-parser-shell-validation.md"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/spec.md",
+        "kitty-specs/027-issue-281-add/spec.md",
+        "docs/PRD-ast-parser-shell-validation.md"
+      ]
+    },
+    {
+      "key": "shellstories",
+      "name": "Shell Integration Stories",
+      "role": "task",
+      "idScopes": [
+        {
+          "pattern": "specs/007-caro-shell-integration*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/007-caro-shell-integration/milestones.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "Story",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": true,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "backlog",
+      "name": "Broken Windows",
+      "role": "task",
+      "idScopes": [
+        {
+          "pattern": ".claude/memory/broken-windows.md"
+        }
+      ],
+      "onlyInScopes": true,
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "package_tables",
+      "name": "Work Packages (registers)",
+      "role": "task",
+      "idScopes": [
+        {
+          "pattern": "kitty-specs/018-*"
+        },
+        {
+          "pattern": "kitty-specs/020-*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "kitty-specs/*/tasks.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": false,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "regex",
+          "pattern": "^(?:Work Package )?(?<id>WP\\d+)\\b"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    }
+  ],
+  "rules": [
+    {
+      "key": "fr",
+      "category": "requirements",
+      "pattern": "\\b(?:FR|NFR)-(?:[A-Z]+-)?\\d+\\b"
+    },
+    {
+      "key": "sc",
+      "category": "success",
+      "prefix": "SC"
+    },
+    {
+      "key": "story",
+      "category": "stories",
+      "pattern": "\\bUser Story \\d+\\b"
+    },
+    {
+      "key": "us",
+      "category": "stories",
+      "pattern": "\\bUS-?(?<n>\\d+)\\b",
+      "id": "User Story {n:int}"
+    },
+    {
+      "key": "task",
+      "category": "tasks",
+      "pattern": "\\bT\\d{3}\\b"
+    },
+    {
+      "key": "wp",
+      "category": "packages",
+      "prefix": "WP",
+      "separator": ""
+    },
+    {
+      "key": "adr",
+      "category": "decisions",
+      "prefix": "ADR"
+    },
+    {
+      "key": "risk",
+      "category": "risks",
+      "prefix": "RISK"
+    },
+    {
+      "key": "tc",
+      "category": "tests",
+      "prefix": "TC"
+    },
+    {
+      "key": "shortstory",
+      "category": "shortstories",
+      "pattern": "\\bUS-?\\d+\\b"
+    },
+    {
+      "key": "shellstory",
+      "category": "shellstories",
+      "pattern": "\\bS\\d+\\.\\d+\\.\\d+\\b"
+    },
+    {
+      "key": "bw",
+      "category": "backlog",
+      "pattern": "(?<![\\w/\\-])BW-\\d+\\b"
+    },
+    {
+      "key": "wp_tables",
+      "category": "package_tables",
+      "prefix": "WP",
+      "separator": ""
+    }
+  ],
+  "idDefinitionSites": {
+    "headings": {
+      "enabled": true,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mode": "start"
+    },
+    "tables": {
+      "enabled": true,
+      "column": "ID",
+      "mode": "exact"
+    },
+    "lists": {
+      "enabled": true,
+      "types": [
+        "unordered",
+        "ordered"
+      ],
+      "mode": "start"
+    },
+    "paragraphs": {
+      "enabled": true,
+      "mode": "start"
+    }
+  },
+  "statusSites": {
+    "checkboxes": {
+      "enabled": true,
+      "markers": {
+        "x": "Done",
+        "X": "Done",
+        " ": "Open",
+        "-": "In progress"
+      }
+    },
+    "paragraphs": {
+      "enabled": true,
+      "mode": "regex",
+      "label": "Status:",
+      "listItems": true,
+      "pattern": "(?:^|\\n)\\*{0,2}Status\\*{0,2}:\\*{0,2}[^\\p{L}\\r\\n]*(?<status>DEFERRED TO FUTURE RELEASE|not reproducing|release done|In progress|[\\p{L}]+)"
+    },
+    "tables": {
+      "enabled": true,
+      "mode": "full",
+      "column": "Status"
+    },
+    "headings": {
+      "enabled": false,
+      "mode": "regex",
+      "pattern": "\\[(?<status>[^\\]]+)\\]$"
+    }
+  },
+  "statuses": [
+    {
+      "name": "Proposed",
+      "rules": [
+        {
+          "mode": "regex",
+          "value": "^(?:[✅🟢⬜] ?)?Proposed\\b"
+        }
+      ]
+    },
+    {
+      "name": "Accepted",
+      "rules": [
+        {
+          "mode": "regex",
+          "value": "^(?:[✅🟢⬜] ?)?Accepted\\b"
+        }
+      ]
+    },
+    {
+      "name": "Rejected",
+      "rules": [
+        {
+          "mode": "regex",
+          "value": "^(?:[✅🟢⬜] ?)?Rejected\\b"
+        }
+      ]
+    },
+    {
+      "name": "Draft",
+      "rules": [
+        {
+          "mode": "regex",
+          "value": "^(?:[✅🟢⬜] ?)?Draft\\b"
+        }
+      ]
+    },
+    {
+      "name": "Open",
+      "rules": [
+        {
+          "mode": "regex",
+          "value": "^(?:[✅🟢⬜] ?)?Open\\b"
+        }
+      ]
+    },
+    {
+      "name": "In progress",
+      "rules": [
+        {
+          "mode": "regex",
+          "value": "^(?:[✅🟢⬜] ?)?In progress\\b"
+        }
+      ]
+    },
+    {
+      "name": "Mitigated",
+      "rules": [
+        {
+          "mode": "regex",
+          "value": "^(?:[✅🟢⬜] ?)?Mitigated\\b"
+        }
+      ]
+    },
+    {
+      "name": "Closed",
+      "rules": [
+        {
+          "mode": "regex",
+          "value": "^(?:[✅🟢⬜] ?)?Closed\\b"
+        }
+      ]
+    },
+    {
+      "name": "Ready",
+      "rules": [
+        {
+          "mode": "regex",
+          "value": "^(?:[✅🟢⬜] ?)?Ready\\b"
+        }
+      ]
+    },
+    {
+      "name": "Done",
+      "rules": [
+        {
+          "mode": "regex",
+          "value": "^(?:✅\\s*)?(?:Done|Complete|Completed)\\b"
+        },
+        {
+          "mode": "exact",
+          "value": "release done"
+        }
+      ]
+    },
+    {
+      "name": "Planned",
+      "rules": [
+        {
+          "mode": "regex",
+          "value": "^(?:⬜\\s*)?Planned\\b"
+        }
+      ]
+    },
+    {
+      "name": "Deferred",
+      "rules": [
+        {
+          "mode": "regex",
+          "value": "DEFERRED TO FUTURE RELEASE"
+        }
+      ]
+    },
+    {
+      "name": "Fixed",
+      "rules": [
+        {
+          "mode": "regex",
+          "value": "^fixed\\b"
+        }
+      ]
+    },
+    {
+      "name": "Claimed",
+      "rules": [
+        {
+          "mode": "exact",
+          "value": "claimed"
+        }
+      ]
+    },
+    {
+      "name": "Not reproducing",
+      "rules": [
+        {
+          "mode": "exact",
+          "value": "not reproducing"
+        }
+      ]
+    }
+  ],
+  "dates": {
+    "rules": [
+      {
+        "key": "list-entry",
+        "site": "list-entry",
+        "enabled": true,
+        "kind": "entry"
+      },
+      {
+        "key": "heading",
+        "site": "heading",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "kind": "milestone"
+      },
+      {
+        "key": "created",
+        "site": "field",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Created",
+        "kind": "milestone"
+      },
+      {
+        "key": "date",
+        "site": "field",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Date",
+        "kind": "milestone"
+      },
+      {
+        "key": "last-updated",
+        "site": "field",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Last Updated",
+        "kind": "snapshot"
+      },
+      {
+        "key": "found",
+        "site": "field",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Found",
+        "kind": "milestone"
+      }
+    ],
+    "exclude": [
+      ".agents",
+      ".claude/skills",
+      ".claude/plugins",
+      ".codex",
+      ".kittify/overrides",
+      ".specify/templates"
+    ]
+  }
+}

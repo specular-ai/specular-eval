@@ -1,0 +1,45 @@
+kind,id,category,scope,file,line,text
+duplicate,D3,decisions,specs/059-staged-path-test-coverage,specs/059-staged-path-test-coverage/spec.md,166,## D3 — the chunk boundary — **DONE**
+duplicate,D3,decisions,specs/059-staged-path-test-coverage,specs/059-staged-path-test-coverage/spec.md,184,## D3 — the chunk boundary
+duplicate,D5,decisions,specs/059-staged-path-test-coverage,specs/059-staged-path-test-coverage/spec.md,216,"## D5 — the string kernel's untested corners — **DONE**, and it found a shipped bug"
+duplicate,D5,decisions,specs/059-staged-path-test-coverage,specs/059-staged-path-test-coverage/spec.md,242,## D5 — the string kernel's untested corners
+unresolved,SC-008,success,specs/006-split-tls-build,specs/006-split-tls-build/quickstart.md,154,- [ ] SC-008: No vcpkg mbedTLS in static link command
+unresolved,FR-009,requirements,specs/006-split-tls-build,specs/006-split-tls-build/research.md,251,"1. **FR-009 revision**: DuckDB-flavor TLS target cannot use DuckDB's bundled headers (they lack SSL). Instead, use vcpkg headers for both targets."
+unresolved,FR-007,requirements,specs/006-split-tls-build,specs/006-split-tls-build/research.md,252,2. **FR-007 revision**: Both targets use find_package(MbedTLS) from vcpkg.
+unresolved,User Story 4,stories,specs/006-split-tls-build,specs/006-split-tls-build/tasks.md,107,## Phase 6: User Story 4 - Trust Server Certificate Behavior Preserved (Priority: P2)
+unresolved,User Story 4,stories,specs/006-split-tls-build,specs/006-split-tls-build/tasks.md,113,### Implementation for User Story 4
+unresolved,User Story 4,stories,specs/006-split-tls-build,specs/006-split-tls-build/tasks.md,115,- [ ] T027 [US4] Review tds_tls_impl.cpp to confirm MBEDTLS_SSL_VERIFY_NONE is set for certificate verification
+unresolved,User Story 4,stories,specs/006-split-tls-build,specs/006-split-tls-build/tasks.md,116,- [ ] T028 [US4] Verify mbedtls_compat.h does not override certificate verification settings
+unresolved,User Story 4,stories,specs/006-split-tls-build,specs/006-split-tls-build/tasks.md,117,- [ ] T029 [US4] Document trust server certificate behavior in quickstart.md verification section
+unresolved,User Story 4,stories,specs/006-split-tls-build,specs/006-split-tls-build/tasks.md,144,- **User Story 4 (Phase 6)**: Can start after US1 or US2 complete (needs working build)
+unresolved,User Story 4,stories,specs/006-split-tls-build,specs/006-split-tls-build/tasks.md,152,- **User Story 4 (P2)**: Requires working build from US1 or US2 to test
+unresolved,User Story 4,stories,specs/006-split-tls-build,specs/006-split-tls-build/tasks.md,202,5. Add US4 → Certificate behavior verified → **Regression prevention**
+unresolved,User Story 4,stories,specs/025-bcp-improvements,specs/025-bcp-improvements/tasks.md,10,**Scope**: User Stories 1-3 only. User Story 4 (INSERT Fallback) deferred to future iteration.
+unresolved,User Story 4,stories,specs/025-bcp-improvements,specs/025-bcp-improvements/tasks.md,221,- **Deferred**: User Story 4 (INSERT Fallback) moved to future iteration
+unresolved,FR-025,requirements,specs/044-codec-consolidation,specs/044-codec-consolidation/plan.md,117,| III | Correctness over Convenience | **PASS** | Migration relies on spec 043 FR-025/SC-007's bit-identity contract; FR-006 of this spec inherits it. No silent behavior change. Invalid-input semantic
+unresolved,FR-025,requirements,specs/044-codec-consolidation,specs/044-codec-consolidation/spec.md,526,input (spec 043 FR-025 / SC-007) plus its
+unresolved,FR-034,requirements,specs/044-codec-consolidation,specs/044-codec-consolidation/spec.md,527,validate-then-fallback contract on invalid input (spec 043 FR-034)
+unresolved,FR-025,requirements,specs/044-codec-consolidation,specs/044-codec-consolidation/spec.md,763,"fixture from spec 043 FR-025) continuing to pass, and (b) the"
+unresolved,FR-032,requirements,specs/044-codec-consolidation,specs/044-codec-consolidation/spec.md,813,- The simdutf wrapper's contracts from spec 043 (FR-032..FR-036
+unresolved,FR-036,requirements,specs/044-codec-consolidation,specs/044-codec-consolidation/spec.md,813,- The simdutf wrapper's contracts from spec 043 (FR-032..FR-036
+unresolved,T094d,tasks,specs/045-type-codec-consolidation/tasks.md,specs/045-type-codec-consolidation/tasks.md,242,- [X] T094a + T094d [P] [US4] **Combined** into `test/sql/catalog/ddl_timestamp_precision.test` (FR-024 + FR-028 invariants in one regression test). Verifies sys.columns reports `DATETIME2(3)/(7)/(0)/
+unresolved,T097a,tasks,specs/045-type-codec-consolidation/tasks.md,specs/045-type-codec-consolidation/tasks.md,271,"The only Phase 7.5 task that stayed in spec 045 is T097a (Category A — dead `MSSQLValueSerializer` private helpers, commit `2aa5df1`, already done)."
+unresolved,SC-008,success,specs/052-thread-safe-catalog-entries,specs/052-thread-safe-catalog-entries/checklists/requirements.md,37,"- `/speckit-clarify` session 2026-05-26 resolved 4 partial-coverage areas: graveyard cap & observability (dropped — internal invariant only), US3 shippability (all three USs land together), dbt smoke "
+unresolved,SC-008,success,specs/052-thread-safe-catalog-entries,specs/052-thread-safe-catalog-entries/spec.md,15,"- Q: Should the lifetime mechanism cap the number of entries kept alive past their `Invalidate()` (graveyard size), and how is it observed? → A: No hard cap, no user-visible diagnostic surface. Mechan"
+unresolved,FR-023,requirements,specs/054-simd-baseline-and-quick-wins,specs/054-simd-baseline-and-quick-wins/spec.md,177,(FR-023 wording is tested).
+unresolved,FR-023,requirements,specs/057-write-representation-aware,specs/057-write-representation-aware/spec.md,1531,UTF-16 byte length exceeds `col.max_length` (non-PLP only; FR-023 / issue #91);
+unresolved,D10,decisions,specs/058-read-framing,specs/058-read-framing/spec.md,31,themselves are 3–5 ns/value (D10 counters). What remains is dominated by
+unresolved,D4,decisions,specs/058-read-framing,specs/058-read-framing/spec.md,84,**T0a. Fix the instrumentation before trusting it.** The D4/D10 counters are
+unresolved,D10,decisions,specs/058-read-framing,specs/058-read-framing/spec.md,84,**T0a. Fix the instrumentation before trusting it.** The D4/D10 counters are
+unresolved,D10,decisions,specs/058-read-framing,specs/058-read-framing/spec.md,107,"- `Feed` copy: 38.5 MB per 500k rows of a 4-column row (D10 `wire_in`), so"
+unresolved,D10,decisions,specs/059-staged-path-test-coverage,specs/059-staged-path-test-coverage/spec.md,88,"Add `nbc_rows` to the D10 staging counters (`StagingCounters`, incremented in"
+unresolved,D10,decisions,specs/059-staged-path-test-coverage,specs/059-staged-path-test-coverage/spec.md,231,"- every boundary strategy asserted through the D10 counters (ASCII offsets, word sweep,"
+unresolved,D10,decisions,specs/059-staged-path-test-coverage,specs/059-staged-path-test-coverage/spec.md,353,"under `counters_enabled_`**: it is one add per ROW, the D10 rule that nothing"
+unresolved,D3,decisions,specs/064-columnar-write-gaps,specs/064-columnar-write-gaps/spec.md,272,### D2 / D3 — CLOSED by measurement: after D1 the cursor path costs the same as strided
+unresolved,D3,decisions,specs/064-columnar-write-gaps,specs/064-columnar-write-gaps/spec.md,293,"- **D3 (stride for string-bearing chunks, incl. reserving a bounded string's"
+unresolved,D3,decisions,specs/064-columnar-write-gaps,specs/064-columnar-write-gaps/spec.md,338,count is no longer 0 for the string-bearing cells — or D3 is closed with a
+unresolved,D3,decisions,specs/064-columnar-write-gaps,specs/064-columnar-write-gaps/spec.md,353,- **D3 may not be worth it.** Interleaving fixed-width regions with variable ones
+unresolved,D5,decisions,specs/067-dml-staging,specs/067-dml-staging/spec.md,62,## 4. D3 — delivery: everything from spec 066 D5
+unresolved,D4,decisions,specs/067-dml-staging,specs/067-dml-staging/spec.md,80,"- Spec 065's D4 plan-time error (""requires a primary key or a fully"
+unresolved,SC-005,success,specs/073-fedauth-token-refresh,specs/073-fedauth-token-refresh/spec.md,362,- **`test/sql/tds_connection/pool_stats_no_credentials.test`** (the SC-005
+unresolved,User Story 3,stories,specs/075-read-path-pinned-connection,specs/075-read-path-pinned-connection/spec.md,123,"(`RegisterStream` / `RetrieveStream`, spec 047 US3) for `InitGlobal` to pick"

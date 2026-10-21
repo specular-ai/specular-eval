@@ -1,0 +1,51 @@
+kind,id,category,scope,file,line,text
+duplicate,ADR-001,decisions,,docs/adr/001-llm-inference-architecture.md,1,# ADR-001: LLM Inference Architecture
+duplicate,ADR-001,decisions,,docs/adr/ADR-001-enterprise-community-architecture.md,1,# ADR-001: Enterprise vs Community Architecture
+duplicate,ADR-002,decisions,,docs/adr/002-karo-system-definition.md,1,# ADR-002: Caro System Definition — Distributed Terminal Intelligence
+duplicate,ADR-002,decisions,,docs/adr/ADR-002-governance-provisioning-system.md,1,# ADR-002: Governance and Provisioning System
+duplicate,ADR-004,decisions,,docs/adr/ADR-004-just-runbook-integration.md,1,# ADR-004: Just-Based Runbook Integration with Workspace-Scoped Command History
+duplicate,ADR-004,decisions,,docs/adr/ADR-004-skills-extension-system.md,1,# ADR-004: Pluggable Skills / Extensions System
+unresolved,User Story 1,stories,kitty-specs/008-caro-web-hub,kitty-specs/008-caro-web-hub/spec.md,10,###User Story 1 - Privacy Dashboard & Local Telemetry Review (Priority: P1)
+unresolved,T080,tasks,kitty-specs/025-llm-evaluation-harness,kitty-specs/025-llm-evaluation-harness/future_work/WP10-multi-backend.md,5,"- ""T080"""
+unresolved,T083,tasks,kitty-specs/025-llm-evaluation-harness,kitty-specs/025-llm-evaluation-harness/future_work/WP10-multi-backend.md,8,"- ""T083"""
+unresolved,T084,tasks,kitty-specs/025-llm-evaluation-harness,kitty-specs/025-llm-evaluation-harness/future_work/WP10-multi-backend.md,9,"- ""T084"""
+unresolved,T085,tasks,kitty-specs/025-llm-evaluation-harness,kitty-specs/025-llm-evaluation-harness/future_work/WP10-multi-backend.md,10,"- ""T085"""
+unresolved,T080,tasks,kitty-specs/025-llm-evaluation-harness,kitty-specs/025-llm-evaluation-harness/future_work/WP10-multi-backend.md,76,### T079-T080 – Backend Integration
+unresolved,T085,tasks,kitty-specs/025-llm-evaluation-harness,kitty-specs/025-llm-evaluation-harness/future_work/WP10-multi-backend.md,156,### T082-T085 – Consistency Testing
+unresolved,T080,tasks,kitty-specs/025-llm-evaluation-harness,kitty-specs/025-llm-evaluation-harness/tasks.md,471,| T080 | Ollama backend integration | WP10 | P2 | [P] |
+unresolved,T083,tasks,kitty-specs/025-llm-evaluation-harness,kitty-specs/025-llm-evaluation-harness/tasks.md,474,| T083 | Run across backends | WP10 | P2 | No |
+unresolved,T084,tasks,kitty-specs/025-llm-evaluation-harness,kitty-specs/025-llm-evaluation-harness/tasks.md,475,| T084 | Calculate similarity score | WP10 | P2 | No |
+unresolved,T085,tasks,kitty-specs/025-llm-evaluation-harness,kitty-specs/025-llm-evaluation-harness/tasks.md,476,| T085 | Report divergence | WP10 | P2 | No |
+unresolved,FR-NEW-001,requirements,specs/004-implement-ollama-and,specs/004-implement-ollama-and/contracts/ollama-backend.md,385,### FR-NEW-001: Embedded Model Fallback
+unresolved,FR-NEW-002,requirements,specs/004-implement-ollama-and,specs/004-implement-ollama-and/contracts/ollama-backend.md,428,### FR-NEW-002: Retry Before Fallback
+unresolved,FR-NEW-003,requirements,specs/004-implement-ollama-and,specs/004-implement-ollama-and/contracts/ollama-backend.md,453,### FR-NEW-003: Optional Backend Status
+unresolved,FR-NEW-001,requirements,specs/004-implement-ollama-and,specs/004-implement-ollama-and/contracts/vllm-backend.md,476,### FR-NEW-001: Embedded Model Fallback
+unresolved,FR-NEW-002,requirements,specs/004-implement-ollama-and,specs/004-implement-ollama-and/contracts/vllm-backend.md,520,### FR-NEW-002: Authentication Failure Fallback
+unresolved,FR-NEW-003,requirements,specs/004-implement-ollama-and,specs/004-implement-ollama-and/contracts/vllm-backend.md,547,### FR-NEW-003: Retry Before Fallback
+unresolved,FR-NEW-004,requirements,specs/004-implement-ollama-and,specs/004-implement-ollama-and/contracts/vllm-backend.md,572,### FR-NEW-004: Optional Backend Status
+unresolved,FR-NEW-005,requirements,specs/004-implement-ollama-and,specs/004-implement-ollama-and/contracts/vllm-backend.md,580,### FR-NEW-005: HTTPS Enforcement
+unresolved,T025,tasks,specs/004-implement-ollama-and,specs/004-implement-ollama-and/plan.md,432,- Write Scenario 11: Embedded → Ollama fallback (T025) [P]
+unresolved,T026,tasks,specs/004-implement-ollama-and,specs/004-implement-ollama-and/plan.md,433,- Write Scenario 12: Offline embedded model (T026) [P]
+unresolved,T027,tasks,specs/004-implement-ollama-and,specs/004-implement-ollama-and/plan.md,434,- Write Scenarios 2-9: Remote backends + fallback (T027-T034) [P]
+unresolved,T034,tasks,specs/004-implement-ollama-and,specs/004-implement-ollama-and/plan.md,434,- Write Scenarios 2-9: Remote backends + fallback (T027-T034) [P]
+unresolved,FR-NEW-001,requirements,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,210,- `test_fallback_to_embedded_on_connection_failure` (FR-NEW-001)
+unresolved,FR-NEW-002,requirements,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,211,- `test_retry_before_fallback` (FR-NEW-002)
+unresolved,FR-NEW-003,requirements,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,212,- `test_optional_backend_status_non_blocking` (FR-NEW-003)
+unresolved,FR-NEW-001,requirements,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,231,- `test_fallback_to_embedded_on_connection_failure` (FR-NEW-001)
+unresolved,FR-NEW-002,requirements,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,232,- `test_auth_failure_fallback_no_retry` (FR-NEW-002)
+unresolved,FR-NEW-005,requirements,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,233,- `test_https_warning_for_http_urls` (FR-NEW-005)
+unresolved,FR-NEW-001,requirements,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,523,2. Add fallback logic similar to Ollama (FR-NEW-001)
+unresolved,FR-NEW-002,requirements,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,524,3. Add authentication failure handling (FR-NEW-002):
+unresolved,FR-NEW-005,requirements,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,526,4. Add HTTPS enforcement warning (FR-NEW-005):
+unresolved,T034,tasks,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,611,### T024-T034: Implement Scenarios 2-12 [P]
+unresolved,T025,tasks,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,616,- T025: Scenario 3 - vLLM Integration
+unresolved,T026,tasks,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,617,- T026: Scenario 4 - Safety Validation
+unresolved,T027,tasks,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,618,- T027: Scenario 5 - Command Execution
+unresolved,T028,tasks,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,619,- T028: Scenario 6 - Backend Switching
+unresolved,T029,tasks,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,620,- T029: Scenario 7 - Offline Operation
+unresolved,T030,tasks,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,621,- T030: Scenario 8 - Multi-Shell Support
+unresolved,T031,tasks,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,622,- T031: Scenario 9 - Error Handling
+unresolved,T032,tasks,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,623,- T032: Scenario 10 - MLX vs CPU Performance
+unresolved,T033,tasks,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,624,- T033: Scenario 11 - Embedded Fallback
+unresolved,T034,tasks,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,625,- T034: Scenario 12 - Complete Offline Operation
+unresolved,T034,tasks,specs/004-implement-ollama-and,specs/004-implement-ollama-and/tasks.md,956,- Phase 4.5: T024-T034 can run in parallel (integration tests)

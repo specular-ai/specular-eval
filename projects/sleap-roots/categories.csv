@@ -1,0 +1,13 @@
+category,name,role,ids,defined_ids,definitions,references,ids_with_status,duplicate_findings,unresolved_findings,status_values
+requirements,Requirements,requirement,116,116,116,158,0,0,0,
+scenarios,Scenarios,,649,649,649,0,0,0,0,
+capability,Capabilities,,14,14,14,0,0,0,0,
+changes,Changes,,47,47,47,0,47,0,0,Archived=47
+tasks,Checklist tasks,task,1263,1263,1263,1,1214,0,0,Done=910; Open=304
+plan_tasks,Plan tasks,task,23,23,23,11,0,0,0,
+decisions,Design decisions,design,198,171,173,531,0,4,61,
+constraints,Cross-cutting concerns,requirement,10,10,10,367,0,0,0,
+reviews,Critical review findings,,23,22,22,26,0,0,1,
+risks,Numbered risks,,12,12,12,0,0,0,0,
+named_risks,Named risks,,3,3,3,0,0,0,0,
+pipeline_decisions,Pipeline design decisions,design,8,8,8,10,0,0,0,

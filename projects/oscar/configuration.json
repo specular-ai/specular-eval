@@ -1,0 +1,425 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "key": "requirements",
+      "name": "Requirements",
+      "role": "requirement",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/spec.md"
+      ]
+    },
+    {
+      "key": "success",
+      "name": "Success Criteria",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/spec.md"
+      ]
+    },
+    {
+      "key": "stories",
+      "name": "User Stories",
+      "role": "requirement",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/spec.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "tasks",
+      "name": "Tasks",
+      "role": "task",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/tasks.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": true,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start",
+          "checkboxOnly": true
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "decisions",
+      "name": "Design Decisions",
+      "role": "design",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/research.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "features",
+      "name": "Features",
+      "role": "requirement",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/spec.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1
+          ],
+          "mode": "keyword",
+          "keyword": "Feature Specification",
+          "separator": ":"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "named-decisions",
+      "name": "Named Design Decisions",
+      "role": "design",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/research.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            2,
+            3
+          ],
+          "mode": "keyword",
+          "keyword": "Decision",
+          "separator": ":"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    }
+  ],
+  "rules": [
+    {
+      "key": "fr",
+      "category": "requirements",
+      "prefix": "FR"
+    },
+    {
+      "key": "nfr",
+      "category": "requirements",
+      "prefix": "NFR"
+    },
+    {
+      "key": "sc",
+      "category": "success",
+      "prefix": "SC"
+    },
+    {
+      "key": "story",
+      "category": "stories",
+      "pattern": "\\bUser Story \\d+\\b"
+    },
+    {
+      "key": "us",
+      "category": "stories",
+      "pattern": "\\bUS-?(?<n>\\d+)\\b",
+      "id": "User Story {n:int}"
+    },
+    {
+      "key": "task",
+      "category": "tasks",
+      "prefix": "T",
+      "separator": ""
+    },
+    {
+      "key": "decision",
+      "category": "decisions",
+      "pattern": "\\bDecision \\d+\\b"
+    }
+  ],
+  "idDefinitionSites": {
+    "headings": {
+      "enabled": true,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mode": "start"
+    },
+    "tables": {
+      "enabled": true,
+      "column": "ID",
+      "mode": "exact"
+    },
+    "lists": {
+      "enabled": true,
+      "types": [
+        "unordered",
+        "ordered"
+      ],
+      "mode": "start"
+    },
+    "paragraphs": {
+      "enabled": false,
+      "mode": "start"
+    }
+  },
+  "statusSites": {
+    "checkboxes": {
+      "enabled": true,
+      "markers": {
+        "x": "Done",
+        "X": "Done",
+        " ": "Open",
+        "-": "In progress"
+      }
+    },
+    "paragraphs": {
+      "enabled": true,
+      "mode": "literal",
+      "label": "Status:"
+    },
+    "tables": {
+      "enabled": true,
+      "mode": "full",
+      "column": "Status"
+    },
+    "headings": {
+      "enabled": false,
+      "mode": "regex",
+      "pattern": "\\[(?<status>[^\\]]+)\\]$"
+    }
+  },
+  "statuses": [
+    {
+      "name": "Done"
+    },
+    {
+      "name": "Open"
+    },
+    {
+      "name": "Draft"
+    },
+    {
+      "name": "In progress"
+    }
+  ],
+  "dates": {
+    "rules": [
+      {
+        "key": "heading",
+        "site": "heading",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "kind": "milestone"
+      },
+      {
+        "key": "created",
+        "site": "field",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Created",
+        "kind": "milestone"
+      },
+      {
+        "key": "date",
+        "site": "field",
+        "enabled": false,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Date",
+        "kind": "milestone"
+      },
+      {
+        "key": "ratified",
+        "site": "field",
+        "enabled": false,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Ratified",
+        "kind": "milestone"
+      },
+      {
+        "key": "plan-date",
+        "site": "field",
+        "enabled": true,
+        "pattern": "Date(?:\\*\\*)?:\\s*(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Branch",
+        "kind": "milestone"
+      },
+      {
+        "key": "constitution-ratified",
+        "site": "field",
+        "enabled": true,
+        "pattern": "Ratified(?:\\*\\*)?:\\s*(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Version",
+        "kind": "milestone"
+      },
+      {
+        "key": "constitution-amended",
+        "site": "field",
+        "enabled": false,
+        "pattern": "Last Amended(?:\\*\\*)?:\\s*(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Version",
+        "kind": "snapshot"
+      }
+    ],
+    "exclude": [
+      ".specify/templates"
+    ]
+  }
+}

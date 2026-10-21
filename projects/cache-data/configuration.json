@@ -1,0 +1,523 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "key": "requirements",
+      "name": "Requirements",
+      "role": "requirement",
+      "idScopes": [
+        {
+          "pattern": ".kiro/specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        ".kiro/specs/*/requirements.md"
+      ]
+    },
+    {
+      "key": "properties",
+      "name": "Correctness Properties",
+      "role": "design",
+      "idScopes": [
+        {
+          "pattern": ".kiro/specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        ".kiro/specs/*/design.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": true,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "tasks",
+      "name": "Tasks",
+      "role": "task",
+      "idScopes": [
+        {
+          "pattern": ".kiro/specs/*/tasks.md"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        ".kiro/specs/*/tasks.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": true,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start",
+          "checkboxOnly": true
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "questions",
+      "name": "Clarifying Questions",
+      "idScopes": [
+        {
+          "pattern": ".kiro/specs/*/SPEC-QUESTIONS.md"
+        },
+        {
+          "pattern": ".kiro/specs/1-3-15-powertools-integration/recommendations.md"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        ".kiro/specs/*/SPEC-QUESTIONS.md",
+        ".kiro/specs/1-3-15-powertools-integration/recommendations.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": true,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": true,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "workstreams",
+      "name": "Workstreams",
+      "idScopes": [
+        {
+          "pattern": ".kiro/specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        ".kiro/specs/*/PLAN.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": true,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": true,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "remediations",
+      "name": "Remediations",
+      "idScopes": [
+        {
+          "pattern": ".kiro/specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        ".kiro/specs/*/FINDINGS.md"
+      ]
+    },
+    {
+      "key": "plannedChanges",
+      "name": "Planned Changes",
+      "idScopes": [
+        {
+          "pattern": ".kiro/specs/1-4-0-cache-key-generation-docs/PLAN.md"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        ".kiro/specs/1-4-0-cache-key-generation-docs/PLAN.md"
+      ]
+    },
+    {
+      "key": "findings",
+      "name": "Findings",
+      "idScopes": [
+        {
+          "pattern": ".kiro/specs/1-4-0-cache-key-generation-docs/PLAN.md"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        ".kiro/specs/1-4-0-cache-key-generation-docs/PLAN.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": true,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "assertions",
+      "name": "Security Property Assertions",
+      "role": "design",
+      "idScopes": [
+        {
+          "pattern": ".kiro/specs/1-3-16-fix-ssm-param-*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        ".kiro/specs/1-3-16-fix-ssm-param-security/design.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": true,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "risks",
+      "name": "Risks",
+      "idScopes": [
+        {
+          "pattern": ".kiro/specs/*/design.md"
+        }
+      ],
+      "onlyInScopes": true
+    },
+    {
+      "key": "scenarios",
+      "name": "Scenarios",
+      "idScopes": [
+        {
+          "pattern": ".kiro/specs/*/design.md"
+        }
+      ],
+      "onlyInScopes": true
+    }
+  ],
+  "rules": [
+    {
+      "key": "requirement",
+      "category": "requirements",
+      "pattern": "\\bRequirement \\d+\\b(?!\\.\\d)"
+    },
+    {
+      "key": "property",
+      "category": "properties",
+      "pattern": "\\bProperty \\d+(?:\\.\\d+)*\\b"
+    },
+    {
+      "key": "task",
+      "category": "tasks",
+      "pattern": "^(?:\\d+(?=\\.\\s)|\\d+(?:\\.\\d+)+[a-z]?(?=\\*?\\s))"
+    },
+    {
+      "key": "q",
+      "category": "questions",
+      "pattern": "\\bQ\\d+(?:\\.\\d+)*\\b"
+    },
+    {
+      "key": "ws",
+      "category": "workstreams",
+      "pattern": "\\bWS-\\d+(?=[.:]\\s+\\S)"
+    },
+    {
+      "key": "r",
+      "category": "remediations",
+      "prefix": "R",
+      "separator": ""
+    },
+    {
+      "key": "d",
+      "category": "plannedChanges",
+      "prefix": "D",
+      "separator": ""
+    },
+    {
+      "key": "x",
+      "category": "plannedChanges",
+      "prefix": "X",
+      "separator": ""
+    },
+    {
+      "key": "f",
+      "category": "findings",
+      "prefix": "F",
+      "separator": ""
+    },
+    {
+      "key": "ws-alias",
+      "category": "workstreams",
+      "pattern": "\\bWS-(?<n>\\d+)\\b(?![.:]\\s+\\S)",
+      "id": "WS-{n}"
+    },
+    {
+      "key": "assertion",
+      "category": "assertions",
+      "pattern": "\\bProperty A\\d+\\b"
+    },
+    {
+      "key": "assertion-alias",
+      "category": "assertions",
+      "pattern": "(?<!Property )\\bA(?<n>\\d+)\\b",
+      "id": "Property A{n}"
+    },
+    {
+      "key": "risks",
+      "category": "risks",
+      "pattern": "\\bRisk \\d+\\b"
+    },
+    {
+      "key": "scenarios",
+      "category": "scenarios",
+      "pattern": "\\bScenario \\d+\\b"
+    }
+  ],
+  "idDefinitionSites": {
+    "headings": {
+      "enabled": true,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mode": "start"
+    },
+    "tables": {
+      "enabled": true,
+      "column": "ID",
+      "mode": "exact"
+    },
+    "lists": {
+      "enabled": false,
+      "types": [
+        "unordered",
+        "ordered"
+      ],
+      "mode": "start"
+    },
+    "paragraphs": {
+      "enabled": false,
+      "mode": "start"
+    }
+  },
+  "statusSites": {
+    "checkboxes": {
+      "enabled": true,
+      "markers": {
+        "x": "Done",
+        "X": "Done",
+        " ": "Open",
+        "-": "In progress"
+      }
+    },
+    "paragraphs": {
+      "enabled": true,
+      "mode": "literal",
+      "label": "Status:",
+      "listItems": true
+    },
+    "tables": {
+      "enabled": true,
+      "mode": "full",
+      "column": "Status"
+    },
+    "headings": {
+      "enabled": false,
+      "mode": "regex",
+      "pattern": "\\[(?<status>[^\\]]+)\\]$"
+    }
+  },
+  "statuses": [
+    {
+      "name": "Done"
+    },
+    {
+      "name": "Open"
+    },
+    {
+      "name": "In progress"
+    }
+  ],
+  "dates": {
+    "rules": [
+      {
+        "key": "heading",
+        "site": "heading",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "kind": "milestone"
+      },
+      {
+        "key": "date",
+        "site": "field",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Date",
+        "kind": "milestone"
+      },
+      {
+        "key": "review-date",
+        "site": "field",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Review Date",
+        "kind": "milestone"
+      },
+      {
+        "key": "report-generated",
+        "site": "field",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Report Generated",
+        "kind": "milestone"
+      }
+    ],
+    "exclude": [
+      ".kiro/specs/1-4-0-property-test-generator-preconditions/issue.md",
+      ".kiro/specs/1-4-0-cache-key-generation-docs/issue.md"
+    ]
+  }
+}

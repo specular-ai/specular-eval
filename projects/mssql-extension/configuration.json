@@ -1,0 +1,530 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "key": "requirements",
+      "name": "Requirements",
+      "role": "requirement",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/spec.md"
+      ]
+    },
+    {
+      "key": "success",
+      "name": "Success criteria",
+      "role": "requirement",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/spec.md"
+      ]
+    },
+    {
+      "key": "stories",
+      "name": "User stories",
+      "role": "requirement",
+      "idScopes": [
+        {
+          "pattern": "specs/*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/spec.md",
+        "specs/017-readme-ddl-examples/tasks.md",
+        "specs/047-process-state-cleanup/tasks.md",
+        "specs/068-login-routing-unification/tasks.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "regex",
+          "pattern": "^(?:Phase \\d+(?:\\.\\d+)?: )?(?<id>User Story \\d+)\\b"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "tasks",
+      "name": "Tasks",
+      "role": "task",
+      "idScopes": [
+        {
+          "pattern": "specs/*/tasks.md"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/tasks.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": true,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start",
+          "checkboxOnly": true
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "decisions",
+      "name": "Design decisions",
+      "role": "design",
+      "idScopes": [
+        {
+          "pattern": "specs/055-read-staging-and-batch-decode*"
+        },
+        {
+          "pattern": "specs/059-staged-path-test-coverage*"
+        },
+        {
+          "pattern": "specs/060-target-types-and-ddl-options*"
+        },
+        {
+          "pattern": "specs/063-writer-merge-and-tests*"
+        },
+        {
+          "pattern": "specs/054-simd-baseline-and-quick-wins*"
+        },
+        {
+          "pattern": "specs/080-dml-pushdown*"
+        },
+        {
+          "pattern": "specs/001-extension-ci-tools-integration*"
+        },
+        {
+          "pattern": "specs/052-thread-safe-catalog-entries*"
+        },
+        {
+          "pattern": "specs/065-dml-pushdown-recon*"
+        },
+        {
+          "pattern": "specs/079-select-pushdown*"
+        },
+        {
+          "pattern": "specs/001-attach-connection-validation*"
+        },
+        {
+          "pattern": "specs/001-code-cleanup*"
+        },
+        {
+          "pattern": "specs/020-multi-statement-scan*"
+        },
+        {
+          "pattern": "specs/027-ctas-bcp-integration*"
+        },
+        {
+          "pattern": "specs/049-fix-partitioned-table-catalog*"
+        },
+        {
+          "pattern": "specs/064-columnar-write-gaps*"
+        },
+        {
+          "pattern": "specs/066-own-scan-materialization*"
+        },
+        {
+          "pattern": "specs/074-tls-server-certificate*"
+        },
+        {
+          "pattern": "specs/001-tds-fedauth-integration*"
+        },
+        {
+          "pattern": "specs/068-login-routing-unification*"
+        },
+        {
+          "pattern": "specs/040-fix-datetimeoffset-nbc*"
+        },
+        {
+          "pattern": "specs/058-read-framing*"
+        },
+        {
+          "pattern": "specs/067-dml-staging*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/spec.md",
+        "specs/*/research.md",
+        "specs/001-extension-ci-tools-integration/plan.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "regex",
+          "pattern": "^(?:Research )?(?:\\d+[a-z]?\\. )?(?<id>D\\d+[a-z]?|Decision \\d+)(?=\\s*[:.—–/])"
+        },
+        "tables": {
+          "enabled": true,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "research",
+      "name": "Research findings",
+      "role": "design",
+      "idScopes": [
+        {
+          "pattern": "specs/001-mssql-transactions*"
+        },
+        {
+          "pattern": "specs/002-dml-update-delete*"
+        },
+        {
+          "pattern": "specs/009-dml-insert*"
+        },
+        {
+          "pattern": "specs/019-fix-winsock-init*"
+        },
+        {
+          "pattern": "specs/022-mssql-ctas*"
+        },
+        {
+          "pattern": "specs/033-fix-catalog-scan*"
+        },
+        {
+          "pattern": "specs/035-ddl-schema-support*"
+        },
+        {
+          "pattern": "specs/037-replace-libcurl-httplib*"
+        },
+        {
+          "pattern": "specs/039-order-pushdown*"
+        },
+        {
+          "pattern": "specs/041-xml-type-support*"
+        },
+        {
+          "pattern": "specs/042-integrated-authentication*"
+        },
+        {
+          "pattern": "specs/043-refactoring-foundation*"
+        },
+        {
+          "pattern": "specs/044-codec-consolidation*"
+        },
+        {
+          "pattern": "specs/045-named-instance-resolution*"
+        },
+        {
+          "pattern": "specs/045-type-codec-consolidation*"
+        },
+        {
+          "pattern": "specs/053-lazy-gssapi-linking*"
+        },
+        {
+          "pattern": "specs/068-login-routing-unification*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/research.md"
+      ]
+    },
+    {
+      "key": "contracts",
+      "name": "Contracts",
+      "role": "design",
+      "idScopes": [
+        {
+          "pattern": "specs/068-login-routing-unification*"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "specs/*/contracts"
+      ]
+    },
+    {
+      "key": "features",
+      "name": "Feature specifications",
+      "role": "requirement",
+      "derive": {
+        "pattern": "specs/{feature}/spec.md"
+      }
+    }
+  ],
+  "rules": [
+    {
+      "key": "fr",
+      "category": "requirements",
+      "pattern": "\\b(?:FR|NFR)-\\d+[a-z]?\\b"
+    },
+    {
+      "key": "sc",
+      "category": "success",
+      "prefix": "SC"
+    },
+    {
+      "key": "story",
+      "category": "stories",
+      "pattern": "\\bUser Story \\d+\\b"
+    },
+    {
+      "key": "story-alias",
+      "category": "stories",
+      "pattern": "\\bUS-?(?<n>\\d+)\\b",
+      "id": "User Story {n:int}"
+    },
+    {
+      "key": "task",
+      "category": "tasks",
+      "pattern": "\\bT\\d+[a-zA-Z]?\\b"
+    },
+    {
+      "key": "decision",
+      "category": "decisions",
+      "pattern": "\\b(?:D\\d+[a-z]?|Decision \\d+)\\b"
+    },
+    {
+      "key": "research",
+      "category": "research",
+      "pattern": "\\bR\\d+\\b"
+    },
+    {
+      "key": "contract",
+      "category": "contracts",
+      "pattern": "\\bC\\d+\\b"
+    }
+  ],
+  "idDefinitionSites": {
+    "headings": {
+      "enabled": true,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mode": "start"
+    },
+    "tables": {
+      "enabled": true,
+      "column": "ID",
+      "mode": "exact"
+    },
+    "lists": {
+      "enabled": true,
+      "types": [
+        "unordered"
+      ],
+      "mode": "start"
+    },
+    "paragraphs": {
+      "enabled": false,
+      "mode": "start"
+    }
+  },
+  "statusSites": {
+    "checkboxes": {
+      "enabled": true,
+      "markers": {
+        "x": "Done",
+        "X": "Done",
+        " ": "Open",
+        "-": "In progress",
+        "~": "Deferred"
+      }
+    },
+    "paragraphs": {
+      "enabled": true,
+      "mode": "regex",
+      "label": "Status:",
+      "listItems": true,
+      "pattern": "\\bStatus\\s*:\\s*(?<status>(?:EXECUTED AND CLOSED|[Ii]n progress|[A-Za-z]+)(?: \\d{4}-\\d{2}-\\d{2})?)"
+    },
+    "tables": {
+      "enabled": true,
+      "mode": "full",
+      "column": "Status"
+    },
+    "headings": {
+      "enabled": true,
+      "mode": "regex",
+      "pattern": "(?:—|–|:)\\s*\\*{0,2}(?<status>DONE|CLOSED|SHIPPED|IMPLEMENTED|IN PROGRESS)\\b"
+    }
+  },
+  "statuses": [
+    {
+      "name": "Draft",
+      "rules": [
+        {
+          "mode": "startsWith",
+          "value": "Draft"
+        }
+      ]
+    },
+    {
+      "name": "Done",
+      "rules": [
+        {
+          "mode": "regex",
+          "value": "^(?:Done|Complete|Implemented|Shipped)\\b"
+        }
+      ]
+    },
+    {
+      "name": "Closed",
+      "rules": [
+        {
+          "mode": "regex",
+          "value": "^(?:Closed|Executed and closed)\\b"
+        }
+      ]
+    },
+    {
+      "name": "Open"
+    },
+    {
+      "name": "In progress"
+    },
+    {
+      "name": "Ready",
+      "rules": [
+        {
+          "mode": "exact",
+          "value": "ready"
+        }
+      ]
+    },
+    {
+      "name": "Deferred"
+    },
+    {
+      "name": "Proposed"
+    },
+    {
+      "name": "Revised",
+      "rules": [
+        {
+          "mode": "startsWith",
+          "value": "revised"
+        }
+      ]
+    }
+  ],
+  "dates": {
+    "rules": [
+      {
+        "key": "status-date",
+        "site": "status",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})"
+      },
+      {
+        "key": "list-entry",
+        "site": "list-entry",
+        "enabled": true,
+        "kind": "entry"
+      },
+      {
+        "key": "heading",
+        "site": "heading",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "kind": "milestone"
+      },
+      {
+        "key": "created",
+        "site": "field",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Created",
+        "kind": "milestone"
+      },
+      {
+        "key": "date",
+        "site": "field",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Date",
+        "kind": "milestone"
+      }
+    ],
+    "exclude": [
+      "website/versioned_docs",
+      ".claude",
+      ".specify/templates"
+    ]
+  }
+}

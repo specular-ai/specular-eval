@@ -1,0 +1,9 @@
+category,name,role,ids,defined_ids,definitions,references,ids_with_status,duplicate_findings,unresolved_findings,status_values
+requirements,Functional requirements,requirement,49,49,49,12,0,0,0,
+success,Success criteria,requirement,28,28,28,0,0,0,0,
+stories,User stories,requirement,16,16,16,228,1,0,0,Done=1
+tasks,Tasks,task,135,133,140,67,133,14,4,Done=128; Open=5
+blockers,Rollback blockers,requirement,3,3,3,0,0,0,0,
+tests,Security test cases,,27,26,26,63,0,0,5,
+phases,Roadmap phases,,13,13,13,89,13,0,0,Done=2; Future=2; Planned=8; In progress=1
+features,Features,requirement,4,4,4,0,4,0,0,In progress=1; Done=2; Draft=1

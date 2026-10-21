@@ -1,0 +1,747 @@
+{
+  "project": "caro",
+  "agent": "Codex",
+  "model": "gpt-6-astra",
+  "toolCallLimit": 80,
+  "toolCalls": 78,
+  "seconds": 315,
+  "submittedEvaluation": {
+    "evaluationId": "e5",
+    "duplicates": 6,
+    "unresolved": 44,
+    "problems": 50
+  },
+  "bestEvaluation": {
+    "evaluationId": "e5",
+    "categories": 12,
+    "duplicates": 6,
+    "unresolved": 44,
+    "problems": 50
+  },
+  "submittedBest": true,
+  "summary": "Measured discovery across 1,177 Markdown files: 12 categories, 1,538 definitions, 3,754 references; 777 mapped status occurrences, no unmapped statuses or status conflicts, and 519 date occurrences. Feature/file scopes exclude templates and technical tokens. Six duplicate definition occurrences are genuine ADR number collisions; 44 references remain unresolved.",
+  "categoryRationale": {
+    "requirements": "Retains the existing requirements key; FR/NFR (including qualified IDs) identify functional and nonfunctional requirements. Evidence: kitty-specs/002-unquoted-cli-arguments/spec.md:105 and specs/005-caro-vscode-extension/spec.md:94. IDs restart by feature; spec.md/PRD.md are definition sources.",
+    "success": "SC IDs identify measurable success criteria, e.g. kitty-specs/002-unquoted-cli-arguments/spec.md:128. Feature scopes and specification definitionPaths prevent contract/quickstart restatements from duplicating definitions.",
+    "stories": "User Story N headings define feature stories, e.g. kitty-specs/002-unquoted-cli-arguments/spec.md:10. US1/US-001 aliases normalize to User Story 1 with integer ID templates in the folders using this naming convention.",
+    "tasks": "Tnnn identifies implementation subtasks. Checkbox definitions in kitty-specs/002-unquoted-cli-arguments/tasks.md:33 and heading definitions in specs/004-implement-ollama-and/tasks.md:29 are supported. Canonical task lists and deferred work detail files define records; prompt repetitions are references.",
+    "packages": "WPnn identifies work packages in feature task-list headings, e.g. kitty-specs/002-unquoted-cli-arguments/tasks.md:26 and kitty-specs/008-caro-web-hub/tasks.md:33. Restricting definitions to tasks.md avoids prompt-file duplicates.",
+    "decisions": "ADR-nnn identifies architectural decisions, defined only by level-one headings under docs/adr, e.g. ADR-019-autoharness-harness-hygiene.md:1. External summaries are references. Actual number collisions are preserved as diagnostics.",
+    "risks": "RISK-nnn identifies release risks in .claude/releases/v1.1.0-beta-risk-register.md:44 onward; file-local scope and Status paragraphs support 12 risks.",
+    "tests": "TC-nnn identifies QA cases in docs/qa/i18n-test-cases.md:24 and specs/006-intelligent-prompt-generation/test_cases.md:5. Definition paths exclude task-list summaries; unrelated TC technical constraints in another feature are excluded by scope.",
+    "shortstories": "Other specifications define US-001, US-1, or US1 directly, e.g. specs/002-implement-tdd-green/spec.md:28 and kitty-specs/027-issue-281-add/spec.md:16. These retain their authored identity in separate feature scopes.",
+    "shellstories": "S1.1.1-style IDs identify implementation stories in the Story column of specs/007-caro-shell-integration/milestones.md:17. Scope is limited to that feature; 100 definitions and 28 references resolve without duplicates.",
+    "backlog": "BW-nnn identifies handoff/backlog records headed in .claude/memory/broken-windows.md:22 onward. Word/path boundaries avoid interpreting a branch-name fragment as a record; 71 definitions have statuses.",
+    "package_tables": "Features 018 and 020 use ID-column registers with authored statuses, e.g. kitty-specs/018-issue-10-implement/tasks.md:14 and kitty-specs/020-machine-resource-assessment/tasks.md:23. Separate sites preserve table statuses while treating repeated headings as references."
+  },
+  "gaps": [
+    {
+      "description": "ADR numbers 001, 002, and 004 are reused for different documents. Bare IDs cannot distinguish these decisions; six duplicate definition occurrences remain rather than hiding legitimate records.",
+      "examples": [
+        {
+          "path": "docs/adr/001-llm-inference-architecture.md",
+          "line": 1
+        },
+        {
+          "path": "docs/adr/ADR-001-enterprise-community-architecture.md",
+          "line": 1
+        },
+        {
+          "path": "docs/adr/ADR-004-skills-extension-system.md",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "description": "FR-NEW requirements restart independently in backend contracts, while task references depend on contextual backend meaning. A single feature-scoped ID cannot faithfully resolve those references.",
+      "examples": [
+        {
+          "path": "specs/004-implement-ollama-and/contracts/ollama-backend.md",
+          "line": 428
+        },
+        {
+          "path": "specs/004-implement-ollama-and/contracts/vllm-backend.md",
+          "line": 520
+        },
+        {
+          "path": "specs/004-implement-ollama-and/tasks.md",
+          "line": 211
+        }
+      ]
+    },
+    {
+      "description": "Task ranges and mixed plain-list/table definitions cannot all be covered by the chosen category-wide sites without also defining summary/dependency occurrences. Remaining task references are left unresolved.",
+      "examples": [
+        {
+          "path": "kitty-specs/025-llm-evaluation-harness/future_work/WP10-multi-backend.md",
+          "line": 156
+        },
+        {
+          "path": "kitty-specs/025-llm-evaluation-harness/tasks.md",
+          "line": 474
+        },
+        {
+          "path": "specs/004-implement-ollama-and/tasks.md",
+          "line": 616
+        }
+      ]
+    },
+    {
+      "description": "Malformed Markdown heading ###User Story 1 is not a heading definition.",
+      "examples": [
+        {
+          "path": "kitty-specs/008-caro-web-hub/spec.md",
+          "line": 10
+        }
+      ]
+    },
+    {
+      "description": "Vertical metadata tables put Status in a header/key cell rather than beside an ID definition; current status sites cannot attach these values to the ADR.",
+      "examples": [
+        {
+          "path": "docs/adr/ADR-005-hayagriva-bibliography-integration.md",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "description": "Work-package lane/history YAML precedes the Markdown definition and is not a supported status/date site.",
+      "examples": [
+        {
+          "path": "kitty-specs/025-llm-evaluation-harness/future_work/WP10-multi-backend.md",
+          "line": 16
+        },
+        {
+          "path": "kitty-specs/025-llm-evaluation-harness/future_work/WP10-multi-backend.md",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "description": "Month-name or month-only dates did not yield normalized dates. They are not approximated as ISO dates.",
+      "examples": [
+        {
+          "path": ".claude/releases/v1.1.0-beta-risk-register.md",
+          "line": 75
+        },
+        {
+          "path": ".claude/releases/v1.1.0-beta-decision-record.md",
+          "line": 13
+        },
+        {
+          "path": "docs/adr/ADR-005-hayagriva-bibliography-integration.md",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "description": "Quoted automation metadata and unnamed research-decision table rows are not supported by the configured definition/status sites.",
+      "examples": [
+        {
+          "path": ".claude/automation/specs/AUTOMATED_DEV_FLOW_DRS.md",
+          "line": 5
+        },
+        {
+          "path": "kitty-specs/002-unquoted-cli-arguments/research.md",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "description": "Status prose may contain several historical dates and linked/inline-code fragments; the configuration captures the lifecycle phrase only and cannot safely assign every mentioned date as a status transition.",
+      "examples": [
+        {
+          "path": ".claude/memory/broken-windows.md",
+          "line": 55
+        },
+        {
+          "path": ".claude/memory/broken-windows.md",
+          "line": 238
+        }
+      ]
+    }
+  ],
+  "statusRationale": "Checkbox markers yield 653 task statuses. Paragraph regex reads Status fields even within multiline metadata paragraphs, captures contiguous authored lifecycle text without crossing Markdown formatting, and handles the bold deferred phrase. Table statuses remain authoritative for work-package registers. Common values and decorations map to Done, Open, Planned, Proposed, Accepted, Rejected, Mitigated, Closed, Fixed, Claimed, Deferred, and Not reproducing. Final evaluation maps all 777 occurrences, with zero conflicts. Missing status examples and unmapped/conflict lists were inspected; no inferred completion from acceptance checkboxes or feature-level Draft fields.",
+  "dateRationale": "Retains measured ISO dated entries (10), headings (67), Created fields (69), and Date fields (123); enables Last Updated snapshots (179) and Found milestones (71). All active rules have real matches inspected with list_matches. Removes zero-yield status-date/Ratified/Last Review rules; leaves unsupported textual dates as gaps. Excludes copied agent skills, plugins, prompt/template trees. Next Review is omitted because it is a scheduled review rather than evidence of an event.",
+  "statusMetrics": {
+    "occurrences": 777,
+    "sites": {
+      "paragraphs": 108,
+      "checkboxes": 653,
+      "tables": 16
+    },
+    "mapped": 777,
+    "unmapped": 0,
+    "categories": [
+      {
+        "key": "requirements",
+        "name": "Requirements",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 396,
+        "conflicts": 0
+      },
+      {
+        "key": "success",
+        "name": "Success Criteria",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 55,
+        "conflicts": 0
+      },
+      {
+        "key": "stories",
+        "name": "User Stories",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 30,
+        "conflicts": 0
+      },
+      {
+        "key": "tasks",
+        "name": "Tasks",
+        "occurrences": 653,
+        "withStatus": 653,
+        "withoutStatus": 42,
+        "conflicts": 0
+      },
+      {
+        "key": "packages",
+        "name": "Work Packages",
+        "occurrences": 9,
+        "withStatus": 9,
+        "withoutStatus": 72,
+        "conflicts": 0
+      },
+      {
+        "key": "decisions",
+        "name": "Architecture Decisions",
+        "occurrences": 16,
+        "withStatus": 15,
+        "withoutStatus": 5,
+        "conflicts": 0
+      },
+      {
+        "key": "risks",
+        "name": "Risks",
+        "occurrences": 12,
+        "withStatus": 12,
+        "withoutStatus": 0,
+        "conflicts": 0
+      },
+      {
+        "key": "tests",
+        "name": "Test Cases",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 19,
+        "conflicts": 0
+      },
+      {
+        "key": "shortstories",
+        "name": "ID User Stories",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 40,
+        "conflicts": 0
+      },
+      {
+        "key": "shellstories",
+        "name": "Shell Integration Stories",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 100,
+        "conflicts": 0
+      },
+      {
+        "key": "backlog",
+        "name": "Broken Windows",
+        "occurrences": 71,
+        "withStatus": 71,
+        "withoutStatus": 0,
+        "conflicts": 0
+      },
+      {
+        "key": "package_tables",
+        "name": "Work Packages (registers)",
+        "occurrences": 16,
+        "withStatus": 16,
+        "withoutStatus": 0,
+        "conflicts": 0
+      }
+    ],
+    "values": [
+      {
+        "value": "Open",
+        "count": 340,
+        "status": "Open",
+        "example": {
+          "path": ".claude/releases/v1.1.0-beta-risk-register.md",
+          "line": 84,
+          "text": "**Status**: Open"
+        }
+      },
+      {
+        "value": "Done",
+        "count": 319,
+        "status": "Done",
+        "example": {
+          "path": "kitty-specs/002-unquoted-cli-arguments/tasks.md",
+          "line": 33,
+          "text": "- [x] T001 Update CliArgs struct with trailing_var_arg configuration in `src/cli/mod.rs`"
+        }
+      },
+      {
+        "value": "open",
+        "count": 45,
+        "status": "Open",
+        "example": {
+          "path": ".claude/memory/broken-windows.md",
+          "line": 26,
+          "text": "**Status:** open"
+        }
+      },
+      {
+        "value": "fixed",
+        "count": 18,
+        "status": "Fixed",
+        "example": {
+          "path": ".claude/memory/broken-windows.md",
+          "line": 35,
+          "text": "**Status:** fixed (#1478, merged 2026-10-11). `CLAUDE.md` points at `Cargo.toml` and repeats no version; #1098 closed."
+        }
+      },
+      {
+        "value": "Proposed",
+        "count": 12,
+        "status": "Proposed",
+        "example": {
+          "path": "docs/adr/ADR-001-enterprise-community-architecture.md",
+          "line": 3,
+          "text": "**Status**: Proposed"
+        }
+      },
+      {
+        "value": "✅ Complete",
+        "count": 8,
+        "status": "Done",
+        "example": {
+          "path": "kitty-specs/018-issue-10-implement/tasks.md",
+          "line": 14,
+          "text": "| WP01 | Setup & Dependencies | 6 | ✅ Complete | [WP01-setup-dependencies.md](tasks/planned/WP01-setup-dependencies.md) |"
+        }
+      },
+      {
+        "value": "Planned",
+        "count": 8,
+        "status": "Planned",
+        "example": {
+          "path": "kitty-specs/010-website-claims-qa/tasks.md",
+          "line": 20,
+          "text": "**Status:** Planned"
+        }
+      },
+      {
+        "value": "claimed",
+        "count": 5,
+        "status": "Claimed",
+        "example": {
+          "path": ".claude/memory/broken-windows.md",
+          "line": 238,
+          "text": "**Status:** claimed-by fix/1550-subcommand-prompt-fallback (draft #1651, Refs #1550). The owner chose option 2 on 2026-10-11 and set a narr…"
+        }
+      },
+      {
+        "value": "planned",
+        "count": 5,
+        "status": "Planned",
+        "example": {
+          "path": "kitty-specs/020-machine-resource-assessment/tasks.md",
+          "line": 23,
+          "text": "| WP01 | Foundation - Core Detection | P1 | planned | 8 |"
+        }
+      },
+      {
+        "value": "Accepted",
+        "count": 4,
+        "status": "Accepted",
+        "example": {
+          "path": ".claude/releases/v1.1.0-beta-risk-register.md",
+          "line": 362,
+          "text": "**Status**: Accepted"
+        }
+      },
+      {
+        "value": "⬜ Planned",
+        "count": 3,
+        "status": "Planned",
+        "example": {
+          "path": "kitty-specs/018-issue-10-implement/tasks.md",
+          "line": 22,
+          "text": "| WP09 | Unit Tests | 8 | ⬜ Planned | [WP09-unit-tests.md](tasks/planned/WP09-unit-tests.md) |"
+        }
+      },
+      {
+        "value": "Mitigated",
+        "count": 3,
+        "status": "Mitigated",
+        "example": {
+          "path": ".claude/releases/v1.1.0-beta-risk-register.md",
+          "line": 47,
+          "text": "**Status**: Mitigated"
+        }
+      },
+      {
+        "value": "Closed",
+        "count": 2,
+        "status": "Closed",
+        "example": {
+          "path": ".claude/releases/v1.1.0-beta-risk-register.md",
+          "line": 394,
+          "text": "**Status**: Closed"
+        }
+      },
+      {
+        "value": "DEFERRED TO FUTURE RELEASE",
+        "count": 1,
+        "status": "Deferred",
+        "example": {
+          "path": "kitty-specs/025-llm-evaluation-harness/tasks.md",
+          "line": 339,
+          "text": "**Status**: ⏸️ **DEFERRED TO FUTURE RELEASE** (v1.2.0 or later)"
+        }
+      },
+      {
+        "value": "mitigated",
+        "count": 1,
+        "status": "Mitigated",
+        "example": {
+          "path": ".claude/memory/broken-windows.md",
+          "line": 157,
+          "text": "**Status:** mitigated (#1505, merged 2026-10-03): Lint & Format and the publish.yml clippy step run on Rust 1.98.1."
+        }
+      },
+      {
+        "value": "not reproducing",
+        "count": 1,
+        "status": "Not reproducing",
+        "example": {
+          "path": ".claude/memory/broken-windows.md",
+          "line": 327,
+          "text": "**Status:** not reproducing; no root cause found. The job passed on the last 11 main push runs (2026-10-12 to 2026-10-13, latest run 38394590892; j…"
+        }
+      },
+      {
+        "value": "Rejected",
+        "count": 1,
+        "status": "Rejected",
+        "example": {
+          "path": "docs/adr/ADR-011-cmd-lib-command-execution-library.md",
+          "line": 3,
+          "text": "**Status**: Rejected"
+        }
+      },
+      {
+        "value": "release done",
+        "count": 1,
+        "status": "Done",
+        "example": {
+          "path": ".claude/memory/broken-windows.md",
+          "line": 133,
+          "text": "**Status:** release done. `v1.5.0` is published and tagged at `d705666` (verified 2026-10-13). #1419 is still open."
+        }
+      }
+    ],
+    "unusedStatuses": [
+      "Draft",
+      "In progress",
+      "Ready"
+    ]
+  },
+  "dateMetrics": {
+    "rules": [
+      {
+        "key": "list-entry",
+        "site": "list-entry",
+        "kind": "entry",
+        "enabled": true,
+        "dates": 10,
+        "examples": [
+          {
+            "path": ".claude/memory/qa-known-flakes.md",
+            "line": 16,
+            "text": "- 2026-05-07: observed once",
+            "date": "2026-05-07"
+          },
+          {
+            "path": ".claude/releases/v1.1.0-capacity-planning-resource-management.md",
+            "line": 669,
+            "text": "- 2026-01-08: Initial creation (Release Manager)",
+            "date": "2026-01-08"
+          },
+          {
+            "path": ".claude/releases/v1.1.0-crisis-management-emergency-response.md",
+            "line": 1021,
+            "text": "- 2026-01-08: Initial creation (Release Manager)",
+            "date": "2026-01-08"
+          }
+        ]
+      },
+      {
+        "key": "heading",
+        "site": "heading",
+        "kind": "milestone",
+        "enabled": true,
+        "dates": 67,
+        "examples": [
+          {
+            "path": ".claude/audits/2026-05-16-caro-dogfood/audit.md",
+            "line": 1,
+            "text": "# Caro Dogfood Audit — 2026-05-16",
+            "date": "2026-05-16"
+          },
+          {
+            "path": ".claude/audits/2026-05-16-caro-dogfood/skill-friction.md",
+            "line": 1,
+            "text": "# Caro Skill Friction Report — 2026-05-16",
+            "date": "2026-05-16"
+          },
+          {
+            "path": ".claude/audits/2026-05-18-design-system-v2/spec/BRIEF.md",
+            "line": 2,
+            "text": "# Captured: 2026-05-18",
+            "date": "2026-05-18"
+          }
+        ]
+      },
+      {
+        "key": "created",
+        "site": "field",
+        "kind": "milestone",
+        "label": "Created",
+        "enabled": true,
+        "dates": 69,
+        "examples": [
+          {
+            "path": ".claude/memory/v150-release-handoff.md",
+            "line": 3,
+            "text": "**Created**: 2026-07-12 by the autonomous ops session.",
+            "date": "2026-07-12"
+          },
+          {
+            "path": ".claude/recommendations/gap-analyzer-design.md",
+            "line": 3,
+            "text": "**Created**: 2026-01-08",
+            "date": "2026-01-08"
+          },
+          {
+            "path": ".claude/recommendations/WEEK-1-SUMMARY.md",
+            "line": 3,
+            "text": "**Created**: 2026-01-08",
+            "date": "2026-01-08"
+          }
+        ]
+      },
+      {
+        "key": "date",
+        "site": "field",
+        "kind": "milestone",
+        "label": "Date",
+        "enabled": true,
+        "dates": 123,
+        "examples": [
+          {
+            "path": ".claude/audits/2026-05-14/brand-audit-waitlist.md",
+            "line": 3,
+            "text": "**Date:** 2026-05-14",
+            "date": "2026-05-14"
+          },
+          {
+            "path": ".claude/audits/2026-10-11-seo-share/README.md",
+            "line": 3,
+            "text": "**Date:** 2026-10-11 · **Auditor:** `claude-design-frontend-engineer` (read-only)",
+            "date": "2026-10-11"
+          },
+          {
+            "path": ".claude/beta-testing/critical-gaps-fixes-complete.md",
+            "line": 3,
+            "text": "**Date**: 2026-01-08",
+            "date": "2026-01-08"
+          }
+        ]
+      },
+      {
+        "key": "last-updated",
+        "site": "field",
+        "kind": "snapshot",
+        "label": "Last Updated",
+        "enabled": true,
+        "dates": 179,
+        "examples": [
+          {
+            "path": ".claude/beta-testing/README.md",
+            "line": 10,
+            "text": "**Last Updated**: 2025-01-07",
+            "date": "2025-01-07"
+          },
+          {
+            "path": ".claude/memory/consolidated-knowledge-rules.md",
+            "line": 104,
+            "text": "*Last updated: 2025-01-04*",
+            "date": "2025-01-04"
+          },
+          {
+            "path": ".claude/memory/integrator-playbook.md",
+            "line": 160,
+            "text": "*Last updated: 2026-04-26 (initial seed, first night)*",
+            "date": "2026-04-26"
+          }
+        ]
+      },
+      {
+        "key": "found",
+        "site": "field",
+        "kind": "milestone",
+        "label": "Found",
+        "enabled": true,
+        "dates": 71,
+        "examples": [
+          {
+            "path": ".claude/memory/broken-windows.md",
+            "line": 24,
+            "text": "**Found:** 2026-10-10, WCAG design pass (`feat/website-wcag-design-pass`)",
+            "date": "2026-10-10"
+          },
+          {
+            "path": ".claude/memory/broken-windows.md",
+            "line": 33,
+            "text": "**Found:** 2026-09-27, PR #1470 session",
+            "date": "2026-09-27"
+          },
+          {
+            "path": ".claude/memory/broken-windows.md",
+            "line": 42,
+            "text": "**Found:** 2026-09-24, google/ax harness survey",
+            "date": "2026-09-24"
+          }
+        ]
+      }
+    ],
+    "emptyRules": [],
+    "exclusions": [
+      {
+        "path": ".agents",
+        "files": 9
+      },
+      {
+        "path": ".claude/skills",
+        "files": 122
+      },
+      {
+        "path": ".claude/plugins",
+        "files": 9
+      },
+      {
+        "path": ".codex",
+        "files": 13
+      },
+      {
+        "path": ".kittify/overrides",
+        "files": 38
+      },
+      {
+        "path": ".specify/templates",
+        "files": 6
+      }
+    ]
+  },
+  "progress": [
+    "Starting the Specular tools…",
+    "Preparing a read-only Codex thread…",
+    "Codex is surveying the project…",
+    "I’ll survey the documents, test the record patterns and status/date rules, and submit the best measured configuration.",
+    "1/80 · Surveyed 1177 Markdown files in 281 folders",
+    "2/80 · Read the configuration format",
+    "3/80 · heuristic_candidates failed: Discovery exceeds 128 candidate groups. Select fewer files.",
+    "4/80 · Read kitty-specs/002-unquoted-cli-arguments/spec.md lines 1-149",
+    "5/80 · Read kitty-specs/002-unquoted-cli-arguments/tasks.md lines 1-130",
+    "6/80 · Read kitty-specs/002-unquoted-cli-arguments/tasks/WP01-cli-argument-parsing-setup.md lines 1-100",
+    "7/80 · Read specs/005-caro-vscode-extension/spec.md lines 1-160",
+    "8/80 · Searched /\\b(?:REQ|FR|NFR|SC|US|ADR|RISK|TC|CHK)[-_]?\\d+\\b/: 1420 matches in 169 files",
+    "9/80 · Read docs/adr/README.md lines 1-100",
+    "10/80 · Read docs/adr/ADR-019-autoharness-harness-hygiene.md lines 1-65",
+    "11/80 · Read docs/qa/i18n-test-cases.md lines 1-110",
+    "12/80 · Read .claude/releases/v1.1.0-beta-risk-register.md lines 35-85",
+    "13/80 · Read docs/prd/PRD-001-olmo3-model-support.md lines 1-65",
+    "14/80 · Searched /\\bREQ-\\d+\\b|\\b[A-Z]{2,8}-\\d{2,4}\\b/: 235 matches in 47 files",
+    "The main conventions are feature-local requirements, user stories, success criteria, tasks, and work packages, plus ADRs, risks, and QA cases. Numbering restarts in each feature, and templates repeat example IDs, so scope boundaries matter. I also found reused ADR numbers and work-package metadata that may need to be reported as gaps.",
+    "15/80 · Searched /\\bREQ[-_]\\d+\\b/: 0 matches in 0 files",
+    "16/80 · Searched /\\bUS-?\\d+\\b|^#{1,6} .*User Story/: 0 matches in 0 files",
+    "17/80 · Searched /^#{1,6} .*\\b(?:Scenario|Decision|Risk|Test Case|Milestone|Re/: 25 matches in 25 files",
+    "18/80 · Searched /(?:Last Updated|Last Amended|Ratified|Created|Status|Date)\\*/: 36 matches in 19 files",
+    "19/80 · Searched /\\bUS-?\\d+\\b/: 24 matches in 5 files",
+    "20/80 · Searched /#{1,6} (?:Scenario|Decision|Risk|Test Case|Milestone|Require/: 424 matches in 167 files",
+    "21/80 · Searched /\\b(?:FR|NFR|SC)-[A-Za-z0-9-]+/: 484 matches in 22 files",
+    "22/80 · Searched /Last Updated|Last Amended|Ratified|\\b20\\d\\d-\\d\\d-\\d\\d/: 4 matches in 2 files",
+    "23/80 · Evaluated draft 1: 8 categories, 1266 definitions, 26 duplicates",
+    "24/80 · Listed 12 of 17 unresolved matches of requirements",
+    "25/80 · Listed 12 of 55 definition matches of success",
+    "26/80 · Listed 12 of 41 unresolved matches of stories",
+    "27/80 · Listed 12 of 221 unresolved matches of tasks",
+    "28/80 · Listed 12 of 134 unresolved matches of packages",
+    "29/80 · Listed 6 of 6 duplicate matches of decisions",
+    "30/80 · Listed 12 of 12 definition matches of risks",
+    "31/80 · Listed 12 of 20 duplicate matches of tests",
+    "32/80 · Searched /#{1,6} US-?\\d+/: 40 matches in 8 files",
+    "33/80 · Searched /#{1,6}.*WP\\d+|\\|.*(?:WP|Package).*\\|/: 32 matches in 1 files",
+    "34/80 · Searched /#{1,6}.*T\\d{3}|\\[.\\].*T\\d{3}/: 36 matches in 1 files",
+    "35/80 · Read specs/006-intelligent-prompt-generation/test_cases.md lines 1-42",
+    "36/80 · Read kitty-specs/025-llm-evaluation-harness/future_work/WP10-multi-backend.md lines 1-75",
+    "37/80 · Listed 15 of 221 unresolved matches of tasks",
+    "The first evaluation found 1,266 definitions. Inspection showed several correctable issues: test-case summaries were counted as definitions, some tasks use headings, and user stories use two naming styles. I’m adjusting those rules and adding status and date handling.",
+    "38/80 · Searched /#{1,6}.*WP\\d+/: 10 matches in 1 files",
+    "39/80 · Searched /#{1,6} User Story \\d+/: 39 matches in 10 files",
+    "40/80 · Searched /Last Updated|Last Amended|Status.*(?:20\\d\\d|Complete)|\\*\\*Cl/: 3 matches in 1 files",
+    "41/80 · Evaluated a draft: rejected (ID scope pattern \"kitty-specs/002-unquoted-cli-arguments\" ends in a literal folder. A scope pattern needs a wildcard, gl)",
+    "42/80 · Evaluated a draft: rejected (kitty-specs/025-llm-evaluation-harness/tasks.md: Line 339, status paragraphs: Error: Captured status \"⏸️ DEFERRED TO FUT)",
+    "43/80 · Evaluated a draft: rejected (kitty-specs/025-llm-evaluation-harness/tasks.md: Line 339, status paragraphs: Error: Captured status \"DEFERRED TO FUTURE)",
+    "44/80 · Evaluated draft 2: 9 categories, 1378 definitions, 28 duplicates",
+    "45/80 · Listed 8 of 22 duplicate matches of packages",
+    "46/80 · Listed 26 of 26 unresolved matches of tasks",
+    "47/80 · Listed 3 of 3 unresolved matches of tests",
+    "48/80 · Listed 5 of 5 without-status statuses of decisions",
+    "49/80 · Listed 6 of 40 definition matches of shortstories",
+    "50/80 · Listed 4 of 42 without-status statuses of tasks",
+    "51/80 · Listed 0 of 0 conflict statuses of risks",
+    "52/80 · Listed 5 of 10 dates of rule list-entry",
+    "53/80 · Listed 5 of 67 dates of rule heading",
+    "54/80 · Listed 5 of 123 dates of rule date",
+    "55/80 · Listed 5 of 69 dates of rule created",
+    "56/80 · Listed 5 of 179 dates of rule last-updated",
+    "57/80 · Listed 5 of 31 dates of rule next-review",
+    "58/80 · Read docs/adr/ADR-005-hayagriva-bibliography-integration.md lines 1-25",
+    "59/80 · Read kitty-specs/002-unquoted-cli-arguments/research.md lines 1-50",
+    "60/80 · Read specs/007-caro-shell-integration/milestones.md lines 1-60",
+    "The revised rules resolve most of the earlier issues and map all 706 detected status values without conflicts. Remaining limitations include ADR statuses in vertical metadata tables, work-package YAML metadata, and dates written as month names.\n\nBefore submission, I’m checking document kinds not yet sampled: automation specifications, audit/backlog records, contracts, changelogs, and release decision records.",
+    "61/80 · Searched /\\b[A-Z]{2,8}-\\d+\\b|Status|Last Updated|Created|Date:/: 14 matches in 8 files",
+    "62/80 · Searched /\\b[A-Z]{2,8}-\\d+\\b|Status|Last Updated|Created|Date:/: 190 matches in 16 files",
+    "63/80 · Read .claude/automation/specs/AUTOMATED_DEV_FLOW_DRS.md lines 1-45",
+    "64/80 · Read .claude/releases/v1.1.0-beta-decision-record.md lines 1-45",
+    "65/80 · Read CHANGELOG.md lines 1-35",
+    "66/80 · Read kitty-specs/002-unquoted-cli-arguments/contracts/cli-argument-parsing.contract.md lines 1-42",
+    "67/80 · Read .claude/memory/broken-windows.md lines 1-62",
+    "68/80 · Evaluated a draft: rejected (.claude/memory/broken-windows.md: Line 607, status paragraphs: Error: Captured status \"claimed by fix\" has no reliable l)",
+    "69/80 · Evaluated draft 3: 11 categories, 1533 definitions, 6 duplicates",
+    "70/80 · Evaluated draft 4: 12 categories, 1538 definitions, 6 duplicates",
+    "Warned the agent: 10 tool calls remain.",
+    "71/80 · Listed 4 of 100 definition matches of shellstories",
+    "72/80 · Listed 1 of 1 unresolved matches of backlog",
+    "73/80 · Listed 4 of 16 definition matches of package_tables",
+    "74/80 · Listed 0 of 0 unmapped statuses of backlog",
+    "75/80 · Listed 0 of 0 conflict statuses of backlog",
+    "76/80 · Listed 4 of 71 dates of rule found",
+    "The final checks found 12 supported record categories and 777 status values, all mapped without conflicts. The remaining duplicate definitions are genuinely reused ADR numbers. I’m submitting the measured configuration with gaps for ambiguous references and unsupported status/date locations.",
+    "77/80 · Evaluated draft 5: 12 categories, 1538 definitions, 6 duplicates",
+    "78/80 · Submitted draft 5 with 12 categories, statuses, dates, 9 gaps"
+  ]
+}

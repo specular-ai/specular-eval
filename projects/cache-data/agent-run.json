@@ -1,0 +1,468 @@
+{
+  "project": "cache-data",
+  "agent": "Codex",
+  "model": "gpt-6-astra",
+  "toolCallLimit": 80,
+  "toolCalls": 71,
+  "seconds": 205,
+  "submittedEvaluation": {
+    "evaluationId": "e4",
+    "duplicates": 4,
+    "unresolved": 13,
+    "problems": 17
+  },
+  "bestEvaluation": {
+    "evaluationId": "e3",
+    "categories": 9,
+    "duplicates": 4,
+    "unresolved": 13,
+    "problems": 17
+  },
+  "submittedBest": true,
+  "summary": "Measured configuration for Kiro engineering records: 1,943 definitions, 800 references, 1,208 mapped task statuses and 53 dates. Eleven categories; 4 duplicate occurrences and 13 unresolved references remain explicitly documented. Technical tokens, versions, runtime names and priorities are excluded.",
+  "categoryRationale": {
+    "requirements": "Retains the existing requirements key. Requirement N headings define feature requirements, e.g. force-refresh-option/requirements.md. IDs restart per feature folder; definitionPaths prevents report summaries becoming definitions. Decimal acceptance-criterion citations are not truncated into whole requirement IDs.",
+    "properties": "Property N and dotted property citations identify correctness guarantees. design.md headings and colon-led paragraphs are definition sites (cache-bool-test-fix/design.md:74 and force-refresh-option/design.md:124). Feature scopes separate reused numbers; summaries in tasks/reports remain references. 335 definitions measured.",
+    "tasks": "Numbered checkbox items and numbered task headings define implementation work, e.g. force-refresh-option/tasks.md:9 and client-request-validation-fixes/tasks.md:5. File scopes and onlyInScopes prevent unrelated document section numbers becoming tasks. 1,216 definitions, zero duplicates or unresolved references.",
+    "questions": "Qn and Qn.m identify clarification questions in SPEC-QUESTIONS.md and the Powertools recommendations file. Security-fixes/SPEC-QUESTIONS.md:15 uses Q1.1 in a colon-led paragraph. File scopes reflect local numbering; 28 definitions and one resolved reference.",
+    "workstreams": "WS-n identifies implementation workstreams in PLAN.md, with heading definitions in the SSM SDK plan:93 and list definitions in the Node 26 plan:90. Punctuated title forms define records; reference-only ID templates join other WS-n mentions without treating the implementation-order summary as new definitions. 16 definitions, no duplicates.",
+    "remediations": "R1–R7 are recommended security remediations, not requirements or risk IDs, in the SSM SDK FINDINGS.md:170–245. Definition paths isolate the findings report while folder scope resolves PLAN.md references. Seven definitions, all references resolved.",
+    "plannedChanges": "D1–D7 and X1–X4 identify proposed documentation changes and code fixes in cache-key-generation-docs/PLAN.md ID tables at lines 164 and 176. Restricted to that plan; 11 definitions and 11 resolved references.",
+    "findings": "F1–F4 identify empirically observed cache-key drift findings in cache-key-generation-docs/PLAN.md:32,57,63,68. Emphasized dash-led paragraphs define these records. Four definitions with ten resolved references.",
+    "assertions": "Property A1–A12 identify security correctness assertions in fix-ssm-param-security/design.md:310–332. A1-style short references map to Property A1 with ID templates. Scoped to the security feature to avoid unrelated A tokens. Twelve definitions and 37 resolved references.",
+    "risks": "Risk N headings identify documented risks with impact, mitigation and detection sections, e.g. test-migration-phase-5/design.md:953. File scopes confined to design.md avoid numbering in other documentation. All 20 inspected definitions are risk records.",
+    "scenarios": "Scenario N headings identify error-handling and migration scenarios with problem/solution descriptions, e.g. test-migration-phase-4/design.md:303. Restricted to design files with independent file scopes. All 14 inspected definitions are scenario records."
+  },
+  "gaps": [
+    {
+      "description": "Acceptance criteria use ordered-list numbering beneath Requirement headings, with citations such as Requirements 1.1 or Req 1.2; the schema cannot synthesize hierarchical IDs from the enclosing requirement plus the ordered-list ordinal. Bugfix paragraphs also use bare decimal IDs without the required definition delimiter. These are not approximated as their parent requirement.",
+      "examples": [
+        {
+          "path": ".kiro/specs/1-3-14-force-refresh-option/tasks.md",
+          "line": 15
+        },
+        {
+          "path": ".kiro/specs/1-3-10-cache-bool-test-fix/bugfix.md",
+          "line": 17
+        },
+        {
+          "path": ".kiro/specs/1-3-16-fix-ssm-param-security/design.md",
+          "line": 310
+        }
+      ]
+    },
+    {
+      "description": "Some questions are bold paragraph titles using Q1. followed by prose, rather than a supported colon/dash definition site. PLAN.md and FINDINGS.md question sets are omitted rather than manufacturing definitions or merging independently numbered questions.",
+      "examples": [
+        {
+          "path": ".kiro/specs/1-4-0-cache-key-generation-docs/PLAN.md",
+          "line": 215
+        },
+        {
+          "path": ".kiro/specs/1-3-16-fully-implement-ssm-parameter-store-and-secrets-manager-sdk/FINDINGS.md",
+          "line": 258
+        }
+      ]
+    },
+    {
+      "description": "Two correctness properties are repeated as paragraph summaries within the same design file, creating four duplicate occurrences. The schema cannot prefer heading definitions only in this file while retaining paragraph definitions used by other design files within the same category.",
+      "examples": [
+        {
+          "path": ".kiro/specs/1-3-6-in-memory-cache/design.md",
+          "line": 331
+        },
+        {
+          "path": ".kiro/specs/1-3-6-in-memory-cache/design.md",
+          "line": 529
+        },
+        {
+          "path": ".kiro/specs/1-3-6-in-memory-cache/design.md",
+          "line": 555
+        }
+      ]
+    },
+    {
+      "description": "Thirteen references name properties/workstreams from other feature scopes or pre-consolidation property numbers. Text does not provide a uniform scope-qualified ID convention, so these remain unresolved rather than linking to an unrelated local ID.",
+      "examples": [
+        {
+          "path": ".kiro/specs/1-3-16-fix-ssm-param-security/design.md",
+          "line": 324
+        },
+        {
+          "path": ".kiro/specs/1-3-9-appconfig-async-init-optimization/design.md",
+          "line": 245
+        },
+        {
+          "path": ".kiro/specs/1-4-0-convert-aws-to-lazy-accessors/SPEC.md",
+          "line": 99
+        }
+      ]
+    },
+    {
+      "description": "Document-level statuses and free-text answers do not state an individual selected record's lifecycle status. They cannot safely be propagated to all requirements/tasks or converted into a lifecycle state.",
+      "examples": [
+        {
+          "path": ".kiro/specs/1-3-16-fully-implement-ssm-parameter-store-and-secrets-manager-sdk/PLAN.md",
+          "line": 5
+        },
+        {
+          "path": ".kiro/specs/1-3-10-test-migration-phase-4/baseline-validation.md",
+          "line": 4
+        },
+        {
+          "path": ".kiro/specs/1-3-15-powertools-integration/recommendations.md",
+          "line": 234
+        }
+      ]
+    },
+    {
+      "description": "Natural-language calendar dates require normalization beyond regex capture; ISO-only rules leave these dates unrecognized.",
+      "examples": [
+        {
+          "path": ".kiro/specs/1-3-10-test-migration-phase-4/final-validation-report.md",
+          "line": 198
+        },
+        {
+          "path": ".kiro/specs/1-3-6-documentation-enhancement/COMPLETION-SUMMARY.md",
+          "line": 196
+        }
+      ]
+    },
+    {
+      "description": "Runtime lifecycle dates and Last Checked snapshots live in table cells; the date schema has no table-column site, and some dates are explicitly approximate. They are not treated as heading or field dates.",
+      "examples": [
+        {
+          "path": ".kiro/steering/cache-data-node-support.md",
+          "line": 23
+        },
+        {
+          "path": ".kiro/steering/cache-data-node-support.md",
+          "line": 24
+        }
+      ]
+    }
+  ],
+  "statusRationale": "Enable checkbox status sites and map x/X to Done, blank to Open, and hyphen to In progress. Evaluation finds 1,192 Done, 13 Open and 3 In progress: all 1,208 values map, with zero conflicts. Eight heading-defined tasks have no authored status; inspected without-status matches and did not infer completion from child tasks. Keep literal Status paragraphs (including list fields) and Status table sites available; none attach to the selected records. No speculative mappings from prose or answer text.",
+  "dateRationale": "Retain ISO dates in headings (44) and Date fields (6); add Review Date (1) and Report Generated (2), each inspected with list_matches. Remove empty status-date, list-entry, Created, Ratified and Last Updated rules rather than enabling ineffective extraction. Imported GitHub issue copies are explicitly excluded. No vendored Markdown was identified. Total 53 real release/report/status-heading dates; natural-language dates and lifecycle table cells are documented as gaps.",
+  "statusMetrics": {
+    "occurrences": 1208,
+    "sites": {
+      "checkboxes": 1208
+    },
+    "mapped": 1208,
+    "unmapped": 0,
+    "categories": [
+      {
+        "key": "requirements",
+        "name": "Requirements",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 280,
+        "conflicts": 0
+      },
+      {
+        "key": "properties",
+        "name": "Correctness Properties",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 333,
+        "conflicts": 0
+      },
+      {
+        "key": "tasks",
+        "name": "Tasks",
+        "occurrences": 1208,
+        "withStatus": 1208,
+        "withoutStatus": 8,
+        "conflicts": 0
+      },
+      {
+        "key": "questions",
+        "name": "Clarifying Questions",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 28,
+        "conflicts": 0
+      },
+      {
+        "key": "workstreams",
+        "name": "Workstreams",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 16,
+        "conflicts": 0
+      },
+      {
+        "key": "remediations",
+        "name": "Remediations",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 7,
+        "conflicts": 0
+      },
+      {
+        "key": "plannedChanges",
+        "name": "Planned Changes",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 11,
+        "conflicts": 0
+      },
+      {
+        "key": "findings",
+        "name": "Findings",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 4,
+        "conflicts": 0
+      },
+      {
+        "key": "assertions",
+        "name": "Security Property Assertions",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 12,
+        "conflicts": 0
+      },
+      {
+        "key": "risks",
+        "name": "Risks",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 20,
+        "conflicts": 0
+      },
+      {
+        "key": "scenarios",
+        "name": "Scenarios",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 14,
+        "conflicts": 0
+      }
+    ],
+    "values": [
+      {
+        "value": "Done",
+        "count": 1192,
+        "status": "Done",
+        "example": {
+          "path": ".kiro/specs/1-3-10-cache-bool-test-fix/tasks.md",
+          "line": 3,
+          "text": "- [x] 1. Write bug condition exploration test"
+        }
+      },
+      {
+        "value": "Open",
+        "count": 13,
+        "status": "Open",
+        "example": {
+          "path": ".kiro/specs/1-3-10-test-migration-phase-5/tasks.md",
+          "line": 16,
+          "text": "- [ ] 1. Migrate Generic Response Module Tests"
+        }
+      },
+      {
+        "value": "In progress",
+        "count": 3,
+        "status": "In progress",
+        "example": {
+          "path": ".kiro/specs/1-3-6-reduce-json-stringify/tasks.md",
+          "line": 16,
+          "text": "- [-] 2. Phase 1: Optimize ImmutableObject class"
+        }
+      }
+    ],
+    "unusedStatuses": []
+  },
+  "dateMetrics": {
+    "rules": [
+      {
+        "key": "heading",
+        "site": "heading",
+        "kind": "milestone",
+        "enabled": true,
+        "dates": 44,
+        "examples": [
+          {
+            "path": ".kiro/specs/1-3-10-validation-parameter-extraction-fix/tasks.md",
+            "line": 19,
+            "text": "## Current Status (2026-03-13)",
+            "date": "2026-03-13"
+          },
+          {
+            "path": ".kiro/specs/1-3-9-npm-security-vulnerabilities-fix/vulnerability-documentation-before-fix.md",
+            "line": 3,
+            "text": "## Date: 2026-03-05",
+            "date": "2026-03-05"
+          },
+          {
+            "path": "CHANGELOG.md",
+            "line": 37,
+            "text": "## v1.3.17 (2026-10-02)",
+            "date": "2026-10-02"
+          }
+        ]
+      },
+      {
+        "key": "date",
+        "site": "field",
+        "kind": "milestone",
+        "label": "Date",
+        "enabled": true,
+        "dates": 6,
+        "examples": [
+          {
+            "path": ".kiro/specs/1-3-10-test-migration-phase-4/baseline-validation.md",
+            "line": 3,
+            "text": "**Date**: 2026-03-12",
+            "date": "2026-03-12"
+          },
+          {
+            "path": ".kiro/specs/1-3-10-test-migration-phase-5/ci-cd-validation-report.md",
+            "line": 5,
+            "text": "**Date**: 2025-02-01  ",
+            "date": "2025-02-01"
+          },
+          {
+            "path": ".kiro/specs/1-3-10-validation-parameter-extraction-fix/test-results.md",
+            "line": 5,
+            "text": "**Date**: 2026-03-12",
+            "date": "2026-03-12"
+          }
+        ]
+      },
+      {
+        "key": "review-date",
+        "site": "field",
+        "kind": "milestone",
+        "label": "Review Date",
+        "enabled": true,
+        "dates": 1,
+        "examples": [
+          {
+            "path": ".kiro/specs/1-3-6-documentation-enhancement/docs-review-summary.md",
+            "line": 3,
+            "text": "**Review Date:** 2026-01-27  ",
+            "date": "2026-01-27"
+          }
+        ]
+      },
+      {
+        "key": "report-generated",
+        "site": "field",
+        "kind": "milestone",
+        "label": "Report Generated",
+        "enabled": true,
+        "dates": 2,
+        "examples": [
+          {
+            "path": ".kiro/specs/1-3-10-test-migration-phase-5/ci-cd-validation-report.md",
+            "line": 310,
+            "text": "**Report Generated**: 2025-02-01  ",
+            "date": "2025-02-01"
+          },
+          {
+            "path": ".kiro/specs/1-3-8-security-fixes/SECURITY-AUDIT-REPORT.md",
+            "line": 291,
+            "text": "**Report Generated:** 2026-02-12",
+            "date": "2026-02-12"
+          }
+        ]
+      }
+    ],
+    "emptyRules": [],
+    "exclusions": [
+      {
+        "path": ".kiro/specs/1-4-0-property-test-generator-preconditions/issue.md",
+        "files": 1
+      },
+      {
+        "path": ".kiro/specs/1-4-0-cache-key-generation-docs/issue.md",
+        "files": 1
+      }
+    ]
+  },
+  "progress": [
+    "Starting the Specular tools…",
+    "Preparing a read-only Codex thread…",
+    "Codex is surveying the project…",
+    "I’ll survey the Markdown records, measure a draft configuration, and inspect the matches, statuses, and dates before submitting the best result.",
+    "1/80 · Surveyed 249 Markdown files in 66 folders",
+    "2/80 · Read the configuration format",
+    "3/80 · Found 40 prefix and 25 keyword candidates",
+    "4/80 · Read .kiro/specs/1-3-14-force-refresh-option/requirements.md lines 1-100",
+    "5/80 · Read .kiro/specs/1-3-14-force-refresh-option/design.md lines 1-120",
+    "6/80 · Read .kiro/specs/1-3-14-force-refresh-option/tasks.md lines 1-120",
+    "7/80 · Read .kiro/specs/1-3-10-cache-bool-test-fix/bugfix.md lines 1-40",
+    "8/80 · search_markdown failed: Invalid regular expression: Invalid regular expression: /(?i)/gu: Invalid group",
+    "9/80 · Searched /^(?:#{1,6} .*?(?:Requirement|Property|Decision|Risk|Scenario/: 44 matches in 44 files",
+    "10/80 · Searched /(?:\\*\\*)?(?:Status|Created|Last Updated|Date|Completed|Updat/: 248 matches in 33 files",
+    "11/80 · Read .kiro/specs/1-4-0-cache-key-generation-docs/PLAN.md lines 145-225",
+    "12/80 · Read .kiro/specs/1-3-10-clean-up-generic-responses/SPEC-QUESTIONS.md lines 1-20",
+    "The main records are Kiro requirements, correctness properties, and numbered task checklists. IDs restart within each feature folder. I also found planning records such as questions and workstreams; I’m checking their definition sites so repeated summaries resolve as references.",
+    "13/80 · Read .kiro/specs/1-3-16-fully-implement-ssm-parameter-store-and-secrets-manager-sdk/PLAN.md lines 1-145",
+    "14/80 · Read .kiro/specs/1-3-16-fully-implement-ssm-parameter-store-and-secrets-manager-sdk/FINDINGS.md lines 160-245",
+    "15/80 · Read .kiro/specs/1-4-0-cache-key-generation-docs/PLAN.md lines 1-90",
+    "16/80 · Read .kiro/specs/1-3-14-force-refresh-option/design.md lines 120-165",
+    "17/80 · Searched /\\b(?:Requirement|Property) \\d+(?:\\.\\d+)?|\\b(?:US|REQ|ADR|RIS/: 1323 matches in 123 files",
+    "18/80 · Evaluated a draft: rejected (ID scope pattern \".kiro/specs/1-4-0-cache-key-generation-docs\" ends in a literal folder. A scope pattern needs a wildcar)",
+    "19/80 · Evaluated a draft: rejected (.kiro/specs/1-3-10-clean-up-generic-responses/requirements.md: Line 21, heading: Error: Rules 1 and 2 overlap on \"Requir)",
+    "20/80 · Evaluated draft 1: 8 categories, 1862 definitions, 4 duplicates",
+    "21/80 · Listed 12 of 608 unresolved matches of requirements",
+    "22/80 · Listed 4 of 4 duplicate matches of properties",
+    "23/80 · Listed 12 of 13 unresolved matches of tasks",
+    "24/80 · Listed 12 of 164 unresolved matches of questions",
+    "25/80 · Listed 7 of 7 definition matches of remediations",
+    "26/80 · Listed 11 of 11 unresolved matches of workstreams",
+    "27/80 · Listed 4 of 4 definition matches of findings",
+    "28/80 · Listed 11 of 11 definition matches of plannedChanges",
+    "29/80 · Read .kiro/specs/1-3-15-powertools-integration/recommendations.md lines 215-240",
+    "30/80 · Read .kiro/specs/1-3-10-test-migration-phase-4/baseline-validation.md lines 1-30",
+    "31/80 · Read CHANGELOG.md lines 1-45",
+    "32/80 · Read .kiro/specs/1-3-6-documentation-enhancement/docs-review-summary.md lines 1-35",
+    "33/80 · Searched /(?:Last Updated|Last updated|Report Generated|Review Date|An/: 72 matches in 36 files",
+    "The first measurement exposed two important details: acceptance-criterion numbers are not requirement IDs, and some questions use paragraph formats the available definition sites cannot recognize. I’ll report those as gaps rather than create misleading links. Task checkboxes provide explicit statuses, while dates appear mainly in release headings and report fields.",
+    "34/80 · Evaluated draft 2: 8 categories, 1889 definitions, 16 duplicates",
+    "35/80 · Listed 44 of 44 dates of rule heading",
+    "36/80 · Listed 6 of 6 dates of rule date",
+    "37/80 · Listed 2 of 2 dates of rule report-generated",
+    "38/80 · Listed 1 of 1 dates of rule review-date",
+    "39/80 · Listed 0 of 0 dates of rule last-updated",
+    "40/80 · Listed 8 of 8 without-status statuses of tasks",
+    "41/80 · Listed 0 of 0 conflict statuses of tasks",
+    "42/80 · Listed 0 of 0 unmapped statuses of tasks",
+    "43/80 · Listed 12 of 12 duplicate matches of workstreams",
+    "44/80 · Listed 15 of 15 unresolved matches of questions",
+    "45/80 · Listed 8 of 8 unresolved matches of properties",
+    "46/80 · Listed 5 of 280 definition matches of requirements",
+    "The revised draft reads 1,208 task statuses with no conflicts or unmapped values. Before submitting, I’m checking document types not yet read: product documentation, steering guides, issue/spec briefs, and test/script guides. I’ll also check lettered property IDs and the remaining duplicate definitions.",
+    "47/80 · Read .kiro/specs/1-3-16-fix-ssm-param-security/design.md lines 298-335",
+    "48/80 · Read .kiro/specs/1-3-8-security-fixes/SPEC-QUESTIONS.md lines 1-24",
+    "49/80 · Read .kiro/steering/cache-data-node-support.md lines 1-45",
+    "50/80 · Read .kiro/specs/1-4-0-fully-implement-timezone/SPEC.md lines 1-35",
+    "51/80 · Read docs/README.md lines 1-26",
+    "52/80 · Read .kiro/specs/1-4-0-property-test-generator-preconditions/issue.md lines 1-32",
+    "53/80 · Read test/README.md lines 1-30",
+    "54/80 · Read scripts/README.md lines 1-30",
+    "55/80 · Searched /\\b(?:REQ|US|ADR|RISK|TASK)[-_]?\\d+|(?:Status|Last Updated|Cr/: 0 matches in 0 files",
+    "56/80 · Searched /\\b(?:REQ|US|ADR|RISK|TASK)[-_]?\\d+|(?:Status|Last Updated|Cr/: 20 matches in 2 files",
+    "57/80 · Searched /\\b(?:REQ|US|ADR|RISK|TASK)[-_]?\\d+|(?:Status|Last Updated|Cr/: 43 matches in 1 files",
+    "58/80 · Evaluated draft 3: 9 categories, 1909 definitions, 4 duplicates",
+    "59/80 · Listed 12 of 12 definition matches of assertions",
+    "60/80 · Listed 12 of 12 unresolved matches of properties",
+    "61/80 · Listed 5 of 28 definition matches of questions",
+    "62/80 · Listed 16 of 16 definition matches of workstreams",
+    "63/80 · Searched /\\bRequirement \\d+\\.\\d+|\\b(?:Risk|Scenario|Decision|User Stor/: 86 matches in 17 files",
+    "64/80 · Read .kiro/specs/1-3-10-test-migration-phase-5/design.md lines 947-990",
+    "65/80 · Read .kiro/specs/1-3-10-test-migration-phase-4/design.md lines 300-324",
+    "66/80 · Searched /\\bDecision \\d+|\\bRisk \\d+|\\bScenario \\d+/: 37 matches in 7 files",
+    "67/80 · Evaluated draft 4: 11 categories, 1943 definitions, 4 duplicates",
+    "68/80 · Listed 20 of 20 definition matches of risks",
+    "69/80 · Listed 14 of 14 definition matches of scenarios",
+    "70/80 · Listed 8 of 37 reference matches of assertions",
+    "Warned the agent: 10 tool calls remain.",
+    "The final draft recognizes 1,943 definitions across 11 categories, 1,208 explicit task statuses, and 53 dates. Inspection confirms 13 unresolved references and four duplicate property occurrences remain. I’m submitting the configuration with those limitations and the unsupported conventions documented.",
+    "71/80 · Submitted draft 4 with 11 categories, statuses, dates, 7 gaps"
+  ]
+}

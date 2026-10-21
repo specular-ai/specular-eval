@@ -1,0 +1,591 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "key": "requirements",
+      "name": "Requirements",
+      "role": "requirement",
+      "idScopes": [
+        {
+          "pattern": "openspec/specs/{capability}/spec.md"
+        },
+        {
+          "pattern": "openspec/changes/**/specs/{capability}/spec.md"
+        }
+      ],
+      "onlyInScopes": true,
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            3
+          ],
+          "mode": "keyword",
+          "keyword": "Requirement",
+          "separator": ":"
+        },
+        "tables": {
+          "enabled": false,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      },
+      "deltas": true,
+      "nameReferences": true
+    },
+    {
+      "key": "scenarios",
+      "name": "Scenarios",
+      "idScopes": [
+        {
+          "pattern": "openspec/specs/{capability}/spec.md"
+        },
+        {
+          "pattern": "openspec/changes/**/specs/{capability}/spec.md"
+        }
+      ],
+      "onlyInScopes": true,
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            4
+          ],
+          "mode": "keyword",
+          "keyword": "Scenario",
+          "separator": ":"
+        },
+        "tables": {
+          "enabled": false,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      },
+      "parent": "requirements",
+      "deltas": true
+    },
+    {
+      "key": "capability",
+      "name": "Capabilities",
+      "derive": {
+        "pattern": "openspec/specs/{capability}/spec.md"
+      }
+    },
+    {
+      "key": "changes",
+      "name": "Changes",
+      "derive": {
+        "pattern": "openspec/changes/**/{change}/proposal.md"
+      },
+      "changes": {
+        "archive": "archive",
+        "capabilities": "capability"
+      }
+    },
+    {
+      "key": "tasks",
+      "name": "Checklist tasks",
+      "role": "task",
+      "idScopes": [
+        {
+          "pattern": "openspec/changes/**/tasks.md"
+        }
+      ],
+      "onlyInScopes": true,
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": false,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": true,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start",
+          "checkboxOnly": true
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "plan_tasks",
+      "name": "Plan tasks",
+      "role": "task",
+      "idScopes": [
+        {
+          "pattern": "docs/superpowers/plans/*.md"
+        }
+      ],
+      "onlyInScopes": true,
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": false,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "decisions",
+      "name": "Design decisions",
+      "role": "design",
+      "idScopes": [
+        {
+          "pattern": "openspec/changes/archive/*"
+        },
+        {
+          "pattern": "docs/superpowers/specs/2026-04-09-adapt-claude-commands-design.md"
+        },
+        {
+          "pattern": "docs/superpowers/specs/2026-04-16-multiple-dicot-plate-pipeline-design.md"
+        },
+        {
+          "pattern": "docs/superpowers/specs/2026-04-23-timelapse-diff-and-tip-kinematics-design.md"
+        },
+        {
+          "pattern": "docs/superpowers/specs/2026-06-05-add-circumnutation-tier2-psi-g-design.md"
+        },
+        {
+          "pattern": "docs/superpowers/specs/2026-06-08-add-circumnutation-tier3a-midline-design.md"
+        },
+        {
+          "pattern": "docs/superpowers/specs/2026-06-09-add-circumnutation-tier3b-spatial-cwt-design.md"
+        },
+        {
+          "pattern": "docs/superpowers/specs/2026-06-10-add-circumnutation-tier3c-traits-design.md"
+        },
+        {
+          "pattern": "docs/superpowers/specs/2026-06-24-add-circumnutation-cli-design.md"
+        },
+        {
+          "pattern": "docs/superpowers/specs/2026-07-06-a3-traits-result-envelope-emitter-design.md"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "openspec/changes/**/design.md",
+        "docs/superpowers/specs/*.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "regex",
+          "pattern": "^(?:Decision )?(?<id>D\\d+[a-z]?|Decision \\d+)\\b"
+        },
+        "tables": {
+          "enabled": false,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": true,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "constraints",
+      "name": "Cross-cutting concerns",
+      "role": "requirement",
+      "definitionPaths": [
+        "docs/circumnutation/roadmap.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": false,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "reviews",
+      "name": "Critical review findings",
+      "idScopes": [
+        {
+          "pattern": "docs/superpowers/specs/*.md"
+        }
+      ],
+      "onlyInScopes": true,
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": false,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "risks",
+      "name": "Numbered risks",
+      "idScopes": [
+        {
+          "pattern": "openspec/changes/archive/2026-05-27-add-circumnutation-temporal-cwt-machinery/design.md"
+        },
+        {
+          "pattern": "openspec/changes/archive/2026-06-03-add-circumnutation-tier1-derr-faithful/design.md"
+        }
+      ],
+      "onlyInScopes": true,
+      "definitionPaths": [
+        "openspec/changes/**/design.md"
+      ],
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": false,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "named_risks",
+      "name": "Named risks",
+      "idScopes": [
+        {
+          "pattern": "openspec/changes/**/design.md"
+        }
+      ],
+      "onlyInScopes": true,
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            3
+          ],
+          "mode": "keyword",
+          "keyword": "Risk",
+          "separator": ":"
+        },
+        "tables": {
+          "enabled": false,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    },
+    {
+      "key": "pipeline_decisions",
+      "name": "Pipeline design decisions",
+      "role": "design",
+      "idScopes": [
+        {
+          "pattern": "docs/superpowers/specs/2026-06-14-add-circumnutation-pipeline-design.md"
+        }
+      ],
+      "onlyInScopes": true,
+      "idDefinitionSites": {
+        "headings": {
+          "enabled": true,
+          "levels": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "mode": "start"
+        },
+        "tables": {
+          "enabled": false,
+          "column": "ID",
+          "mode": "exact"
+        },
+        "lists": {
+          "enabled": false,
+          "types": [
+            "unordered",
+            "ordered"
+          ],
+          "mode": "start"
+        },
+        "paragraphs": {
+          "enabled": false,
+          "mode": "start"
+        }
+      }
+    }
+  ],
+  "rules": [
+    {
+      "key": "task",
+      "category": "tasks",
+      "pattern": "^\\d+(?:\\.\\d+)+[a-z]?(?=\\s)"
+    },
+    {
+      "key": "plan_task",
+      "category": "plan_tasks",
+      "pattern": "\\bTask \\d+(?:\\.\\d+)*\\b"
+    },
+    {
+      "key": "decision",
+      "category": "decisions",
+      "pattern": "\\b(?:D\\d+[a-z]?|Decision \\d+)\\b"
+    },
+    {
+      "key": "cc",
+      "category": "constraints",
+      "prefix": "CC"
+    },
+    {
+      "key": "cr",
+      "category": "reviews",
+      "pattern": "\\bCR\\d*-\\d+\\b"
+    },
+    {
+      "key": "risk",
+      "category": "risks",
+      "pattern": "^R\\d+(?=\\.)"
+    },
+    {
+      "key": "pipeline_decision",
+      "category": "pipeline_decisions",
+      "pattern": "\\bD\\d+[a-z]?\\b"
+    }
+  ],
+  "statusSites": {
+    "checkboxes": {
+      "enabled": true,
+      "markers": {
+        "x": "Done",
+        "X": "Done",
+        " ": "Open",
+        "-": "In progress"
+      }
+    },
+    "paragraphs": {
+      "enabled": true,
+      "mode": "literal",
+      "label": "Status:",
+      "listItems": true
+    },
+    "tables": {
+      "enabled": true,
+      "mode": "full",
+      "column": "Status"
+    },
+    "headings": {
+      "enabled": false,
+      "mode": "regex",
+      "pattern": "\\[(?<status>[^\\]]+)\\]$"
+    }
+  },
+  "statuses": [
+    {
+      "name": "Done"
+    },
+    {
+      "name": "Open"
+    },
+    {
+      "name": "In progress"
+    },
+    {
+      "name": "Archived"
+    }
+  ],
+  "dates": {
+    "rules": [
+      {
+        "key": "heading",
+        "site": "heading",
+        "enabled": true,
+        "pattern": "^(?!.*Workstream).*?(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "kind": "milestone"
+      },
+      {
+        "key": "created",
+        "site": "field",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Created",
+        "kind": "milestone"
+      },
+      {
+        "key": "date",
+        "site": "field",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Date",
+        "kind": "milestone"
+      },
+      {
+        "key": "completed",
+        "site": "field",
+        "enabled": true,
+        "pattern": "(?<date>\\d{4}-\\d{2}-\\d{2})",
+        "label": "Completed",
+        "kind": "milestone"
+      }
+    ],
+    "exclude": [
+      ".claude",
+      ".serena"
+    ]
+  }
+}

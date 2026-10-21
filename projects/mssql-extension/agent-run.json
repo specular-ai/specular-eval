@@ -1,0 +1,639 @@
+{
+  "project": "mssql-extension",
+  "agent": "Codex",
+  "model": "gpt-6-astra",
+  "toolCallLimit": 80,
+  "toolCalls": 78,
+  "seconds": 244,
+  "submittedEvaluation": {
+    "evaluationId": "e4",
+    "duplicates": 4,
+    "unresolved": 40,
+    "problems": 44
+  },
+  "bestEvaluation": {
+    "evaluationId": "e4",
+    "categories": 8,
+    "duplicates": 4,
+    "unresolved": 40,
+    "problems": 44
+  },
+  "submittedBest": true,
+  "summary": "Measured configuration for the project's Spec Kit records and numbered design notes: 4,236 definitions, 6,594 references, 2,368 mapped status occurrences, and 327 dates. Feature-local scopes and canonical definition paths exclude templates, technical tokens, and repeated summaries. Four duplicate occurrences and 40 unresolved references remain visible rather than being hidden with speculative rules.",
+  "categoryRationale": {
+    "requirements": "Retains the existing requirements key and recognizes FR-/NFR- functional and nonfunctional requirements. Evidence: specs/001-attach-connection-validation/spec.md:86-95 and specs/045-named-instance-resolution/spec.md:124-127. IDs restart per feature; only canonical spec.md definitions and unordered requirement lists are used. 893 definitions; no duplicates.",
+    "success": "SC-nnn identifies measurable acceptance outcomes, e.g. specs/001-attach-connection-validation/spec.md:109-113. Feature scopes and spec.md definition paths prevent checklist and plan summaries from redefining outcomes. 391 definitions, no duplicates.",
+    "stories": "User Story n headings identify user-facing scenarios, e.g. specs/001-attach-connection-validation/spec.md:10. US1 and US-001 forms normalize through an integer ID template. Most definitions belong in spec.md; task-phase headings are canonical in the observed 017, 047 and 068 exceptions. 261 definitions, no duplicates.",
+    "tasks": "Tnnn and suffix forms identify implementation tasks in tasks.md, e.g. specs/068-login-routing-unification/tasks.md:48 and :96. Checkbox-only list definitions preserve dependency mentions as references; heading definitions support specs/045-named-instance-resolution/tasks.md:30. File scopes exclude T1 test-case labels in other documents. 2,317 definitions, no duplicates.",
+    "decisions": "D-number, optional letter suffix, and Decision n headings identify decisions and design deliverables. Evidence includes specs/068-login-routing-unification/spec.md:70 and specs/001-attach-connection-validation/research.md:67. Explicit observed feature scopes avoid percent-encoded D0/D1 bytes; canonical spec/research sites plus the observed CI plan exception retain actual definitions. 139 definitions.",
+    "research": "R-number headings identify research questions/findings, e.g. specs/068-login-routing-unification/research.md:11 and specs/001-mssql-transactions/research.md:6. Restricted to the 17 observed feature scopes with canonical research.md definitions, preventing SQL Server 2008 R2 and unrelated optimization labels from matching. 144 definitions, no unresolved references or duplicates.",
+    "contracts": "C1-C4 identify the login-routing interface contracts in specs/068-login-routing-unification/contracts/tds_connection_routing.md:12, :40, :105 and :142. Scoped to that feature to exclude unrelated benchmark strategy C2. Four definitions and five resolved references.",
+    "features": "Each specs/<feature>/spec.md is a feature specification named by its folder, covering both Feature Specification headings and newer Spec nnn headings. Evidence: specs/001-attach-connection-validation/spec.md:1 and specs/068-login-routing-unification/spec.md:1. 87 derived records."
+  },
+  "gaps": [
+    {
+      "description": "References qualified in prose by another spec number cannot select another feature's ID scope. Some unresolved references are cross-feature citations; others describe removed or renumbered requirements.",
+      "examples": [
+        {
+          "path": "specs/044-codec-consolidation/plan.md",
+          "line": 117
+        },
+        {
+          "path": "specs/067-dml-staging/spec.md",
+          "line": 62
+        },
+        {
+          "path": "specs/052-thread-safe-catalog-entries/spec.md",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "description": "Historical original headings and completed updates repeat the same decision within one file. Definition paths cannot distinguish these sections; four duplicate occurrences for D3/D5 remain instead of silently suppressing history.",
+      "examples": [
+        {
+          "path": "specs/059-staged-path-test-coverage/spec.md",
+          "line": 166
+        },
+        {
+          "path": "specs/059-staged-path-test-coverage/spec.md",
+          "line": 184
+        },
+        {
+          "path": "specs/059-staged-path-test-coverage/spec.md",
+          "line": 242
+        }
+      ]
+    },
+    {
+      "description": "Mixed list-based design deliverables and prose summaries cannot be reliably separated with the available list definition site. A heading jointly defining D2 / D3 also cannot define both through a single named ID capture. Conservative heading-based decision recognition leaves these forms uncovered.",
+      "examples": [
+        {
+          "path": "specs/056-chunk-analyzer-dictionary/spec.md",
+          "line": 116
+        },
+        {
+          "path": "specs/084-metadata-query-shapes/spec.md",
+          "line": 253
+        },
+        {
+          "path": "specs/064-columnar-write-gaps/spec.md",
+          "line": 272
+        }
+      ]
+    },
+    {
+      "description": "Tasks written in fenced task-order blocks are ignored by the analyzer. Other spec-local T labels mix tests, investigations and tasks, so the task category is restricted to tasks.md. A combined checkbox item cannot define both task IDs.",
+      "examples": [
+        {
+          "path": "specs/055-read-staging-and-batch-decode/spec.md",
+          "line": 612
+        },
+        {
+          "path": "specs/058-read-framing/spec.md",
+          "line": 84
+        },
+        {
+          "path": "specs/045-type-codec-consolidation/tasks.md",
+          "line": 242
+        }
+      ]
+    },
+    {
+      "description": "Anonymous acceptance scenarios, risk bullets and quality-checklist items have no stable ID or keyword-heading identity. They are not approximated with generic numbered-list or arbitrary prose rules.",
+      "examples": [
+        {
+          "path": "specs/001-attach-connection-validation/spec.md",
+          "line": 20
+        },
+        {
+          "path": "specs/068-login-routing-unification/spec.md",
+          "line": 166
+        },
+        {
+          "path": "specs/001-attach-connection-validation/checklists/requirements.md",
+          "line": 10
+        }
+      ]
+    },
+    {
+      "description": "Dates in inline multi-field metadata, month-only dates, and status narrative beyond the safely captured contiguous status phrase are not all readable by the available sites. Snapshot Last Amended and Ratified share the Version line and yielded no field matches; no inaccurate approximation is proposed.",
+      "examples": [
+        {
+          "path": ".specify/memory/constitution.md",
+          "line": 148
+        },
+        {
+          "path": "feature-spec/refactoring-v0.2.md",
+          "line": 5
+        },
+        {
+          "path": "specs/059-staged-path-test-coverage/spec.md",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "description": "Task-specific narrative dates embedded after checkbox status markers are not status dates: the checkbox supplies only the marker's mapped value.",
+      "examples": [
+        {
+          "path": "specs/044-codec-consolidation/tasks.md",
+          "line": 167
+        }
+      ]
+    }
+  ],
+  "statusRationale": "Reads the leading contiguous authored status phrase from Status fields even when metadata shares a paragraph, avoiding captures across Markdown formatting. Enables explicit DONE/CLOSED heading tags and task checkbox markers x/X=Done, blank=Open, -=In progress, ~=Deferred. Observed Draft, Implemented, Complete, CLOSED, EXECUTED AND CLOSED, ready, PROPOSED, revised and in progress values map without ambiguity. Measurement: 2,368/2,368 occurrences mapped, zero conflicts; 81/87 feature specifications and 2,280/2,317 tasks have statuses. Missing-status samples include genuinely unmarked task headings; no status is inferred from priorities.",
+  "dateRationale": "Retains measured ISO dates in headings, dated list entries, Created and Date fields, and reads ISO dates immediately included in captured status phrases without requiring 'on'. Inspected matches include release headings, benchmark milestones and the 2026-10-08 Fabric probe entry. Counts: status 5, list entry 1, heading 91, Created 117, Date 113. Omits the zero-result Ratified rule and inactive Last Updated/Last Amended rules; excludes copied website/versioned_docs, tool skills, and templates. No active rule is empty.",
+  "statusMetrics": {
+    "occurrences": 2368,
+    "sites": {
+      "paragraphs": 82,
+      "checkboxes": 2280,
+      "headings": 6
+    },
+    "mapped": 2368,
+    "unmapped": 0,
+    "categories": [
+      {
+        "key": "requirements",
+        "name": "Requirements",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 893,
+        "conflicts": 0
+      },
+      {
+        "key": "success",
+        "name": "Success criteria",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 391,
+        "conflicts": 0
+      },
+      {
+        "key": "stories",
+        "name": "User stories",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 261,
+        "conflicts": 0
+      },
+      {
+        "key": "tasks",
+        "name": "Tasks",
+        "occurrences": 2280,
+        "withStatus": 2280,
+        "withoutStatus": 37,
+        "conflicts": 0
+      },
+      {
+        "key": "decisions",
+        "name": "Design decisions",
+        "occurrences": 7,
+        "withStatus": 7,
+        "withoutStatus": 130,
+        "conflicts": 0
+      },
+      {
+        "key": "research",
+        "name": "Research findings",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 144,
+        "conflicts": 0
+      },
+      {
+        "key": "contracts",
+        "name": "Contracts",
+        "occurrences": 0,
+        "withStatus": 0,
+        "withoutStatus": 4,
+        "conflicts": 0
+      },
+      {
+        "key": "features",
+        "name": "Feature specifications",
+        "occurrences": 81,
+        "withStatus": 81,
+        "withoutStatus": 6,
+        "conflicts": 0
+      }
+    ],
+    "values": [
+      {
+        "value": "Done",
+        "count": 1453,
+        "status": "Done",
+        "example": {
+          "path": "specs/001-attach-connection-validation/tasks.md",
+          "line": 27,
+          "text": "- [x] T001 Review existing ATTACH implementation in src/mssql_storage.cpp (lines 381-435)"
+        }
+      },
+      {
+        "value": "Open",
+        "count": 825,
+        "status": "Open",
+        "example": {
+          "path": "specs/001-azure-token-infrastructure/tasks.md",
+          "line": 31,
+          "text": "- [ ] T001 Create `src/azure/` directory for Azure authentication module"
+        }
+      },
+      {
+        "value": "Draft",
+        "count": 58,
+        "status": "Draft",
+        "example": {
+          "path": "specs/001-attach-connection-validation/spec.md",
+          "line": 5,
+          "text": "**Status**: Draft"
+        }
+      },
+      {
+        "value": "Implemented",
+        "count": 7,
+        "status": "Done",
+        "example": {
+          "path": "specs/005-tls-connection-support/spec.md",
+          "line": 5,
+          "text": "**Status**: Implemented"
+        }
+      },
+      {
+        "value": "DONE",
+        "count": 5,
+        "status": "Done",
+        "example": {
+          "path": "specs/059-staged-path-test-coverage/spec.md",
+          "line": 86,
+          "text": "### D1a — a counter, so the test cannot lie — **DONE**"
+        }
+      },
+      {
+        "value": "CLOSED 2026-09-17",
+        "count": 3,
+        "status": "Closed",
+        "example": {
+          "path": "specs/065-dml-pushdown-recon/spec.md",
+          "line": 3,
+          "text": "**Status:** **CLOSED 2026-09-17 — superseded by spec 080 (`../080-dml-pushdown/spec.md`) on DuckDB 2.0's rewriter, with spec 079 as the writer. Where e…"
+        }
+      },
+      {
+        "value": "implemented",
+        "count": 3,
+        "status": "Done",
+        "example": {
+          "path": "specs/077-identity-columns/spec.md",
+          "line": 3,
+          "text": "**Status:** implemented on `spec/077-identity-columns` (PR #350), on top of"
+        }
+      },
+      {
+        "value": "Deferred",
+        "count": 2,
+        "status": "Deferred",
+        "example": {
+          "path": "specs/044-codec-consolidation/tasks.md",
+          "line": 167,
+          "text": "- [~] T038 [US5] **DEFERRED (scope decision 2026-05-15).** Capture the **baseline** end-to-end run at 100M rows. Rationale: 1…"
+        }
+      },
+      {
+        "value": "DRAFT",
+        "count": 2,
+        "status": "Draft",
+        "example": {
+          "path": "specs/068-login-routing-unification/spec.md",
+          "line": 3,
+          "text": "**Status**: DRAFT"
+        }
+      },
+      {
+        "value": "in progress",
+        "count": 2,
+        "status": "In progress",
+        "example": {
+          "path": "specs/076-catalog-scan-parameters/spec.md",
+          "line": 3,
+          "text": "**Status:** in progress on `spec/076-catalog-scan-parameters` from `main`"
+        }
+      },
+      {
+        "value": "CLOSED",
+        "count": 1,
+        "status": "Closed",
+        "example": {
+          "path": "specs/064-columnar-write-gaps/spec.md",
+          "line": 272,
+          "text": "### D2 / D3 — CLOSED by measurement: after D1 the cursor path costs the same as strided"
+        }
+      },
+      {
+        "value": "Complete",
+        "count": 1,
+        "status": "Done",
+        "example": {
+          "path": "specs/017-readme-ddl-examples/spec.md",
+          "line": 5,
+          "text": "**Status**: Complete"
+        }
+      },
+      {
+        "value": "COMPLETE",
+        "count": 1,
+        "status": "Done",
+        "example": {
+          "path": "specs/070-duckdb-v2-followups/spec.md",
+          "line": 3,
+          "text": "**Status**: **COMPLETE** — all three workstreams merged to main."
+        }
+      },
+      {
+        "value": "done",
+        "count": 1,
+        "status": "Done",
+        "example": {
+          "path": "specs/055-read-staging-and-batch-decode/spec.md",
+          "line": 124,
+          "text": "**Status: done, and it moved the baseline.** Three phase timers already existed in `FillChunk`"
+        }
+      },
+      {
+        "value": "EXECUTED AND CLOSED 2026-08-05",
+        "count": 1,
+        "status": "Closed",
+        "example": {
+          "path": "specs/058-read-framing/spec.md",
+          "line": 3,
+          "text": "**Status: EXECUTED AND CLOSED 2026-08-05 — D1-alt SHIPPED (§T0f), full D1"
+        }
+      },
+      {
+        "value": "PROPOSED",
+        "count": 1,
+        "status": "Proposed",
+        "example": {
+          "path": "specs/071-catalog-metadata-cost/spec.md",
+          "line": 3,
+          "text": "**Status**: PROPOSED. Implementation in progress."
+        }
+      },
+      {
+        "value": "ready",
+        "count": 1,
+        "status": "Ready",
+        "example": {
+          "path": "specs/059-staged-path-test-coverage/spec.md",
+          "line": 3,
+          "text": "**Status:** ready to implement. Every mechanic below was verified on 2026-07-30;"
+        }
+      },
+      {
+        "value": "revised 2026-10-08",
+        "count": 1,
+        "status": "Revised",
+        "example": {
+          "path": "specs/080-dml-pushdown/spec.md",
+          "line": 3,
+          "text": "**Status:** revised 2026-10-08 after the reconnaissance in"
+        }
+      }
+    ],
+    "unusedStatuses": []
+  },
+  "dateMetrics": {
+    "rules": [
+      {
+        "key": "status-date",
+        "site": "status",
+        "enabled": true,
+        "dates": 5,
+        "examples": [
+          {
+            "path": "specs/058-read-framing/spec.md",
+            "line": 3,
+            "text": "**Status: EXECUTED AND CLOSED 2026-08-05 — D1-alt SHIPPED (§T0f), full D1",
+            "date": "2026-08-05"
+          },
+          {
+            "path": "specs/065-dml-pushdown-recon/spec.md",
+            "line": 3,
+            "text": "**Status:** **CLOSED 2026-09-17 — superseded by spec 080 (`../080-dml-pushdown/spec.md`) on DuckDB 2.0's rewriter, with spec 079 as the writer. Where e…",
+            "date": "2026-09-17"
+          },
+          {
+            "path": "specs/066-own-scan-materialization/spec.md",
+            "line": 3,
+            "text": "**Status:** **CLOSED 2026-09-17 — the remainder below is spec 080 W2 (`../080-dml-pushdown/spec.md`). Kept as history.** Superseded by spec 075 W3 (shi…",
+            "date": "2026-09-17"
+          }
+        ]
+      },
+      {
+        "key": "list-entry",
+        "site": "list-entry",
+        "kind": "entry",
+        "enabled": true,
+        "dates": 1,
+        "examples": [
+          {
+            "path": "specs/080-dml-pushdown/fabric-probe/README.md",
+            "line": 52,
+            "text": "- 2026-10-08: not run. The warehouse refused every login with 18456",
+            "date": "2026-10-08"
+          }
+        ]
+      },
+      {
+        "key": "heading",
+        "site": "heading",
+        "kind": "milestone",
+        "enabled": true,
+        "dates": 91,
+        "examples": [
+          {
+            "path": "CHANGELOG.md",
+            "line": 1693,
+            "text": "## [0.2.4] - 2026-08-17",
+            "date": "2026-08-17"
+          },
+          {
+            "path": "CHANGELOG.md",
+            "line": 1809,
+            "text": "## [0.2.3] - 2026-08-07",
+            "date": "2026-08-07"
+          },
+          {
+            "path": "CHANGELOG.md",
+            "line": 1854,
+            "text": "## [0.2.2] - 2026-07-28",
+            "date": "2026-07-28"
+          }
+        ]
+      },
+      {
+        "key": "created",
+        "site": "field",
+        "kind": "milestone",
+        "label": "Created",
+        "enabled": true,
+        "dates": 117,
+        "examples": [
+          {
+            "path": "specs/001-attach-connection-validation/checklists/requirements.md",
+            "line": 4,
+            "text": "**Created**: 2026-01-25",
+            "date": "2026-01-25"
+          },
+          {
+            "path": "specs/001-attach-connection-validation/spec.md",
+            "line": 4,
+            "text": "**Created**: 2026-01-25",
+            "date": "2026-01-25"
+          },
+          {
+            "path": "specs/001-azure-token-infrastructure/checklists/requirements.md",
+            "line": 4,
+            "text": "**Created**: 2026-02-05",
+            "date": "2026-02-05"
+          }
+        ]
+      },
+      {
+        "key": "date",
+        "site": "field",
+        "kind": "milestone",
+        "label": "Date",
+        "enabled": true,
+        "dates": 113,
+        "examples": [
+          {
+            "path": "specs/001-extension-ci-tools-integration/research.md",
+            "line": 3,
+            "text": "**Date**: 2026-01-20",
+            "date": "2026-01-20"
+          },
+          {
+            "path": "specs/001-mssql-transactions/data-model.md",
+            "line": 4,
+            "text": "**Date**: 2026-01-26",
+            "date": "2026-01-26"
+          },
+          {
+            "path": "specs/001-mssql-transactions/quickstart.md",
+            "line": 4,
+            "text": "**Date**: 2026-01-26",
+            "date": "2026-01-26"
+          }
+        ]
+      }
+    ],
+    "emptyRules": [],
+    "exclusions": [
+      {
+        "path": "website/versioned_docs",
+        "files": 40
+      },
+      {
+        "path": ".claude",
+        "files": 10
+      },
+      {
+        "path": ".specify/templates",
+        "files": 5
+      }
+    ]
+  },
+  "progress": [
+    "Starting the Specular tools…",
+    "Preparing a read-only Codex thread…",
+    "Codex is surveying the project…",
+    "I’ll survey the Markdown conventions, measure a draft configuration, and check its records, statuses, and dates before submitting the best result.",
+    "1/80 · Surveyed 589 Markdown files in 219 folders",
+    "2/80 · Read the configuration format",
+    "3/80 · heuristic_candidates failed: Discovery exceeds 128 candidate groups. Select fewer files.",
+    "4/80 · Read specs/068-login-routing-unification/spec.md lines 1-180",
+    "5/80 · Read specs/068-login-routing-unification/tasks.md lines 1-120",
+    "6/80 · Read specs/001-attach-connection-validation/spec.md lines 1-114",
+    "7/80 · Read specs/068-login-routing-unification/research.md lines 1-100",
+    "8/80 · Read specs/068-login-routing-unification/plan.md lines 1-65",
+    "9/80 · Read specs/068-login-routing-unification/contracts/tds_connection_routing.md lines 1-80",
+    "10/80 · Searched /\\b(?:[A-Z]{1,6}-\\d+[a-z]?|[DRC]\\d+|US-?\\d+)\\b/: 6854 matches in 306 files",
+    "11/80 · Searched /(?:^|\\n)#{1,6} .*?(?:\\b[A-Z]{1,5}-?\\d+\\b|User Story|Decision/: 1770 matches in 246 files",
+    "12/80 · Searched /\\b(?:REQ|NFR|AC|CHK|RISK|ADR|DEC|TC)-\\d+\\b/: 14 matches in 8 files",
+    "13/80 · Searched /(?:Status|Created|Last Updated|Last Amended|Ratified|Date)\\*/: 435 matches in 339 files",
+    "The project mixes Spec Kit records with newer design notes. IDs restart within each feature folder, and task checkboxes carry completion status. I also found short story references such as `US1`, plus numbered decisions, research findings, and contracts. I’ll scope these carefully to exclude templates and technical tokens.",
+    "14/80 · Read specs/044-codec-consolidation/spec.md lines 1-45",
+    "15/80 · Read specs/001-attach-connection-validation/checklists/requirements.md lines 1-38",
+    "16/80 · Read feature-spec/refactoring-v0.2.md lines 1-65",
+    "17/80 · Read specs/068-login-routing-unification/data-model.md lines 1-55",
+    "18/80 · Read specs/068-login-routing-unification/quickstart.md lines 1-45",
+    "19/80 · Searched /^#{1,6} (?:\\*\\*)?(?:[DRC]\\d+|Decision[ :]|Risk[ :]|Scenario[/: 0 matches in 0 files",
+    "20/80 · Evaluated draft 1: 8 categories, 4221 definitions, 25 duplicates",
+    "21/80 · Listed 4 of 4 duplicate matches of requirements",
+    "22/80 · Listed 2 of 2 duplicate matches of success",
+    "23/80 · Listed 35 of 218 unresolved matches of stories",
+    "24/80 · Listed 35 of 127 unresolved matches of tasks",
+    "25/80 · Listed 19 of 19 duplicate matches of decisions",
+    "26/80 · Listed 9 of 9 unresolved matches of research",
+    "27/80 · Listed 1 of 1 unresolved matches of contracts",
+    "28/80 · Listed 35 of 87 definition matches of features",
+    "29/80 · Searched /User Story|US-SEC|US-AN/: 5 matches in 1 files",
+    "30/80 · Searched /User Story/: 0 matches in 0 files",
+    "31/80 · Searched /(?:^|\\n)#{1,6}[^\\n]*(?:D\\d+|R\\d+|W\\d+|Risk|Decision)/: 298 matches in 49 files",
+    "32/80 · Searched /Last Updated|Last Amended|\\*\\*Status/: 81 matches in 78 files",
+    "33/80 · Listed 48 of 218 unresolved matches of stories",
+    "34/80 · Listed 50 of 127 unresolved matches of tasks",
+    "35/80 · Read specs/055-read-staging-and-batch-decode/spec.md lines 603-635",
+    "36/80 · Read specs/001-attach-connection-validation/research.md lines 65-92",
+    "37/80 · Read specs/006-split-tls-build/spec.md lines 65-90",
+    "38/80 · Read specs/059-staged-path-test-coverage/spec.md lines 160-190",
+    "39/80 · Searched /Last Updated|Last Amended/: 2 matches in 2 files",
+    "40/80 · Listed 50 of 144 definition matches of research",
+    "41/80 · Evaluated a draft: rejected (ID scope pattern \"specs/001-mssql-transactions\" ends in a literal folder. A scope pattern needs a wildcard, glob, or {na)",
+    "The first measurement exposed repeated summaries being treated as definitions and generic `T1` test labels being mistaken for tasks. I’m correcting those scopes and definition sites. Status extraction also needs to handle `Status` fields embedded in metadata paragraphs, and dates occur in status text without the default “on” wording.",
+    "42/80 · Evaluated a draft: rejected (specs/055-read-staging-and-batch-decode/spec.md: Line 124, status paragraphs: Error: Captured status \"done, and it moved)",
+    "43/80 · Evaluated draft 2: 8 categories, 4134 definitions, 6 duplicates",
+    "44/80 · Listed 50 of 144 definition matches of research",
+    "45/80 · Listed 44 of 144 definition matches of research",
+    "46/80 · Listed 50 of 149 unresolved matches of decisions",
+    "47/80 · Listed 8 of 39 without-status statuses of tasks",
+    "48/80 · Listed 6 of 6 without-status statuses of features",
+    "49/80 · Listed 4 of 4 unmapped statuses of features",
+    "50/80 · Listed 0 of 0 conflict statuses of features",
+    "51/80 · Searched /(?:^|\\n)#{1,6} (?:Research )?(?:\\d+[a-z]?\\. )?(?:D\\d+|Decisi/: 140 matches in 23 files",
+    "52/80 · Read specs/073-fedauth-token-refresh/spec.md lines 1-14",
+    "53/80 · Read specs/045-named-instance-resolution/tasks.md lines 25-48",
+    "54/80 · Read specs/045-named-instance-resolution/security-review.md lines 1-35",
+    "55/80 · Read docs/proposals/extension-repository-trust.md lines 1-30",
+    "56/80 · Read specs/045-type-codec-consolidation/bench_results.md lines 1-25",
+    "Status coverage is now 81 of 87 feature specifications, and 2,278 tasks have checkbox statuses. I found a deferred checkbox marker to add as well. Before submitting, I’m checking the remaining document kinds: release notes, test guides, website copies, audit reports, golden-fixture notes, and repository guidance, plus the dates each rule actually finds.",
+    "57/80 · Listed 5 of 5 dates of rule status-date",
+    "58/80 · Listed 1 of 1 dates of rule list-entry",
+    "59/80 · Listed 6 of 91 dates of rule heading",
+    "60/80 · Listed 6 of 117 dates of rule created",
+    "61/80 · Listed 6 of 113 dates of rule date",
+    "62/80 · Searched /\\b(?:[A-Z]{1,6}-?\\d+|User Story \\d+)\\b|Status|\\d{4}-\\d{2}-\\d/: 212 matches in 16 files",
+    "63/80 · Searched /\\b(?:FR-|REQ-|US-?|T\\d|RISK-|ADR-)|Status|\\d{4}-\\d{2}-\\d{2}/: 31 matches in 12 files",
+    "64/80 · Searched /\\b(?:FR-|REQ-|US-?|T\\d|RISK-|ADR-)|Status|\\d{4}-\\d{2}-\\d{2}/: 39 matches in 2 files",
+    "65/80 · Read docs/release-notes/v0.2.3.md lines 1-22",
+    "66/80 · Read test/README.md lines 1-20",
+    "67/80 · Read website/versioned_docs/version-0.2.4/reference/functions.md lines 160-174",
+    "68/80 · Read specs/045-type-codec-consolidation/golden/datetime/README.md lines 1-22",
+    "69/80 · Read specs/045-type-codec-consolidation/audit_grep.md lines 1-25",
+    "70/80 · Searched /Status|\\d{4}-\\d{2}-\\d{2}|\\b(?:REQ|ADR|RISK|FR)-\\d+\\b/: 40 matches in 4 files",
+    "Warned the agent: 10 tool calls remain.",
+    "71/80 · Evaluated draft 3: 8 categories, 4237 definitions, 6 duplicates",
+    "72/80 · Listed 10 of 10 unresolved matches of requirements",
+    "73/80 · Listed 4 of 4 unresolved matches of success",
+    "74/80 · Listed 13 of 13 unresolved matches of decisions",
+    "75/80 · Listed 6 of 6 duplicate matches of decisions",
+    "76/80 · Listed 41 of 91 dates of rule heading",
+    "77/80 · Evaluated draft 4: 8 categories, 4236 definitions, 4 duplicates",
+    "The best draft recognizes 4,236 definitions across eight categories, maps all 2,368 extracted statuses, and finds 327 dates. The remaining findings include cross-feature references and historical headings repeated beside completion updates. I’ll submit this draft with explicit gaps for conventions the analyzer cannot represent reliably.",
+    "78/80 · Submitted draft 4 with 8 categories, statuses, dates, 7 gaps"
+  ]
+}

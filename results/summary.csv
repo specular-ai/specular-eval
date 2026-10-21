@@ -1,0 +1,7 @@
+project,repository,commit,sdd_approach,coding_agents,md_files,md_lines,md_kb,categories,rules,ids,defined_ids,definitions,references,ids_with_status,status_pct,duplicate_findings,unresolved_findings,pending_items,precision_correct,precision_sampled,precision_pct,extraction_ms,agent_tool_calls,agent_seconds,agent_gaps_reported
+swift-secp256k1,https://github.com/21-DOT-DEV/swift-secp256k1,a0bb7c72577403945ea7e6ac744aabae5b852650,Spec Kit,Devin,120,16408,779,8,8,275,272,279,459,151,56,14,9,62,30,30,100.0,524,71,160,8
+cache-data,https://github.com/63Klabs/cache-data,37c1f1fde6c791cea1b0c03658a996371ba471fc,Kiro specs,Kiro,249,70946,3084,11,14,1952,1941,1943,800,1208,62,4,13,271,30,30,100.0,1822,71,205,7
+oscar,https://github.com/grycap/oscar,af7c37e96b846ba06a0c4d93df5feddd3602103d,Spec Kit,Codex,126,13700,611,7,7,436,436,436,381,223,51,0,0,40,30,30,100.0,389,60,145,6
+sleap-roots,https://github.com/talmolab/sleap-roots,6394cb996a70e7e3f9ebe9c17150a0c423fc0e18,OpenSpec,Claude Code,310,68424,4376,12,7,2366,2338,2340,1104,1261,54,4,62,1186,30,30,100.0,2841,77,272,8
+mssql-extension,https://github.com/hugr-lab/mssql-extension,d4cbe170265a535c3087f7b817296795fda30c5b,Spec Kit,Claude Code,589,128004,6231,8,8,4256,4234,4236,6594,2368,56,4,40,198,30,30,100.0,4082,78,244,7
+caro,https://github.com/wildcard/caro,867323bf1e263194229bd3ebb46dbe53a2f2cb50,Spec Kit + Spec Kitty,"Claude Code, Codex, Cursor, Copilot",1177,446281,13936,12,13,1555,1535,1538,3754,776,51,6,44,8258,29,30,96.7,10480,78,315,9
